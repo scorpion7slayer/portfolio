@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr" data-bs-theme="dark">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Mon Portfolio</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <link href="style.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a
+                    class="navbar-brand fw-bold text-primary fs-3"
+                    href="#accueil"
+                    >Théo</a
+                >
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent"
+                    aria-controls="navbarContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#accueil">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#apropos">À propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#competences"
+                                >Compétences</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projets">Projets</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <section id="accueil" class="py-5 section-accueil">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="display-5 fw-bold">Théo</h1>
+                            <p class="lead">
+                                Développeur débutant, motivé et curieux.
+                            </p>
+                        </div>
+                        <div class="col-lg-6 text-center">
+                            <div class="placeholder-img rounded">
+                                <img
+                                    src="https://picsum.photos/seed/picsum/200/300"
+                                    alt="Profil"
+                                />
+                            </div>
+                            <div
+                                class="mt-3 d-flex justify-content-center gap-3"
+                            >
+                                <a
+                                    href="#projets"
+                                    class="btn btn-primary btn-lg rounded-pill shadow fw-bold btn-enhanced"
+                                    >Voir mes projets</a
+                                >
+                                <a
+                                    href="#contact"
+                                    class="btn btn-outline-light btn-lg rounded-pill shadow fw-bold btn-enhanced"
+                                    >Me contacter</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="apropos" class="py-5 section-apropos">
+                <div class="container">
+                    <h2 class="h3 mb-4">À propos</h2>
+                    <p>
+                        Je suis un développeur en formation, j'aime apprendre et
+                        construire des projets simples et utiles. Voici un
+                        aperçu de mon parcours et de ce que j'ai commencé à
+                        explorer.
+                    </p>
+                </div>
+            </section>
+            <section id="competences" class="py-5 section-competences">
+                <div class="container">
+                    <h2 class="h3 mb-4">Compétences</h2>
+                    <div class="d-flex flex-wrap gap-3 align-items-center">
+                        <span class="badge badge-html rounded-pill px-3 py-2"
+                            >HTML</span
+                        >
+                        <span
+                            class="badge text-bg-primary rounded-pill px-3 py-2"
+                            >CSS</span
+                        >
+                        <span
+                            class="badge text-bg-warning rounded-pill px-3 py-2"
+                            >JavaScript</span
+                        >
+                        <span
+                            class="badge badge-bootstrap rounded-pill px-3 py-2"
+                            >Bootstrap</span
+                        >
+                    </div>
+                </div>
+            </section>
+            <section id="projets" class="py-5 section-projets">
+                <div class="container">
+                    <h2 class="h3 mb-4">Projets</h2>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div
+                                class="card bg-dark border border-secondary h-100 project-card"
+                            >
+                                <img
+                                    src="https://picsum.photos/seed/picsum/200/300"
+                                    class="card-img-top"
+                                    alt="Projet 1"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">Projet 1</h5>
+                                    <p class="card-text small">
+                                        Petit projet de découverte du web.
+                                    </p>
+                                    <div class="project-links d-flex gap-2">
+                                        <a
+                                            href="https://github.com/example/projet1"
+                                            aria-label="Voir le code source"
+                                            title="Voir le code source"
+                                        >
+                                            <i
+                                                class="fa-brands fa-github text-white"
+                                            ></i>
+                                        </a>
+                                        <a
+                                            href="https://example.com/projet1"
+                                            aria-label="Visiter le site"
+                                            title="Visiter le site"
+                                        >
+                                            <i
+                                                class="fa-solid fa-globe text-white"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div
+                                class="card bg-dark border border-secondary h-100 project-card"
+                            >
+                                <img
+                                    src="https://picsum.photos/seed/picsum/200/300"
+                                    class="card-img-top"
+                                    alt="Projet 2"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">Projet 2</h5>
+                                    <p class="card-text small">
+                                        Expérimentation avec Bootstrap et mise
+                                        en page.
+                                    </p>
+                                    <div class="project-links d-flex gap-2">
+                                        <a
+                                            href="https://github.com/example/projet2"
+                                            aria-label="Voir le code source"
+                                            title="Voir le code source"
+                                        >
+                                            <i
+                                                class="fa-brands fa-github text-white"
+                                            ></i>
+                                        </a>
+                                        <a
+                                            href="https://example.com/projet2"
+                                            aria-label="Visiter le site"
+                                            title="Visiter le site"
+                                        >
+                                            <i
+                                                class="fa-solid fa-globe text-white"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div
+                                class="card bg-dark border border-secondary h-100 project-card"
+                            >
+                                <img
+                                    src="https://picsum.photos/seed/picsum/200/300"
+                                    class="card-img-top"
+                                    alt="Projet 3"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">Projet 3</h5>
+                                    <p class="card-text small">
+                                        Apprentissage de JavaScript pas à pas.
+                                    </p>
+                                    <div class="project-links d-flex gap-2">
+                                        <a
+                                            href="https://github.com/example/projet3"
+                                            aria-label="Voir le code source"
+                                            title="Voir le code source"
+                                        >
+                                            <i
+                                                class="fa-brands fa-github text-white"
+                                            ></i>
+                                        </a>
+                                        <a
+                                            href="https://example.com/projet3"
+                                            aria-label="Visiter le site"
+                                            title="Visiter le site"
+                                        >
+                                            <i
+                                                class="fa-solid fa-globe text-white"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="py-5 section-contact">
+                <div class="container">
+                    <h2 class="h3 mb-4">Contact</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form
+                                action="https://formspree.io/f/xqaydvyj"
+                                method="POST"
+                            >
+                                <label>
+                                    Votre nom:
+                                    <input type="text" name="name" />
+                                </label>
+                                <label>
+                                    Votre email:
+                                    <input type="email" name="email" />
+                                </label>
+                                <label>
+                                    Votre message:
+                                    <textarea name="message"></textarea>
+                                </label>
+                                <button type="submit">Envoyer</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="py-3 text-center bg-dark">
+            <div class="container">
+                <h6>© 2025 Théo. Tous droits réservés.</h6>
+            </div>
+        </footer>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
