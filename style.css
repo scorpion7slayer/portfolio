@@ -3,28 +3,25 @@ body {
 }
 
 .section-accueil {
-    background-color: #0b1320;
-    color: #e9ecef;
+    background: #1a1c23;
 }
 
 .section-apropos {
-    background-color: #121212;
-    color: #f1f3f5;
+    background: #1A1C23;
+    background: linear-gradient(180deg, rgba(26, 28, 35, 1) 17%, rgba(39, 42, 52, 1) 38%);
 }
 
 .section-competences {
-    background-color: #1d1f27;
-    color: #f8f9fa;
+    background: #393b43;
 }
 
 .section-projets {
-    background-color: #20232a;
-    color: #eaecef;
+    background: #393B43;
+    background: linear-gradient(180deg, rgba(57, 59, 67, 1) 6%, rgba(86, 86, 86, 1) 42%);
 }
 
 .section-contact {
-    background-color: #1b1b1b;
-    color: #f8f9fa;
+    background-color: #393d4c;
 }
 
 .placeholder-img {
@@ -69,10 +66,10 @@ body {
 
 /* Cards Projets */
 .project-card img {
-  height: 220px;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  border: 1px solid #3a3f47;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 1px solid #3a3f47;
 }
 
 .project-links a {
