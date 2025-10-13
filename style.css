@@ -2,6 +2,8 @@ body {
     padding-top: 70px;
 }
 
+
+
 .section-accueil {
     background: #1a1c23;
 }
@@ -59,8 +61,6 @@ body {
     background-color: #6726E0;
 }
 
-
-/* Cards Projets */
 .project-card img {
     height: 220px;
     object-fit: cover;
