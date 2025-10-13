@@ -117,11 +117,6 @@ body {
     transition: border-color 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
 }
 
-.section-contact form input[type="email"]::placeholder,
-.section-contact form textarea::placeholder {
-    color: #b0b7c5;
-}
-
 .section-contact form textarea {
     min-height: 260px;
     resize: vertical;
@@ -154,9 +149,4 @@ body {
     transform: translateY(-1px);
     filter: brightness(1.05);
     box-shadow: 0 0.5rem 1rem rgba(13, 110, 253, 0.25);
-}
-
-.section-contact form button[type="submit"]:focus {
-    outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.4);
 }
