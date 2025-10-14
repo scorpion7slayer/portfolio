@@ -2,8 +2,6 @@ body {
     padding-top: 70px;
 }
 
-
-
 .section-accueil {
     background: #1a1c23;
 }
@@ -52,19 +50,28 @@ body {
 }
 
 .badge-html {
-    color: #fff;
     background-color: #E34F26;
 }
 
 .badge-bootstrap {
-    color: #fff;
     background-color: #6726E0;
 }
+
+.badge-github {
+    background: #852090;
+    background: linear-gradient(180deg, rgba(133, 32, 144, 1) 34%, rgba(71, 32, 120, 1) 69%);
+}
+
+.badge-laragon-ddev {
+    background-color: #36A2FF;
+}
+
+
 
 .project-card img {
     height: 220px;
     object-fit: cover;
-    border-radius: 0.5rem;
+    border-radius: 3%;
     border: 1px solid #3a3f47;
 }
 
