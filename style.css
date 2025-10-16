@@ -1,6 +1,15 @@
 body {
     padding-top: 70px;
 }
+.navbar.navbar-expand-lg.navbar-dark.fixed-top {
+    margin-top: 1%;
+    background: rgba(26, 28, 35, 0.45);
+    backdrop-filter: blur(8px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.6);
+    transition: background 200ms ease, border-color 200ms ease,
+        box-shadow 200ms ease;
+}
 
 .section-accueil {
     background: #1a1c23;
@@ -168,7 +177,6 @@ body {
     box-shadow: 0 0.5rem 1rem rgba(13, 110, 253, 0.25);
 }
 
-/* animation du toggler — ajuster duration, easing et transform selon besoin */
 #navbar-toggler-icon {
     display: inline-flex;
     align-items: center;
@@ -177,17 +185,14 @@ body {
     transform-origin: center;
 }
 
-/* état "ouvert" : rotation et légère mise à l'échelle */
 #navbar-toggler-icon.open {
     transform: rotate(180deg) scale(1.05);
 }
 
-/* si vous voulez une transition de couleur/opacité de l'icône */
 #navbar-toggler-icon i {
     transition: color 200ms ease, transform 300ms ease;
 }
 
-/* exemple : changer la couleur quand ouvert */
 #navbar-toggler-icon.open i {
-    color: #ffc107; /* jaune bootstrap, modifier si besoin */
+    color: #ffc107;
 }
