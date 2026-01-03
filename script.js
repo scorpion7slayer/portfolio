@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbarCollapse = document.getElementById("navbarContent");
     const togglerIcon = document.querySelector("#navbar-toggler-icon i");
     const togglerSpan = document.getElementById("navbar-toggler-icon");
+    const footerYear = document.getElementById("copyright-year");
 
     if (!navbarCollapse || !togglerIcon || !togglerSpan) return;
 
@@ -15,4 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
         togglerIcon.classList.add("fa-plus");
         togglerSpan.classList.remove("open");
     });
+
+    if (footerYear) {
+        footerYear.textContent = new Date().getFullYear();
+    }
 });
