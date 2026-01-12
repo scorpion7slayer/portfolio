@@ -1,0 +1,8 @@
+# robots.txt pour GitHub Pages
+# Autoriser tous les robots de recherche
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://scorpion7slayer.github.io/portfolio/sitemap.xml
