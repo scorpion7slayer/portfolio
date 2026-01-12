@@ -86,6 +86,10 @@ body {
     background-color: #FF0099;
 }
 
+.badge-claude {
+    background-color: #C57C5E;
+}
+
 .project-card img {
     height: 220px;
     object-fit: cover;
