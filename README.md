@@ -81,6 +81,7 @@ Mon portfolio se distingue par son **design moderne** et ses **interactions flui
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 ### Outils de Développement
 
@@ -100,11 +101,12 @@ Mon portfolio se distingue par son **design moderne** et ses **interactions flui
 
 <img src="assets/screenshots/extension-flavortown.webp" alt="Flavortown Extension" width="500"/>
 
-Une **extension Chrome** permettant d'exporter facilement des projets GitHub vers Flavortown.
-Projet fonctionnel et publié sur le Chrome Web Store !
+Une **extension Chrome et Firefox** permettant d'exporter facilement des projets GitHub vers Flavortown.
+Projet fonctionnel et publié sur le Chrome Web Store et Firefox Add-ons !
 
 [![GitHub Repo](https://img.shields.io/badge/📁_Code_Source-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/scorpion7slayer/flavortown-github-exporter)
 [![Chrome Store](https://img.shields.io/badge/🌐_Installer-Chrome_Store-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/detail/ohkkaaibkhikfeemhpfpdhbpopjngaia)
+[![Firefox Add-ons](https://img.shields.io/badge/🦊_Installer-Firefox_Add--ons-FF7139?style=for-the-badge&logo=firefox&logoColor=white)](https://addons.mozilla.org/fr/firefox/addon/flavortown-github-exporter/)
 
 </div>
 
