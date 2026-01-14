@@ -9,9 +9,7 @@
 
 ---
 
-![Portfolio Preview](https://via.placeholder.com/800x400/1a1c23/00C7B7?text=🎬+Ajoutez+un+GIF+de+votre+portfolio+ici)
-
-*👆 Remplacez ce placeholder par un GIF animé de votre portfolio en action !*
+![Portfolio Preview](assets/screenshots/page-accueil.png)
 
 </div>
 
@@ -72,33 +70,22 @@ Mon portfolio se distingue par son **design moderne** et ses **interactions flui
 - **📱 Design Responsive** — Expérience optimale sur tous les appareils
 - **⚡ Performance Optimisée** — Images WebP, chargement prioritaire, code léger
 
-<div align="center">
-
-![Skills Demo](https://via.placeholder.com/600x300/393b43/ffc107?text=🎬+GIF+des+animations+interactives)
-
-*Suggéré : Ajoutez un GIF montrant les animations de votre navbar ou des effets de survol*
-
-</div>
-
 ---
 
 ## 💻 Technologies & Outils
 
 <div align="center">
 
-### Langages & Frameworks
+### Technologies Utilisées pour ce Portfolio
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-6726E0?style=for-the-badge&logo=bootstrap&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
 ### Outils de Développement
 
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![Wamp](https://img.shields.io/badge/Wamp-FF0099?style=for-the-badge&logo=wampserver&logoColor=white)
 ![Claude Code](https://img.shields.io/badge/Claude_Code-C57C5E?style=for-the-badge&logo=anthropic&logoColor=white)
 
 </div>
@@ -111,9 +98,7 @@ Mon portfolio se distingue par son **design moderne** et ses **interactions flui
 
 ### 🌟 Flavortown GitHub Export Extension
 
-<img src="https://via.placeholder.com/500x250/1a1c23/00C7B7?text=🎬+Screenshot+de+l'extension" alt="Flavortown Extension" width="500"/>
-
-*Suggéré : Ajoutez une capture d'écran ou un GIF de votre extension en action*
+<img src="assets/screenshots/extension-flavortown.webp" alt="Flavortown Extension" width="500"/>
 
 Une **extension Chrome** permettant d'exporter facilement des projets GitHub vers Flavortown.
 Projet fonctionnel et publié sur le Chrome Web Store !
@@ -155,9 +140,7 @@ Projet fonctionnel et publié sur le Chrome Web Store !
 
 | 🏠 Page d'Accueil | 🛠️ Section Compétences | 📬 Formulaire Contact |
 |:-----------------:|:----------------------:|:---------------------:|
-| ![Home](https://via.placeholder.com/250x150/1a1c23/00C7B7?text=Hero+Section) | ![Skills](https://via.placeholder.com/250x150/393b43/ffc107?text=Skills+Pills) | ![Contact](https://via.placeholder.com/250x150/1a1c23/6726e0?text=Contact+Form) |
-
-*📷 Remplacez ces placeholders par de vraies captures d'écran de votre portfolio*
+| ![Home](assets/screenshots/page-accueil.png) | ![Skills](assets/screenshots/section-competences.png) | ![Contact](assets/screenshots/formulaire-contact.png) |
 
 </div>
 
