@@ -213,3 +213,57 @@ body {
 #navbar-toggler-icon.open i {
     color: #ffc107;
 }
+
+/* Modal Navigateur - Style Navbar */
+.browser-modal-content {
+    background: rgba(26, 28, 35, 0.45);
+    backdrop-filter: blur(8px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.6);
+    border-radius: 1rem;
+}
+
+.browser-modal-content .modal-title {
+    color: #eaecef;
+    font-weight: 600;
+}
+
+.browser-choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid #3a3f47;
+    text-decoration: none;
+    color: #eaecef;
+    transition:
+        transform 0.15s ease,
+        filter 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.browser-choice:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.15);
+    border-color: #0d6efd;
+    color: #ffffff;
+}
+
+.browser-choice i {
+    font-size: 2.5rem;
+}
+
+.browser-choice:first-child i {
+    color: #4285f4;
+}
+
+.browser-choice:last-child i {
+    color: #ff7139;
+}
+
+.browser-choice span {
+    font-weight: 500;
+}
