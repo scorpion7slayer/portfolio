@@ -267,3 +267,8 @@ body {
 .browser-choice span {
     font-weight: 500;
 }
+
+.footer-sponsor-btn {
+    border: 0;
+    border-radius: 6px;
+}
