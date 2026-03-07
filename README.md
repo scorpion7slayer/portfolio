@@ -4,7 +4,7 @@
 
 ### Développeur Web Débutant, Motivé et Curieux
 
-[![Live Site](https://img.shields.io/badge/🌍_Site_Live-Visiter-00C7B7?style=for-the-badge)](https://scorpion7slayer.github.io/portfolio/)
+[![Live Site](https://img.shields.io/badge/🌍_Site_Live-Visiter-00C7B7?style=for-the-badge)](https://theo.nxtaigen.com/)
 [![GitHub](https://img.shields.io/badge/GitHub-scorpion7slayer-181717?style=for-the-badge&logo=github)](https://github.com/scorpion7slayer)
 
 ---
@@ -205,9 +205,9 @@ Ce portfolio n'est pas juste une vitrine — c'est une **démonstration concrèt
 <div align="center">
 
 Vous avez un projet en tête ? Une opportunité à partager ?
-N'hésitez pas à me contacter via le **[formulaire sur mon portfolio](https://scorpion7slayer.github.io/portfolio/#contact)** !
+N'hésitez pas à me contacter via le **[formulaire sur mon portfolio](https://theo.nxtaigen.com/#contact)** !
 
-[![Portfolio](https://img.shields.io/badge/🌐_Visitez_Mon_Portfolio-00C7B7?style=for-the-badge)](https://scorpion7slayer.github.io/portfolio/)
+[![Portfolio](https://img.shields.io/badge/🌐_Visitez_Mon_Portfolio-00C7B7?style=for-the-badge)](https://theo.nxtaigen.com/)
 [![GitHub](https://img.shields.io/badge/GitHub-scorpion7slayer-181717?style=for-the-badge&logo=github)](https://github.com/scorpion7slayer)
 
 </div>
@@ -222,7 +222,7 @@ N'hésitez pas à me contacter via le **[formulaire sur mon portfolio](https://s
 
 **© 2026 Théo | Portfolio Personnel**
 
-[![Made with Love](https://img.shields.io/badge/Made_with-❤️-red?style=flat-square)](https://scorpion7slayer.github.io/portfolio/)
+[![Made with Love](https://img.shields.io/badge/Made_with-❤️-red?style=flat-square)](https://theo.nxtaigen.com/)
 [![Powered by](https://img.shields.io/badge/Powered_by-DigitalOcean-0080FF?style=flat-square&logo=digitalocean)](https://www.digitalocean.com/)
 [![Powered by](https://img.shields.io/badge/Powered_by-Cloudflare-F38020?style=flat-square&logo=cloudflare)](https://www.cloudflare.com/)
 
