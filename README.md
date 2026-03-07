@@ -26,18 +26,21 @@ Ce portfolio est le reflet de ma passion pour le **développement web**. Conçu 
 <td width="33%" align="center">
 
 ### 🏠 Accueil
+
 Une introduction chaleureuse avec un design moderne et des appels à l'action clairs
 
 </td>
 <td width="33%" align="center">
 
 ### 👨‍💻 À propos
+
 Mon parcours et ma motivation en tant que développeur débutant passionné
 
 </td>
 <td width="33%" align="center">
 
 ### 🛠️ Compétences
+
 Mes technologies maîtrisées et mes outils de développement favoris
 
 </td>
@@ -46,12 +49,14 @@ Mes technologies maîtrisées et mes outils de développement favoris
 <td width="50%" align="center">
 
 ### 🚀 Projets
+
 Mes réalisations concrètes, dont des extensions Chrome fonctionnelles
 
 </td>
 <td width="50%" align="center">
 
 ### 📬 Contact
+
 Un formulaire simple et élégant pour me joindre facilement
 
 </td>
@@ -112,9 +117,25 @@ Projet fonctionnel et publié sur le Chrome Web Store et Firefox Add-ons !
 
 ---
 
+<div align="center">
+
+### ⭐ NxtGit
+
+<img src="assets/screenshots/NxtGit.webp" alt="NxtGit" width="500"/>
+
+Un **client GitHub léger** offrant une interface intuitive et la gestion simplifiée de vos dépôts. Téléchargements disponibles via les releases.
+
+[![GitHub Repo](https://img.shields.io/badge/📁_Code_Source-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/scorpion7slayer/NxtGit)
+[![Releases](https://img.shields.io/badge/🔽_Téléchargements-Releases-0B0B0B?style=for-the-badge&logo=github)](https://github.com/scorpion7slayer/NxtGit/releases)
+
+</div>
+
+---
+
 ## 🔍 Caractéristiques Techniques
 
 ### SEO & Optimisation
+
 - ✅ Balises Open Graph pour les réseaux sociaux
 - ✅ Sitemap.xml et robots.txt configurés
 - ✅ Google Site Verification activée
@@ -122,6 +143,7 @@ Projet fonctionnel et publié sur le Chrome Web Store et Firefox Add-ons !
 - ✅ Meta descriptions complètes
 
 ### Expérience Développeur
+
 - 🎯 Code propre et bien structuré
 - 📦 Système de version Git avec historique complet
 - 🎨 CSS modulaire avec animations personnalisées
@@ -129,6 +151,7 @@ Projet fonctionnel et publié sur le Chrome Web Store et Firefox Add-ons !
 - 🤖 Développement assisté par IA (Claude Code)
 
 ### Accessibilité & UX
+
 - ♿ Aria-labels sur les éléments interactifs
 - 📝 HTML sémantique et structuré
 - 🎨 Contrastes de couleurs optimisés pour le dark mode
@@ -193,13 +216,14 @@ N'hésitez pas à me contacter via le **[formulaire sur mon portfolio](https://s
 
 <div align="center">
 
-### 💙 Merci de votre visite !
+### 💙 Merci de votre visite
 
 *Développé avec passion • Designé avec soin • Optimisé pour l'expérience*
 
 **© 2026 Théo | Portfolio Personnel**
 
 [![Made with Love](https://img.shields.io/badge/Made_with-❤️-red?style=flat-square)](https://scorpion7slayer.github.io/portfolio/)
-[![Powered by](https://img.shields.io/badge/Powered_by-GitHub_Pages-181717?style=flat-square&logo=github)](https://pages.github.com/)
+[![Powered by](https://img.shields.io/badge/Powered_by-DigitalOcean-0080FF?style=flat-square&logo=digitalocean)](https://www.digitalocean.com/)
+[![Powered by](https://img.shields.io/badge/Powered_by-Cloudflare-F38020?style=flat-square&logo=cloudflare)](https://www.cloudflare.com/)
 
 </div>

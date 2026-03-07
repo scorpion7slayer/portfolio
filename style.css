@@ -1,6 +1,27 @@
 body {
     padding-top: 70px;
 }
+
+/* give navbar contents more horizontal breathing space */
+.navbar {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    width: calc(100% - 1rem);
+    margin: 0 auto;
+}
+
+.navbar .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        width: calc(100% - 2rem);
+    }
+}
 .navbar.navbar-expand-lg.navbar-dark.fixed-top {
     margin-top: 1%;
     background: rgba(26, 28, 35, 0.45);
@@ -60,11 +81,44 @@ body {
 }
 
 .btn-modif {
-    transition: transform 0.15s ease;
+    /* smoother vertical lift so hover feels fluid, not 'clicky' */
+    transition: transform 0.25s ease-out;
+    will-change: transform;
 }
 
 .btn-modif:hover {
     transform: translateY(-1px);
+}
+
+/* glassmorphic button style matching navbar */
+.btn-glass {
+    background: rgba(26, 28, 35, 0.45) !important;
+    backdrop-filter: blur(8px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.04) !important;
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.6);
+    color: #ffffff !important;
+    transition:
+        transform 0.25s ease-out,
+        background-color 200ms ease,
+        border-color 200ms ease,
+        box-shadow 200ms ease;
+}
+
+/* default hover is subtle lightening, overridden per button */
+.btn-glass:hover {
+    filter: brightness(1.1);
+}
+
+/* contact button hover color */
+.btn-contact.btn-glass:hover {
+    background-color: #216bcd !important;
+    border-color: #4493f8 !important;
+}
+
+/* projets button hover color (darker grey) */
+.btn-projects.btn-glass:hover {
+    background-color: #4b4e57 !important;
+    border-color: #6e7380 !important;
 }
 
 .badge-html {
@@ -85,7 +139,7 @@ body {
 }
 
 .badge-ddev {
-    background-color: #00A8E2;
+    background-color: #00a8e2;
 }
 
 .badge-claude {
@@ -214,6 +268,76 @@ body {
     color: #ffc107;
 }
 
+/* round mobile menu toggle button */
+.navbar-toggler {
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0; /* dimensions control size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* add spacing for brand on mobile so it doesn't sit at viewport edge */
+@media (max-width: 767.98px) {
+    .navbar-brand {
+        margin-left: 1rem;
+    }
+    /* indent dropdown menu items a bit from edge */
+    .navbar-nav .nav-link {
+        padding-left: 1rem;
+    }
+}
+
+/* always provide a small left padding for nav links (desktop too) */
+.navbar-nav .nav-link {
+    padding-left: 0.5rem;
+}
+
+/* skip link for keyboard users - hidden offscreen, slides into view without pushing other elements */
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-120%);
+    background: #000;
+    color: #fff;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    z-index: 1001; /* above header */
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+/* focus outlines */
+.nav-link:focus,
+.btn:focus,
+#backToTop:focus,
+.footer-sponsor-btn:focus {
+    outline: 3px solid #ffc107;
+    outline-offset: 2px;
+}
+
+/* social icons container - horizontal layout */
+.social-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.social-links .nav-link {
+    padding-left: 0; /* no extra padding inside group */
+}
+
+/* enlarge social icons */
+.github-link i,
+.linkedin-link i {
+    font-size: 1.5rem;
+}
+
 /* Modal Navigateur - Style Navbar */
 .browser-modal-content {
     background: rgba(26, 28, 35, 0.45);
@@ -269,6 +393,65 @@ body {
 }
 
 .footer-sponsor-btn {
-    border: 0;
     border-radius: 6px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    position: static; /* default for mobile */
+}
+
+/* make button absolute on medium and larger screens */
+@media (min-width: 768px) {
+    .footer-sponsor-btn {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+/* footer button hover effect — white background for readability */
+.footer-sponsor-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+}
+
+/* back to top button */
+#backToTop {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    background: rgba(26, 28, 35, 0.45);
+    backdrop-filter: blur(8px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.6);
+    color: #eaecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.15s ease;
+    z-index: 999;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#backToTop:hover {
+    transform: translateY(-2px);
+    background: rgba(26, 28, 35, 0.6);
 }
