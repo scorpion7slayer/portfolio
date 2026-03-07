@@ -5,4 +5,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://scorpion7slayer.github.io/portfolio/sitemap.xml
+Sitemap: https://theo.nxtaigen.com/sitemap.xml
