@@ -223,7 +223,7 @@ N'hésitez pas à me contacter via le **[formulaire sur mon portfolio](https://t
 **© 2026 Théo | Portfolio Personnel**
 
 [![Made with Love](https://img.shields.io/badge/Made_with-❤️-red?style=flat-square)](https://theo.nxtaigen.com/)
+[![Powered by](https://img.shields.io/badge/Powered_by-Cloudflare-F38020?style=flat-square&logo=cloudflare)](https://www.cloudflare.com/)<br>
 [![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=cb3c5c7ece01&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
-[![Powered by](https://img.shields.io/badge/Powered_by-Cloudflare-F38020?style=flat-square&logo=cloudflare)](https://www.cloudflare.com/)
 
 </div>
