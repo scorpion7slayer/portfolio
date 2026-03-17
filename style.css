@@ -1,8 +1,16 @@
-body {
-    padding-top: 70px;
+/* Police globale */
+body,
+* {
+    font-family: "Iosevka Charon Mono", monospace;
 }
 
-/* give navbar contents more horizontal breathing space */
+body {
+    padding-top: 70px;
+    background-color: #1e1d1c;
+    color: #e5e4e2;
+}
+
+/* Navbar */
 .navbar {
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
@@ -22,54 +30,62 @@ body {
         width: calc(100% - 2rem);
     }
 }
+
 .navbar.navbar-expand-lg.navbar-dark.fixed-top {
     margin-top: 1%;
-    background: rgba(26, 28, 35, 0.45);
+    background: rgba(30, 29, 28, 0.55);
     backdrop-filter: blur(8px) saturate(120%);
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.6);
+    border: 1px solid rgba(229, 228, 226, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
     transition:
         background 200ms ease,
         border-color 200ms ease,
         box-shadow 200ms ease;
 }
 
+/* Sections */
 .section-accueil {
-    background: #1a1c23;
+    background: #1e1d1c;
 }
 
 .section-apropos {
-    background: #1a1c23;
+    background: #1e1d1c;
     background: linear-gradient(
         180deg,
-        rgba(26, 28, 35, 1) 17%,
-        rgba(39, 42, 52, 1) 38%
+        rgba(30, 29, 28, 1) 17%,
+        rgba(36, 35, 34, 1) 38%
     );
 }
 
 .section-competences {
-    background: #393b43;
+    background: #252423;
 }
 
 .section-projets {
-    background: #393b43;
+    background: #252423;
     background: linear-gradient(
         180deg,
-        rgba(57, 59, 67, 1) 6%,
-        rgba(86, 86, 86, 1) 42%
+        rgba(37, 36, 35, 1) 6%,
+        rgba(48, 47, 46, 1) 42%
     );
 }
 
-.section-contact {
-    background-color: #393d4c;
+.section-contributions {
+    background-color: #1e1d1c;
 }
 
+.section-contact {
+    background-color: #252423;
+}
+
+/* Profil */
 .placeholder-img {
-    width: 100%;
-    max-width: 420px;
-    height: 240px;
-    border: 2px solid #484b4d;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 3px solid rgba(229, 228, 226, 0.2);
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .placeholder-img img {
@@ -77,11 +93,10 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: inherit;
 }
 
+/* Boutons */
 .btn-modif {
-    /* smoother vertical lift so hover feels fluid, not 'clicky' */
     transition: transform 0.25s ease-out;
     will-change: transform;
 }
@@ -90,13 +105,12 @@ body {
     transform: translateY(-1px);
 }
 
-/* glassmorphic button style matching navbar */
 .btn-glass {
-    background: rgba(26, 28, 35, 0.45) !important;
+    background: rgba(30, 29, 28, 0.55) !important;
     backdrop-filter: blur(8px) saturate(120%);
-    border: 1px solid rgba(255, 255, 255, 0.04) !important;
-    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.6);
-    color: #ffffff !important;
+    border: 1px solid rgba(229, 228, 226, 0.08) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    color: #e5e4e2 !important;
     transition:
         transform 0.25s ease-out,
         background-color 200ms ease,
@@ -104,23 +118,21 @@ body {
         box-shadow 200ms ease;
 }
 
-/* default hover is subtle lightening, overridden per button */
 .btn-glass:hover {
     filter: brightness(1.1);
 }
 
-/* contact button hover color */
 .btn-contact.btn-glass:hover {
     background-color: #216bcd !important;
     border-color: #4493f8 !important;
 }
 
-/* projets button hover color (darker grey) */
 .btn-projects.btn-glass:hover {
-    background-color: #4b4e57 !important;
-    border-color: #6e7380 !important;
+    background-color: #3a3938 !important;
+    border-color: rgba(229, 228, 226, 0.3) !important;
 }
 
+/* Badges */
 .badge-html {
     background-color: #e34f26;
 }
@@ -146,11 +158,12 @@ body {
     background-color: #c57c5e;
 }
 
+/* Cartes projets */
 .project-card img {
     height: 220px;
     object-fit: cover;
     border-radius: 3%;
-    border: 1px solid #3a3f47;
+    border: 1px solid rgba(229, 228, 226, 0.12);
 }
 
 .project-links a {
@@ -160,8 +173,8 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 0.375rem;
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid #3a3f47;
+    background-color: rgba(229, 228, 226, 0.06);
+    border: 1px solid rgba(229, 228, 226, 0.12);
     transition:
         transform 0.15s ease,
         filter 0.15s ease;
@@ -173,6 +186,7 @@ body {
     filter: brightness(1.15);
 }
 
+/* Formulaire contact */
 .section-contact form {
     display: flex;
     flex-direction: column;
@@ -181,7 +195,7 @@ body {
 
 .section-contact form label {
     display: block;
-    color: #eaecef;
+    color: #e5e4e2;
     font-weight: 500;
 }
 
@@ -196,10 +210,10 @@ body {
 .section-contact form textarea {
     width: 100%;
     padding: 0.6rem 0.75rem;
-    border: 1px solid #3a3f47;
+    border: 1px solid rgba(229, 228, 226, 0.15);
     border-radius: 0.5rem;
-    background-color: #262c36;
-    color: #eaecef;
+    background-color: #1e1d1c;
+    color: #e5e4e2;
     outline: none;
     transition:
         border-color 0.15s ease,
@@ -244,6 +258,7 @@ body {
     box-shadow: 0 0.5rem 1rem rgba(13, 110, 253, 0.25);
 }
 
+/* Navbar toggle icon */
 #navbar-toggler-icon {
     display: inline-flex;
     align-items: center;
@@ -268,34 +283,30 @@ body {
     color: #ffc107;
 }
 
-/* round mobile menu toggle button */
 .navbar-toggler {
     border-radius: 50%;
     width: 2.5rem;
     height: 2.5rem;
-    padding: 0; /* dimensions control size */
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* add spacing for brand on mobile so it doesn't sit at viewport edge */
 @media (max-width: 767.98px) {
     .navbar-brand {
         margin-left: 1rem;
     }
-    /* indent dropdown menu items a bit from edge */
     .navbar-nav .nav-link {
         padding-left: 1rem;
     }
 }
 
-/* always provide a small left padding for nav links (desktop too) */
 .navbar-nav .nav-link {
     padding-left: 0.5rem;
 }
 
-/* skip link for keyboard users - hidden offscreen, slides into view without pushing other elements */
+/* Accessibilité */
 .skip-link {
     position: absolute;
     top: 0;
@@ -305,7 +316,7 @@ body {
     color: #fff;
     padding: 0.25rem 0.75rem;
     font-size: 0.875rem;
-    z-index: 1001; /* above header */
+    z-index: 1001;
     transition: transform 0.3s ease;
     text-decoration: none;
 }
@@ -313,7 +324,6 @@ body {
     transform: translateY(0);
 }
 
-/* focus outlines */
 .nav-link:focus,
 .btn:focus,
 #backToTop:focus,
@@ -322,33 +332,32 @@ body {
     outline-offset: 2px;
 }
 
-/* social icons container - horizontal layout */
+/* Icônes réseaux sociaux */
 .social-links {
     display: flex;
     gap: 0.5rem;
     align-items: center;
 }
 .social-links .nav-link {
-    padding-left: 0; /* no extra padding inside group */
+    padding-left: 0;
 }
 
-/* enlarge social icons */
 .github-link i,
 .linkedin-link i {
     font-size: 1.5rem;
 }
 
-/* Modal Navigateur - Style Navbar */
+/* Modal navigateur */
 .browser-modal-content {
-    background: rgba(26, 28, 35, 0.45);
+    background: rgba(30, 29, 28, 0.75);
     backdrop-filter: blur(8px) saturate(120%);
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.6);
+    border: 1px solid rgba(229, 228, 226, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
     border-radius: 1rem;
 }
 
 .browser-modal-content .modal-title {
-    color: #eaecef;
+    color: #e5e4e2;
     font-weight: 600;
 }
 
@@ -359,10 +368,10 @@ body {
     gap: 0.5rem;
     padding: 1.5rem 2rem;
     border-radius: 0.75rem;
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid #3a3f47;
+    background-color: rgba(229, 228, 226, 0.06);
+    border: 1px solid rgba(229, 228, 226, 0.12);
     text-decoration: none;
-    color: #eaecef;
+    color: #e5e4e2;
     transition:
         transform 0.15s ease,
         filter 0.15s ease,
@@ -392,6 +401,7 @@ body {
     font-weight: 500;
 }
 
+/* Footer */
 .footer-sponsor-btn {
     border-radius: 6px;
     padding: 0.25rem 0.75rem;
@@ -399,10 +409,9 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    position: static; /* default for mobile */
+    position: static;
 }
 
-/* make button absolute on medium and larger screens */
 @media (min-width: 768px) {
     .footer-sponsor-btn {
         position: absolute;
@@ -412,14 +421,13 @@ body {
     }
 }
 
-/* footer button hover effect — white background for readability */
 .footer-sponsor-btn:hover {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #e5e4e2;
+    color: #1e1d1c;
     text-decoration: none;
 }
 
-/* back to top button */
+/* Bouton retour en haut */
 #backToTop {
     position: fixed;
     bottom: 1.5rem;
@@ -428,11 +436,11 @@ body {
     height: 3rem;
     border: none;
     border-radius: 50%;
-    background: rgba(26, 28, 35, 0.45);
+    background: rgba(30, 29, 28, 0.55);
     backdrop-filter: blur(8px) saturate(120%);
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.6);
-    color: #eaecef;
+    border: 1px solid rgba(229, 228, 226, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    color: #e5e4e2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -453,5 +461,394 @@ body {
 
 #backToTop:hover {
     transform: translateY(-2px);
-    background: rgba(26, 28, 35, 0.6);
+    background: rgba(30, 29, 28, 0.8);
 }
+
+/* Typewriter (h1) */
+.typewriter-cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: #e5e4e2;
+    margin-left: 4px;
+    vertical-align: baseline;
+    height: 0.8em;
+    opacity: 0;
+}
+
+.typewriter-cursor.active {
+    animation: tw-blink 0.8s step-end infinite;
+    opacity: 1;
+}
+
+@keyframes tw-blink {
+    0%,
+    49% {
+        opacity: 1;
+    }
+    50%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Terminal Boot Screen */
+.terminal-boot-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #1e1d1c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+        opacity 0.9s ease,
+        visibility 0.9s ease;
+}
+
+.terminal-boot-overlay.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.terminal-window {
+    width: min(680px, 92vw);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow:
+        0 0 0 1px rgba(229, 228, 226, 0.1),
+        0 24px 64px rgba(0, 0, 0, 0.85);
+    background: #141312;
+}
+
+.terminal-titlebar {
+    background: #2a2928;
+    padding: 11px 16px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid rgba(229, 228, 226, 0.06);
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.terminal-btn-close {
+    background: #ff5f57;
+}
+.terminal-btn-minimize {
+    background: #febc2e;
+}
+.terminal-btn-maximize {
+    background: #28c840;
+}
+
+.terminal-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(229, 228, 226, 0.4);
+    font-size: 0.78rem;
+    font-family: "Iosevka Charon Mono", monospace;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.terminal-body {
+    padding: 18px 22px 22px;
+    min-height: 260px;
+    font-family: "Iosevka Charon Mono", monospace;
+    font-size: 0.88rem;
+    color: #e5e4e2;
+    line-height: 1.6;
+}
+
+/* Terminal — prompt lines */
+.term-prompt-line {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 0.35rem;
+}
+
+.term-user,
+.term-info-user {
+    color: #28c840;
+    font-weight: bold;
+}
+
+.term-at,
+.term-info-at {
+    color: #e5e4e2;
+}
+
+.term-host,
+.term-info-host {
+    color: #28c840;
+    font-weight: bold;
+}
+
+.term-sep {
+    color: rgba(229, 228, 226, 0.6);
+}
+
+.term-cmd-text {
+    color: #febc2e;
+}
+
+.term-cursor-inline {
+    color: #e5e4e2;
+    animation: term-blink 1s step-end infinite;
+    margin-left: 2px;
+}
+
+@keyframes term-blink {
+    0%,
+    49% {
+        opacity: 1;
+    }
+    50%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Terminal — neofetch layout */
+.term-neofetch {
+    display: flex;
+    gap: 2.5rem;
+    margin: 0.4rem 0 0.6rem;
+    align-items: flex-start;
+}
+
+.term-ascii {
+    font-family: "Iosevka Charon Mono", monospace;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: #28c840;
+    white-space: pre;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.term-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.08rem;
+    padding-top: 0.05rem;
+}
+
+.term-info-line {
+    display: flex;
+    align-items: center;
+    font-family: "Iosevka Charon Mono", monospace;
+    font-size: 0.88rem;
+}
+
+.term-info-user {
+    font-weight: bold;
+}
+
+.term-info-key {
+    color: #28c840;
+    font-weight: bold;
+    min-width: 78px;
+}
+
+.term-info-colon {
+    color: rgba(229, 228, 226, 0.5);
+    margin-right: 6px;
+}
+
+.term-info-val {
+    color: #e5e4e2;
+}
+
+.term-info-sep {
+    color: rgba(229, 228, 226, 0.25);
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+}
+
+.term-info-colors {
+    display: flex;
+    gap: 5px;
+    margin-top: 2px;
+}
+
+.term-info-colors span {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+@media (max-width: 480px) {
+    .term-ascii {
+        display: none;
+    }
+    .term-neofetch {
+        justify-content: center;
+    }
+}
+
+/* Terminal — boot lines */
+.term-boot-info {
+    color: rgba(229, 228, 226, 0.6);
+    font-size: 0.88rem;
+}
+
+.term-boot-success {
+    color: #28c840;
+    font-size: 0.88rem;
+}
+
+.term-blank {
+    height: 0.5rem;
+    display: block;
+}
+
+.term-boot-dim {
+    color: rgba(229, 228, 226, 0.38);
+    font-size: 0.88rem;
+}
+
+.term-boot-url {
+    color: #4fc3f7;
+    font-size: 0.88rem;
+}
+
+/* Section À propos — terminal */
+.about-terminal {
+    max-width: 680px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow:
+        0 0 0 1px rgba(229, 228, 226, 0.1),
+        0 20px 56px rgba(0, 0, 0, 0.6);
+}
+
+.about-terminal-bar {
+    background: #2a2928;
+    padding: 11px 16px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid rgba(229, 228, 226, 0.06);
+}
+
+.about-terminal-body {
+    background: #141312;
+    padding: 18px 22px 16px;
+    font-family: "Iosevka Charon Mono", monospace;
+    font-size: 0.9rem;
+    color: #e5e4e2;
+    line-height: 1.6;
+}
+
+.about-prompt-line {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-cmd {
+    color: #febc2e;
+}
+
+.about-output {
+    color: rgba(229, 228, 226, 0.75);
+    margin: 0.6rem 0 0.7rem;
+    padding: 0;
+}
+
+/* Section contributions — heatmap */
+.contributions-total {
+    color: rgba(229, 228, 226, 0.5);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.contrib-loading {
+    color: rgba(229, 228, 226, 0.4);
+    font-size: 0.88rem;
+}
+
+.contrib-wrapper {
+    overflow-x: auto;
+    padding-bottom: 4px;
+    text-align: center;
+}
+
+.contrib-inner {
+    display: inline-block;
+    text-align: left;
+}
+
+.contrib-months {
+    display: flex;
+    padding-left: 32px;
+    margin-bottom: 4px;
+    gap: 0;
+}
+
+.contrib-months span {
+    font-size: 0.72rem;
+    color: rgba(229, 228, 226, 0.45);
+    width: 16px;
+    flex-shrink: 0;
+}
+
+.contrib-grid-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.contrib-day-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 28px;
+    text-align: right;
+    padding-right: 4px;
+    flex-shrink: 0;
+}
+
+.contrib-day-labels span {
+    font-size: 0.7rem;
+    color: rgba(229, 228, 226, 0.4);
+    height: 13px;
+    line-height: 13px;
+    display: block;
+}
+
+.contrib-grid {
+    display: flex;
+    gap: 3px;
+}
+
+.contrib-col {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.contrib-cell {
+    width: 13px;
+    height: 13px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    cursor: default;
+}
+
