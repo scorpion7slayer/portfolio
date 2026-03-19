@@ -409,16 +409,6 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    position: static;
-}
-
-@media (min-width: 768px) {
-    .footer-sponsor-btn {
-        position: absolute;
-        right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-    }
 }
 
 .footer-sponsor-btn:hover {
@@ -434,21 +424,15 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    position: static;
 }
 
-.footer-powered-link:hover {
+.footer-do-brand {
+    color: #aaa;
+    transition: color 0.2s;
+}
+
+.footer-powered-link:hover .footer-do-brand {
     color: #4d8cee;
-    text-decoration: none;
-}
-
-@media (min-width: 768px) {
-    .footer-powered-link {
-        position: absolute;
-        left: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-    }
 }
 
 /* Bouton retour en haut */
