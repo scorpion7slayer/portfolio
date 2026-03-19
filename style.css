@@ -427,6 +427,30 @@ body {
     text-decoration: none;
 }
 
+.footer-powered-link {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    position: static;
+}
+
+.footer-powered-link:hover {
+    color: #4d8cee;
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+    .footer-powered-link {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
 /* Bouton retour en haut */
 #backToTop {
     position: fixed;
