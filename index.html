@@ -55,7 +55,7 @@
             integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
             crossorigin="anonymous"
         />
-        <link href="style.css?v=3" rel="stylesheet" />
+        <link href="style.css?v=4" rel="stylesheet" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -290,142 +290,336 @@
             <section id="projets" class="py-5 section-projets">
                 <div class="container">
                     <h2 class="h3 mb-4">Projets</h2>
-                    <div class="row g-4">
-                        <div class="col-md-4">
+                    <div class="projects-carousel-outer">
+                        <button
+                            class="carousel-btn carousel-btn-prev"
+                            id="projectsPrev"
+                            aria-label="Projet précédent"
+                        >
+                            <i
+                                class="fa-solid fa-chevron-left"
+                                aria-hidden="true"
+                            ></i>
+                        </button>
+                        <div class="projects-carousel-track-wrapper">
                             <div
-                                class="card bg-dark border border-secondary h-100 project-card"
+                                class="projects-carousel-track"
+                                id="projectsTrack"
                             >
-                                <img
-                                    src="assets/screenshots/extension-flavortown.webp"
-                                    class="card-img-top"
-                                    alt="Extension web Flavortown GitHub Exporter pour Chrome"
-                                />
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        flavortown github export extension
-                                    </h5>
-                                    <p class="card-text small">
-                                        Cette extension web permet d'exporter
-                                        les projet github vers flavortown.
-                                    </p>
-                                    <div class="project-links d-flex gap-2">
-                                        <a
-                                            href="https://github.com/scorpion7slayer/flavortown-github-exporter"
-                                            target="_blank"
-                                            aria-label="Voir le code source"
-                                            title="Voir le code source"
+                                <!-- Card 1 : Flavortown -->
+                                <div class="project-card">
+                                    <div class="project-card-bar">
+                                        <div class="terminal-buttons">
+                                            <span
+                                                class="terminal-btn terminal-btn-close"
+                                            ></span>
+                                            <span
+                                                class="terminal-btn terminal-btn-minimize"
+                                            ></span>
+                                            <span
+                                                class="terminal-btn terminal-btn-maximize"
+                                            ></span>
+                                        </div>
+                                        <span class="project-card-filename"
+                                            >flavortown.js</span
                                         >
-                                            <i
-                                                class="fa-brands fa-github text-white"
-                                            ></i>
-                                        </a>
-                                        <a
-                                            href="#"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#browserModal"
-                                            aria-label="Installer l'extension"
-                                            title="Installer l'extension"
+                                    </div>
+                                    <div class="project-card-img-wrap">
+                                        <img
+                                            src="assets/screenshots/extension-flavortown.webp"
+                                            class="project-card-img"
+                                            alt="Extension web Flavortown GitHub Exporter pour Chrome"
+                                        />
+                                    </div>
+                                    <div class="project-card-body">
+                                        <h5 class="project-card-title">
+                                            flavortown github export
+                                        </h5>
+                                        <p class="project-card-desc">
+                                            Extension web pour exporter les
+                                            projets GitHub vers Flavortown.
+                                        </p>
+                                        <div class="project-links d-flex gap-2">
+                                            <a
+                                                href="https://github.com/scorpion7slayer/flavortown-github-exporter"
+                                                target="_blank"
+                                                aria-label="Voir le code source"
+                                                title="Voir le code source"
+                                            >
+                                                <i
+                                                    class="fa-brands fa-github text-white"
+                                                ></i>
+                                            </a>
+                                            <a
+                                                href="#"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#browserModal"
+                                                aria-label="Installer l'extension"
+                                                title="Installer l'extension"
+                                            >
+                                                <i
+                                                    class="fa-solid fa-globe text-white"
+                                                ></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 2 : NxtAIGen -->
+                                <div class="project-card">
+                                    <div class="project-card-bar">
+                                        <div class="terminal-buttons">
+                                            <span
+                                                class="terminal-btn terminal-btn-close"
+                                            ></span>
+                                            <span
+                                                class="terminal-btn terminal-btn-minimize"
+                                            ></span>
+                                            <span
+                                                class="terminal-btn terminal-btn-maximize"
+                                            ></span>
+                                        </div>
+                                        <span class="project-card-filename"
+                                            >NxtAIGen.js</span
                                         >
-                                            <i
-                                                class="fa-solid fa-globe text-white"
-                                            ></i>
-                                        </a>
+                                    </div>
+                                    <div class="project-card-img-wrap">
+                                        <img
+                                            src="assets/screenshots/NxtAIGen.webp"
+                                            class="project-card-img"
+                                            alt="Chatbot multi modèles IA NxtAIGen"
+                                        />
+                                    </div>
+                                    <div class="project-card-body">
+                                        <h5 class="project-card-title">
+                                            NxtAIGen
+                                        </h5>
+                                        <p class="project-card-desc">
+                                            Chatbot multi-modèles
+                                            d'intelligence artificielle.
+                                        </p>
+                                        <div class="project-links d-flex gap-2">
+                                            <a
+                                                href="https://github.com/scorpion7slayer/NxtAIGen"
+                                                target="_blank"
+                                                aria-label="Voir le code source"
+                                                title="Voir le code source"
+                                            >
+                                                <i
+                                                    class="fa-brands fa-github text-white"
+                                                ></i>
+                                            </a>
+                                            <a
+                                                href="#"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#nxtaigenModal"
+                                                aria-label="Voir le site"
+                                                title="Voir le site"
+                                            >
+                                                <i
+                                                    class="fa-solid fa-globe text-white"
+                                                ></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 3 : NxtGit -->
+                                <div class="project-card">
+                                    <div class="project-card-bar">
+                                        <div class="terminal-buttons">
+                                            <span
+                                                class="terminal-btn terminal-btn-close"
+                                            ></span>
+                                            <span
+                                                class="terminal-btn terminal-btn-minimize"
+                                            ></span>
+                                            <span
+                                                class="terminal-btn terminal-btn-maximize"
+                                            ></span>
+                                        </div>
+                                        <span class="project-card-filename"
+                                            >NxtGit.js</span
+                                        >
+                                    </div>
+                                    <div class="project-card-img-wrap">
+                                        <img
+                                            src="assets/screenshots/NxtGit.webp"
+                                            class="project-card-img"
+                                            alt="Client GitHub NxtGit"
+                                        />
+                                    </div>
+                                    <div class="project-card-body">
+                                        <h5 class="project-card-title">
+                                            NxtGit
+                                        </h5>
+                                        <p class="project-card-desc">
+                                            Client GitHub léger avec interface
+                                            conviviale et gestion des dépôts.
+                                        </p>
+                                        <div class="project-links d-flex gap-2">
+                                            <a
+                                                href="https://github.com/scorpion7slayer/NxtGit"
+                                                target="_blank"
+                                                aria-label="Voir le code source"
+                                                title="Voir le code source"
+                                            >
+                                                <i
+                                                    class="fa-brands fa-github text-white"
+                                                ></i>
+                                            </a>
+                                            <a
+                                                href="https://github.com/scorpion7slayer/NxtGit/releases"
+                                                target="_blank"
+                                                aria-label="Télécharger depuis les releases"
+                                                title="Télécharger depuis les releases"
+                                            >
+                                                <i
+                                                    class="fa-solid fa-download text-white"
+                                                ></i>
+                                            </a>
+                                            <a
+                                                href="https://nxtgit.nxtaigen.com/"
+                                                target="_blank"
+                                                aria-label="Visiter le site web"
+                                                title="Visiter le site web"
+                                            >
+                                                <i
+                                                    class="fa-solid fa-globe text-white"
+                                                ></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 4 : Nxt AI Card -->
+                                <div class="project-card">
+                                    <div class="project-card-bar">
+                                        <div class="terminal-buttons">
+                                            <span
+                                                class="terminal-btn terminal-btn-close"
+                                            ></span>
+                                            <span
+                                                class="terminal-btn terminal-btn-minimize"
+                                            ></span>
+                                            <span
+                                                class="terminal-btn terminal-btn-maximize"
+                                            ></span>
+                                        </div>
+                                        <span class="project-card-filename"
+                                            >NxtAICard.js</span
+                                        >
+                                    </div>
+                                    <div class="project-card-img-wrap">
+                                        <img
+                                            src="assets/screenshots/NxtAICard.webp"
+                                            class="project-card-img"
+                                            alt="Comparateur de modèles IA Nxt AI Card"
+                                        />
+                                    </div>
+                                    <div class="project-card-body">
+                                        <h5 class="project-card-title">
+                                            Nxt AI Card
+                                        </h5>
+                                        <p class="project-card-desc">
+                                            Comparateur de modèles IA avec
+                                            benchmarks, performances et
+                                            tarification.
+                                        </p>
+                                        <div class="project-links d-flex gap-2">
+                                            <a
+                                                href="https://github.com/scorpion7slayer/nxtaicard"
+                                                target="_blank"
+                                                aria-label="Voir le code source"
+                                                title="Voir le code source"
+                                            >
+                                                <i
+                                                    class="fa-brands fa-github text-white"
+                                                ></i>
+                                            </a>
+                                            <a
+                                                href="https://nxtaicard.nxtaigen.com/"
+                                                target="_blank"
+                                                aria-label="Visiter le site web"
+                                                title="Visiter le site web"
+                                            >
+                                                <i
+                                                    class="fa-solid fa-globe text-white"
+                                                ></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 5 : NxtUpdate -->
+                                <div class="project-card">
+                                    <div class="project-card-bar">
+                                        <div class="terminal-buttons">
+                                            <span
+                                                class="terminal-btn terminal-btn-close"
+                                            ></span>
+                                            <span
+                                                class="terminal-btn terminal-btn-minimize"
+                                            ></span>
+                                            <span
+                                                class="terminal-btn terminal-btn-maximize"
+                                            ></span>
+                                        </div>
+                                        <span class="project-card-filename"
+                                            >NxtUpdate.js</span
+                                        >
+                                    </div>
+                                    <div class="project-card-img-wrap">
+                                        <img
+                                            src="assets/screenshots/NxtUpdate.webp"
+                                            class="project-card-img"
+                                            alt="Universal macOS Updater NxtUpdate"
+                                        />
+                                    </div>
+                                    <div class="project-card-body">
+                                        <h5 class="project-card-title">
+                                            NxtUpdate
+                                        </h5>
+                                        <p class="project-card-desc">
+                                            Universal macOS Updater — met à
+                                            jour Homebrew, Node, Python, Rust
+                                            et macOS via une TUI.
+                                        </p>
+                                        <div class="project-links d-flex gap-2">
+                                            <a
+                                                href="https://github.com/scorpion7slayer/NxtUpdate"
+                                                target="_blank"
+                                                aria-label="Voir le code source"
+                                                title="Voir le code source"
+                                            >
+                                                <i
+                                                    class="fa-brands fa-github text-white"
+                                                ></i>
+                                            </a>
+                                            <a
+                                                href="#"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#nxtupdateModal"
+                                                aria-label="Instructions d'installation"
+                                                title="Instructions d'installation"
+                                            >
+                                                <i
+                                                    class="fa-solid fa-terminal text-white"
+                                                ></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div
-                                class="card bg-dark border border-secondary h-100 project-card"
-                            >
-                                <img
-                                    src="assets/screenshots/NxtAIGen.webp"
-                                    class="card-img-top"
-                                    alt="Chatbot multi modèles IA NxtAIGen"
-                                />
-                                <div class="card-body">
-                                    <h5 class="card-title">NxtAIGen</h5>
-                                    <p class="card-text small">
-                                        Ce site web est un chatbot multi-modèles
-                                        d'intelligence artificielle
-                                    </p>
-                                    <div class="project-links d-flex gap-2">
-                                        <a
-                                            href="https://github.com/scorpion7slayer/NxtAIGen"
-                                            target="_blank"
-                                            aria-label="Voir le code source"
-                                            title="Voir le code source"
-                                        >
-                                            <i
-                                                class="fa-brands fa-github text-white"
-                                            ></i>
-                                        </a>
-                                        <a
-                                            href="#"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#nxtaigenModal"
-                                            aria-label="Installer l'extension"
-                                            title="Installer l'extension"
-                                        >
-                                            <i
-                                                class="fa-solid fa-globe text-white"
-                                            ></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div
-                                class="card bg-dark border border-secondary h-100 project-card"
-                            >
-                                <img
-                                    src="assets/screenshots/NxtGit.webp"
-                                    class="card-img-top"
-                                    alt="Client GitHub NxtGit"
-                                />
-                                <div class="card-body">
-                                    <h5 class="card-title">NxtGit</h5>
-                                    <p class="card-text small">
-                                        Client GitHub léger avec interface
-                                        conviviale et gestion des dépôts.
-                                    </p>
-                                    <div class="project-links d-flex gap-2">
-                                        <a
-                                            href="https://github.com/scorpion7slayer/NxtGit"
-                                            target="_blank"
-                                            aria-label="Voir le code source"
-                                            title="Voir le code source"
-                                        >
-                                            <i
-                                                class="fa-brands fa-github text-white"
-                                            ></i>
-                                        </a>
-                                        <a
-                                            href="https://github.com/scorpion7slayer/NxtGit/releases"
-                                            target="_blank"
-                                            aria-label="Télécharger depuis les releases"
-                                            title="Télécharger depuis les releases"
-                                        >
-                                            <i
-                                                class="fa-solid fa-download text-white"
-                                            ></i>
-                                        </a>
-                                        <a
-                                            href="https://nxtgit.nxtaigen.com/"
-                                            target="_blank"
-                                            aria-label="Visiter le site web"
-                                            title="Visiter le site web"
-                                        >
-                                            <i
-                                                class="fa-solid fa-globe text-white"
-                                            ></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <button
+                            class="carousel-btn carousel-btn-next"
+                            id="projectsNext"
+                            aria-label="Projet suivant"
+                        >
+                            <i
+                                class="fa-solid fa-chevron-right"
+                                aria-hidden="true"
+                            ></i>
+                        </button>
                     </div>
+                    <div class="carousel-dots" id="projectsDots"></div>
                 </div>
             </section>
             <!-- Modal Choix Navigateur -->
@@ -498,6 +692,80 @@
                         <div class="modal-body">
                             <div class="d-flex justify-content-center gap-4">
                                 site web indisponible pour le moment
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal NxtUpdate -->
+            <div
+                class="modal fade"
+                id="nxtupdateModal"
+                tabindex="-1"
+                aria-labelledby="nxtupdateModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content browser-modal-content">
+                        <div class="modal-header border-0">
+                            <h5 class="modal-title" id="nxtupdateModalLabel">
+                                <i
+                                    class="fa-solid fa-terminal me-2"
+                                    aria-hidden="true"
+                                ></i>
+                                Installer NxtUpdate
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close btn-close-white"
+                                data-bs-dismiss="modal"
+                                aria-label="Fermer"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="install-step-label">
+                                1. Installer Bun
+                            </p>
+                            <div class="install-code-block">
+                                <code class="install-code"
+                                    >curl -fsSL https://bun.sh/install |
+                                    bash</code
+                                >
+                                <button
+                                    class="copy-btn"
+                                    aria-label="Copier"
+                                    data-copy="curl -fsSL https://bun.sh/install | bash"
+                                >
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+                            <p class="install-step-label mt-3">
+                                2. Installer NxtUpdate
+                            </p>
+                            <div class="install-code-block">
+                                <code class="install-code"
+                                    >npm install -g nxtupdate</code
+                                >
+                                <button
+                                    class="copy-btn"
+                                    aria-label="Copier"
+                                    data-copy="npm install -g nxtupdate"
+                                >
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+                            <div class="install-or">ou</div>
+                            <div class="install-code-block">
+                                <code class="install-code"
+                                    >bun add -g nxtupdate</code
+                                >
+                                <button
+                                    class="copy-btn"
+                                    aria-label="Copier"
+                                    data-copy="bun add -g nxtupdate"
+                                >
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -584,6 +852,6 @@
         <button id="backToTop" aria-label="Remonter en haut">
             <i class="fa-solid fa-chevron-up"></i>
         </button>
-        <script src="script.js?v=3"></script>
+        <script src="script.js?v=4"></script>
     </body>
 </html>

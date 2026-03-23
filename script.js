@@ -14,6 +14,8 @@
         { type: "success", text: "  [OK] flavortown-github-exporter" },
         { type: "success", text: "  [OK] NxtAIGen" },
         { type: "success", text: "  [OK] NxtGit" },
+        { type: "success", text: "  [OK] NxtAI Card" },
+        { type: "success", text: "  [OK] NxtUpdate" },
         { type: "blank" },
         { type: "progress" },
         { type: "blank" },
@@ -24,7 +26,7 @@
         { type: "blank" },
     ];
 
-    var DELAYS = [80, 100, 500, 260, 260, 100, 500, 260, 260, 260, 100, 0, 100, 400, 150, 250, 80, 100];
+    var DELAYS = [80, 100, 500, 260, 260, 100, 500, 260, 260, 260, 260, 260, 100, 0, 100, 400, 150, 250, 80, 100];
 
     function span(cls, txt) {
         var s = document.createElement("span");
@@ -294,6 +296,102 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     loadGithubContributions();
+
+    // Carrousel projets
+    (function () {
+        var track = document.getElementById("projectsTrack");
+        var prevBtn = document.getElementById("projectsPrev");
+        var nextBtn = document.getElementById("projectsNext");
+        var dotsContainer = document.getElementById("projectsDots");
+        if (!track || !prevBtn || !nextBtn) return;
+
+        var cards = track.querySelectorAll(".project-card");
+        var currentIndex = 0;
+
+        function getVisibleCount() {
+            if (window.innerWidth < 576) return 1;
+            if (window.innerWidth < 992) return 2;
+            return 3;
+        }
+
+        function getMaxIndex() {
+            return Math.max(0, cards.length - getVisibleCount());
+        }
+
+        function rebuildDots(maxIndex) {
+            if (!dotsContainer) return;
+            var dotCount = maxIndex + 1;
+            if (dotsContainer.children.length !== dotCount) {
+                while (dotsContainer.firstChild) {
+                    dotsContainer.removeChild(dotsContainer.firstChild);
+                }
+                for (var i = 0; i <= maxIndex; i++) {
+                    var dot = document.createElement("button");
+                    dot.className = "carousel-dot";
+                    dot.setAttribute("aria-label", "Position " + (i + 1));
+                    (function (idx) {
+                        dot.addEventListener("click", function () {
+                            goTo(idx);
+                        });
+                    })(i);
+                    dotsContainer.appendChild(dot);
+                }
+            }
+        }
+
+        function updateDots() {
+            if (!dotsContainer) return;
+            var dots = dotsContainer.querySelectorAll(".carousel-dot");
+            for (var j = 0; j < dots.length; j++) {
+                dots[j].classList.toggle("active", j === currentIndex);
+            }
+        }
+
+        function goTo(index) {
+            var maxIndex = getMaxIndex();
+            rebuildDots(maxIndex);
+            currentIndex = Math.max(0, Math.min(index, maxIndex));
+            var cardEl = track.querySelector(".project-card");
+            var gap = parseFloat(window.getComputedStyle(track).columnGap) || 24;
+            var offset = cardEl ? currentIndex * (cardEl.offsetWidth + gap) : 0;
+            track.style.transform = "translateX(-" + offset + "px)";
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex >= maxIndex;
+            updateDots();
+        }
+
+        prevBtn.addEventListener("click", function () { goTo(currentIndex - 1); });
+        nextBtn.addEventListener("click", function () { goTo(currentIndex + 1); });
+
+        var resizeTimer;
+        window.addEventListener("resize", function () {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                goTo(Math.min(currentIndex, getMaxIndex()));
+            }, 150);
+        });
+
+        goTo(0);
+    })();
+
+    // Boutons copier dans les modals
+    document.addEventListener("click", function (e) {
+        var btn = e.target.closest(".copy-btn");
+        if (!btn) return;
+        var text = btn.getAttribute("data-copy");
+        if (!text) return;
+        navigator.clipboard.writeText(text).then(function () {
+            var icon = btn.querySelector("i");
+            if (icon) {
+                icon.className = "fa-solid fa-check";
+            }
+            btn.classList.add("copied");
+            setTimeout(function () {
+                if (icon) icon.className = "fa-regular fa-copy";
+                btn.classList.remove("copied");
+            }, 1800);
+        });
+    });
 
     var backBtn = document.getElementById("backToTop");
     window.addEventListener("scroll", function () {
