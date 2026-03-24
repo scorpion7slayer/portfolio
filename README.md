@@ -1,75 +1,108 @@
-# My Portfolio
+# Théo — Portfolio
 
-This repository contains the source code for my personal portfolio website: [theo.nxtaigen.com](https://theo.nxtaigen.com/).
+> **Online:** [theo.nxtaigen.com](https://theo.nxtaigen.com/)
 
-## What this site includes
+## Why I Created This Site
 
-The portfolio is a single-page website with:
+I wanted a space that reflected me, not a pre-established template. The terminal startup animation came first: I spend most of my time in a terminal, so it made sense to start there. Everything else was built around this idea: the dark theme, the fixed-width font, the project cards styled like editor tabs.
 
-- an intro section with a terminal-style landing animation
-- a short "about me" section
-- a skills and tools section
-- a projects carousel
-- a GitHub contributions section
-- a contact form powered by Formspree
+## Content
 
-The goal is simple: present my work clearly and keep the site easy to maintain.
+| Section | Features |
 
-## Stack
+|---|---|
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Bootstrap 5 via CDN
-- Font Awesome 7 via CDN
+| **Startup Animation** | Terminal startup sequence with a button to skip (Esc or click) |
 
-## A few implementation details
+| **About** | Short personal introduction in a mock terminal displaying `cat about.txt` |
 
-- Dark UI with a glassmorphism-inspired navbar
-- Terminal boot screen and typewriter effect in the hero section
-- Responsive layout for desktop and mobile
-- Open Graph tags, `robots.txt`, and `sitemap.xml` for basic SEO
-- Manual cache busting for local assets with `?v=...`
+| **Skills and Tools** | Badge Grid — HTML · CSS · JS · Bootstrap · Tailwind · Next.js · Tauri · VS Code · DDEV · GitHub · Claude Code |
 
-## Featured projects shown on the site
+| **Projects** | Project carousel with screenshots and links |
 
-Some of the projects currently highlighted in the portfolio:
+| **GitHub Contributions** | Live heatmap retrieved via the GitHub Contributions API |
 
-- Flavortown GitHub Exporter
-- NxtAIGen
-- NxtGit
-- Nxt AI Card
-- NxtUpdate
+| **Contact** | Formspree powered form |
 
-## Project structure
+The site is **bilingual (FR/EN)** — change the language in the navigation bar. Your preference is saved in `localStorage`. (English is not my native language, so there may be some errors)
 
-```text
-index.html       Main single-page document
-style.css        Custom styles
-script.js        UI behavior and animations
-assets/
-  screenshots/   Project images and preview media
-robots.txt       SEO
-sitemap.xml      SEO
-```
+## Featured Projects
 
-## Running it locally
+- **[flavortown-github-exporter](https://github.com/scorpion7slayer/flavortown-github-exporter)** — Chrome and Firefox extension for submitting GitHub projects to Flavortown with one click
 
-There is nothing to build.
+- **[NxtAIGen](https://github.com/scorpion7slayer/NxtAIGen)** — Multi-model AI chatbot (GPT, Claude, Mistral) from a single interface
 
-You can either open `index.html` directly in your browser, or run a simple local server:
+- **[NxtGit](https://nxtgit.nxtaigen.com/)** — Lightweight GitHub client for macOS/Windows: cloning, committing, diffing — no browser required
+
+- **[Nxt AI Card](https://nxtaicard.nxtaigen.com/)** — Dashboard comparing AI models: performance, price, and speed Real-time updates
+- **[NxtUpdate](https://github.com/scorpion7slayer/NxtUpdate)** — Updates Homebrew, Node, Python, Rust, and macOS from a single terminal.
+
+## Technology Stack
+
+- **HTML5 · CSS3 · Pure JavaScript** — No dependencies, no compilation steps
+
+- **Bootstrap 5** via CDN — Layout and utilities
+
+- **Font Awesome 7** via CDN — Icons
+
+- **Iosevka Charon Mono** — Single font
+
+- **Formspree** — Contact form administration interface
+
+- **DigitalOcean** — Hosting
+
+## Main Features
+
+- Terminal splash screen with character-by-character animation and the ability to skip characters
+
+- Typewriter effect in the main section, which repeats when switching languages
+
+- Responsive project carousel (1/2/3 cards depending on screen size)
+
+- GitHub contribution heatmap with month and day labels that change according to language
+
+- Glassmorphism navigation bar with blur and frosted glass effects
+
+- Full keyboard navigation and ARIA tags
+
+## Execution Local
+
+No installation required.
 
 ```bash
+# Option 1 — Direct opening
+open index.html
+
+# Option 2 — Local server
 python3 -m http.server 8000
+# then open http://localhost:8000
 ```
 
-Then open `http://localhost:8000`.
+## File Structure
+
+```
+index.html Single-page document — all sections inline
+
+style.css All custom styles (~1200 lines)
+
+script.js Animations, i18n, GitHub contributions, carousel
+assets/
+
+screenshots/ Project images (WebP)
+
+robots.txt SEO
+
+sitemap.xml SEO
+```
 
 ## Author
 
-scorpion7slayer
+**Théo** (scorpion7slayer)
 
 - Portfolio: [theo.nxtaigen.com](https://theo.nxtaigen.com/)
+
 - GitHub: [github.com/scorpion7slayer](https://github.com/scorpion7slayer)
 
-[![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=cb3c5c7ece01&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+---
+
+[![Sponsorship badge DigitalOcean](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=cb3c5c7ece01&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)

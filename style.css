@@ -764,8 +764,12 @@ body {
 
 .terminal-window {
     width: min(680px, 92vw);
+    max-height: 90svh;
+    max-height: 90vh;
     border-radius: 12px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
     box-shadow:
         0 0 0 1px rgba(229, 228, 226, 0.1),
         0 24px 64px rgba(0, 0, 0, 0.85);
@@ -816,7 +820,9 @@ body {
 
 .terminal-body {
     padding: 18px 22px 22px;
+    flex: 1;
     min-height: 260px;
+    overflow-y: auto;
     font-family: "Iosevka Charon Mono", monospace;
     font-size: 0.88rem;
     color: #e5e4e2;
@@ -949,6 +955,20 @@ body {
     }
     .term-neofetch {
         justify-content: center;
+    }
+    .terminal-window {
+        max-height: 85svh;
+        max-height: 85vh;
+    }
+    .terminal-body {
+        font-size: 0.75rem;
+        padding: 12px 14px 16px;
+    }
+    .term-boot-info,
+    .term-boot-success,
+    .term-boot-dim,
+    .term-boot-url {
+        font-size: 0.75rem;
     }
 }
 
@@ -1116,4 +1136,82 @@ body {
     border-radius: 2px;
     flex-shrink: 0;
     cursor: default;
+}
+
+/* Bouton passer l'animation */
+.term-skip-btn {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: rgba(30, 29, 28, 0.7);
+    border: 1px solid rgba(229, 228, 226, 0.15);
+    border-radius: 6px;
+    color: rgba(229, 228, 226, 0.45);
+    font-family: "Iosevka Charon Mono", monospace;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.65rem;
+    cursor: pointer;
+    transition:
+        color 0.15s ease,
+        border-color 0.15s ease,
+        background 0.15s ease;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.term-skip-btn:hover {
+    color: #e5e4e2;
+    border-color: rgba(229, 228, 226, 0.3);
+    background: rgba(30, 29, 28, 0.9);
+}
+
+.term-skip-btn kbd {
+    font-family: inherit;
+    font-size: 0.68rem;
+    background: rgba(229, 228, 226, 0.08);
+    border: 1px solid rgba(229, 228, 226, 0.15);
+    border-radius: 3px;
+    padding: 0 4px;
+    line-height: 1.4;
+}
+
+/* Toggle langue FR/EN */
+.lang-toggle {
+    background: none;
+    border: 1px solid rgba(229, 228, 226, 0.15);
+    border-radius: 6px;
+    color: rgba(229, 228, 226, 0.4);
+    font-family: "Iosevka Charon Mono", monospace;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.55rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition:
+        border-color 0.15s ease,
+        background 0.15s ease;
+    white-space: nowrap;
+}
+
+.lang-toggle:hover {
+    border-color: rgba(229, 228, 226, 0.3);
+    background: rgba(229, 228, 226, 0.04);
+}
+
+.lang-opt {
+    transition: color 0.15s ease;
+    line-height: 1;
+}
+
+.lang-opt.active {
+    color: #e5e4e2;
+    font-weight: 700;
+}
+
+.lang-sep {
+    color: rgba(229, 228, 226, 0.2);
+    font-size: 0.65rem;
 }
