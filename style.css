@@ -158,6 +158,16 @@ body {
     background-color: #c57c5e;
 }
 
+.badge-nextjs {
+    background-color: #000;
+    color: #ededed;
+}
+
+.badge-tauri {
+    background-color: #24c8db;
+    color: #000;
+}
+
 /* Carrousel projets */
 .projects-carousel-outer {
     position: relative;
@@ -184,7 +194,7 @@ body {
 .project-card {
     flex: 0 0 calc(33.333% - 1rem);
     background: rgba(30, 29, 28, 0.6);
-    border: 1px solid rgba(229, 228, 226, 0.10);
+    border: 1px solid rgba(229, 228, 226, 0.1);
     border-radius: 12px;
     overflow: hidden;
     display: flex;
@@ -968,6 +978,21 @@ body {
     font-size: 0.88rem;
 }
 
+.term-banner-line {
+    font-family: "Iosevka Charon Mono", monospace;
+    color: #28c840;
+    white-space: pre;
+    line-height: 1.25;
+    font-size: 0.5rem;
+    font-weight: 700;
+}
+
+@media (min-width: 480px) {
+    .term-banner-line {
+        font-size: 0.72rem;
+    }
+}
+
 /* Section À propos — terminal */
 .about-terminal {
     max-width: 680px;
@@ -1092,4 +1117,3 @@ body {
     flex-shrink: 0;
     cursor: default;
 }
-

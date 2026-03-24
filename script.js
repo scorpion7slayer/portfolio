@@ -4,13 +4,17 @@
     if (!body || !termEl) return;
 
     var BOOT_LINES = [
-        { type: "dim",     text: "\u00a0\u00a0> portfolio@1.0.0 dev" },
+        { type: "dim", text: "\u00a0\u00a0> portfolio@1.0.0 dev" },
         { type: "blank" },
-        { type: "info",    text: "  Chargement des modules..." },
+        { type: "info", text: "  Chargement des modules..." },
         { type: "success", text: "  [OK] HTML5 \u00b7 CSS3 \u00b7 JavaScript" },
         { type: "success", text: "  [OK] Bootstrap 5 \u00b7 Font Awesome 7" },
         { type: "blank" },
-        { type: "info",    text: "  R\u00e9cup\u00e9ration des projets..." },
+        { type: "info", text: "  R\u00e9cup\u00e9ration des comp\u00e9tences et des outils..." },
+        { type: "success", text: "  [OK] HTML \u00b7 CSS \u00b7 JavaScript \u00b7 Bootstrap \u00b7 TailwindCSS \u00b7 Next.js \u00b7 Tauri" },
+        { type: "success", text: "  [OK] VS Code \u00b7 DDEV \u00b7 GitHub \u00b7 Claude Code" },
+        { type: "blank" },
+        { type: "info", text: "  R\u00e9cup\u00e9ration des projets..." },
         { type: "success", text: "  [OK] flavortown-github-exporter" },
         { type: "success", text: "  [OK] NxtAIGen" },
         { type: "success", text: "  [OK] NxtGit" },
@@ -19,14 +23,21 @@
         { type: "blank" },
         { type: "progress" },
         { type: "blank" },
-        { type: "success", text: "  [OK] Interface construite \u2014 bienvenue !" },
+        {
+            type: "success",
+            text: "  [OK] Interface construite !",
+        },
+        { type: "ascii-banner" },
         { type: "blank" },
-        { type: "url",     text: "  \u279C  Local:    http://127.0.0.1/" },
-        { type: "url",     text: "  \u279C  Network:  https://theo.nxtaigen.com/" },
+        { type: "url", text: "  \u279C  Local:    http://127.0.0.1/" },
+        { type: "url", text: "  \u279C  Network:  https://theo.nxtaigen.com/" },
         { type: "blank" },
     ];
 
-    var DELAYS = [80, 100, 500, 260, 260, 100, 500, 260, 260, 260, 260, 260, 100, 0, 100, 400, 150, 250, 80, 100];
+    var DELAYS = [
+        120, 150, 700, 380, 380, 150, 700, 380, 380, 150, 700, 380, 380, 380, 380, 380, 150, 0, 150,
+        550, 200, 0, 150, 350, 120, 150,
+    ];
 
     function span(cls, txt) {
         var s = document.createElement("span");
@@ -82,7 +93,8 @@
             var filled = "\u2588".repeat(step);
             var empty = "\u2591".repeat(BAR_LEN - step);
             var pct = Math.round((step / BAR_LEN) * 100);
-            el.textContent = "  Compilation... [" + filled + empty + "] " + pct + "%";
+            el.textContent =
+                "  Compilation... [" + filled + empty + "] " + pct + "%";
             if (step < BAR_LEN) {
                 step++;
                 setTimeout(update, 55 + Math.random() * 35);
@@ -91,6 +103,42 @@
             }
         }
         update();
+    }
+
+    function animateWelcomeBanner(container, cb) {
+        var ROWS = [
+            "  ****   ***  ***** *   * *   * ***** *   * *   * *****",
+            "  *   *   *   *     **  * *   * *     **  * *   * *    ",
+            "  *   *   *   ****  * * * *   * ****  * * * *   * **** ",
+            "  ****    *   *     *  **  * *  *     *  ** *   * *    ",
+            "  *   *   *   *     *   *  * *  *     *   * *   * *    ",
+            "  *   *   *   *     *   *   *   *     *   * *   * *    ",
+            "  ****   ***  ***** *   *   *   ***** *   *  ***  *****"
+        ];
+        var rowIdx = 0;
+        function printRow() {
+            if (rowIdx >= ROWS.length) {
+                setTimeout(cb, 150);
+                return;
+            }
+            var line = document.createElement("div");
+            line.className = "term-banner-line";
+            container.appendChild(line);
+            var text = ROWS[rowIdx];
+            var charIdx = 0;
+            function printChar() {
+                line.textContent = text.slice(0, charIdx);
+                charIdx++;
+                if (charIdx <= text.length) {
+                    setTimeout(printChar, 4);
+                } else {
+                    rowIdx++;
+                    setTimeout(printRow, 15);
+                }
+            }
+            printChar();
+        }
+        printRow();
     }
 
     function showBootLines(cb) {
@@ -114,11 +162,15 @@
                 body.appendChild(el);
                 i++;
                 animateProgress(el, next);
+            } else if (d.type === "ascii-banner") {
+                body.appendChild(el);
+                i++;
+                animateWelcomeBanner(el, next);
             } else {
-                if (d.type === "dim")     el.className = "term-boot-dim";
-                if (d.type === "info")    el.className = "term-boot-info";
+                if (d.type === "dim") el.className = "term-boot-dim";
+                if (d.type === "info") el.className = "term-boot-info";
                 if (d.type === "success") el.className = "term-boot-success";
-                if (d.type === "url")     el.className = "term-boot-url";
+                if (d.type === "url") el.className = "term-boot-url";
                 el.textContent = d.text;
                 body.appendChild(el);
                 var wait = DELAYS[i] !== undefined ? DELAYS[i] : 200;
@@ -143,7 +195,7 @@
                 termEl.remove();
                 startTypewriter();
             },
-            { once: true }
+            { once: true },
         );
     }
 
@@ -173,12 +225,27 @@ function startTypewriter() {
 
 function renderContribGraph(container, contributions, total) {
     var COLORS = ["#1a1918", "#0e4429", "#006d32", "#26a641", "#39d353"];
-    var MONTHS = ["Jan","Fév","Mar","Avr","Mai","Jun","Jul","Aoû","Sep","Oct","Nov","Déc"];
+    var MONTHS = [
+        "Jan",
+        "Fév",
+        "Mar",
+        "Avr",
+        "Mai",
+        "Jun",
+        "Jul",
+        "Aoû",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Déc",
+    ];
     var DAY_LABELS = ["", "Lun", "", "Mer", "", "Ven", ""];
 
     // Map date -> level
     var map = {};
-    contributions.forEach(function (c) { map[c.date] = c.level; });
+    contributions.forEach(function (c) {
+        map[c.date] = c.level;
+    });
 
     // Start from the Sunday 52 full weeks ago
     var today = new Date();
@@ -193,7 +260,11 @@ function renderContribGraph(container, contributions, total) {
         var week = [];
         for (var d = 0; d < 7; d++) {
             var ds = cur.toISOString().slice(0, 10);
-            week.push({ date: ds, level: map[ds] !== undefined ? map[ds] : 0, future: cur > today });
+            week.push({
+                date: ds,
+                level: map[ds] !== undefined ? map[ds] : 0,
+                future: cur > today,
+            });
             cur.setDate(cur.getDate() + 1);
         }
         weeks.push(week);
@@ -212,7 +283,10 @@ function renderContribGraph(container, contributions, total) {
     weeks.forEach(function (week) {
         var sp = document.createElement("span");
         var m = new Date(week[0].date).getMonth();
-        if (m !== lastMonth) { sp.textContent = MONTHS[m]; lastMonth = m; }
+        if (m !== lastMonth) {
+            sp.textContent = MONTHS[m];
+            lastMonth = m;
+        }
         monthRow.appendChild(sp);
     });
     inner.appendChild(monthRow);
@@ -238,8 +312,12 @@ function renderContribGraph(container, contributions, total) {
         week.forEach(function (day) {
             var cell = document.createElement("div");
             cell.className = "contrib-cell";
-            cell.style.background = day.future ? "transparent" : COLORS[day.level];
-            cell.title = day.date + (day.level > 0 ? " — " + day.level + " contribution(s)" : "");
+            cell.style.background = day.future
+                ? "transparent"
+                : COLORS[day.level];
+            cell.title =
+                day.date +
+                (day.level > 0 ? " — " + day.level + " contribution(s)" : "");
             col.appendChild(cell);
         });
         grid.appendChild(col);
@@ -254,7 +332,9 @@ function renderContribGraph(container, contributions, total) {
     // Total
     var totalEl = document.getElementById("contributions-total");
     if (totalEl && total) {
-        var sum = Object.values(total).reduce(function (a, b) { return a + b; }, 0);
+        var sum = Object.values(total).reduce(function (a, b) {
+            return a + b;
+        }, 0);
         totalEl.textContent = sum + " contributions cette année";
     }
 }
@@ -263,13 +343,22 @@ function loadGithubContributions() {
     var container = document.getElementById("contributions-graph");
     if (!container) return;
 
-    fetch("https://github-contributions-api.jogruber.de/v4/scorpion7slayer?y=last")
-        .then(function (r) { return r.json(); })
+    fetch(
+        "https://github-contributions-api.jogruber.de/v4/scorpion7slayer?y=last",
+    )
+        .then(function (r) {
+            return r.json();
+        })
         .then(function (data) {
-            renderContribGraph(container, data.contributions || [], data.total || {});
+            renderContribGraph(
+                container,
+                data.contributions || [],
+                data.total || {},
+            );
         })
         .catch(function () {
-            while (container.firstChild) container.removeChild(container.firstChild);
+            while (container.firstChild)
+                container.removeChild(container.firstChild);
             var err = document.createElement("p");
             err.className = "contrib-loading";
             err.textContent = "Impossible de charger les contributions.";
@@ -352,7 +441,8 @@ document.addEventListener("DOMContentLoaded", function () {
             rebuildDots(maxIndex);
             currentIndex = Math.max(0, Math.min(index, maxIndex));
             var cardEl = track.querySelector(".project-card");
-            var gap = parseFloat(window.getComputedStyle(track).columnGap) || 24;
+            var gap =
+                parseFloat(window.getComputedStyle(track).columnGap) || 24;
             var offset = cardEl ? currentIndex * (cardEl.offsetWidth + gap) : 0;
             track.style.transform = "translateX(-" + offset + "px)";
             prevBtn.disabled = currentIndex === 0;
@@ -360,8 +450,12 @@ document.addEventListener("DOMContentLoaded", function () {
             updateDots();
         }
 
-        prevBtn.addEventListener("click", function () { goTo(currentIndex - 1); });
-        nextBtn.addEventListener("click", function () { goTo(currentIndex + 1); });
+        prevBtn.addEventListener("click", function () {
+            goTo(currentIndex - 1);
+        });
+        nextBtn.addEventListener("click", function () {
+            goTo(currentIndex + 1);
+        });
 
         var resizeTimer;
         window.addEventListener("resize", function () {
