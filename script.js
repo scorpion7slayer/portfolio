@@ -1,7 +1,95 @@
+window.currentLang = localStorage.getItem('portfolio-lang') || 'fr';
+
+var TRANSLATIONS = {
+    fr: {
+        'nav-home': 'Accueil',
+        'nav-about': '\u00c0 propos',
+        'nav-skills': 'Comp\u00e9tences et Outils',
+        'nav-projects': 'Projets',
+        'nav-contact': 'Contact',
+        'hero-lead': 'D\u00e9veloppeur web, motiv\u00e9 et curieux.',
+        'hero-btn-projects': 'Voir mes projets',
+        'hero-btn-contact': 'Me contacter',
+        'about-output': 'Bonjour\u00a0! Je suis Th\u00e9o, d\u00e9veloppeur web de 16\u00a0ans bas\u00e9 en Belgique. Je code depuis un an et j\u2019ai lanc\u00e9 plusieurs projets open-source sous l\u2019organisation NxtAIGen. J\u2019aime construire des outils concrets \u2014 un client GitHub, un chatbot IA multi-mod\u00e8les, une extension navigateur. Ce qui me passionne vraiment, c\u2019est l\u2019IA\u00a0: comprendre comment elle fonctionne et l\u2019utiliser pour construire des choses utiles.',
+        'skills-title': 'Comp\u00e9tences',
+        'tools-title': 'Outils de d\u00e9veloppement',
+        'projects-title': 'Projets',
+        'proj-1-desc': 'Extension Chrome & Firefox pour exporter vos projets GitHub vers Flavortown en un clic.',
+        'proj-2-desc': 'Chatbot web multi-mod\u00e8les\u00a0: GPT, Claude, Mistral.',
+        'proj-3-desc': 'Client GitHub l\u00e9ger pour macOS/Windows\u00a0: clone, commit, diff \u2014 sans navigateur.',
+        'proj-4-desc': 'Dashboard comparant les mod\u00e8les IA\u00a0: benchmarks, prix et vitesse en temps r\u00e9el.',
+        'proj-5-desc': 'Outil en ligne de commande pour mettre \u00e0 jour tous tes paquets en une seule fois.',
+        'contribs-title': 'Contributions GitHub',
+        'contact-title': 'Contact',
+        'contact-name': 'Votre nom\u00a0:',
+        'contact-email': 'Votre email\u00a0:',
+        'contact-message': 'Votre message\u00a0:',
+        'contact-submit': 'Envoyer',
+        'footer-rights': 'Tous droits r\u00e9serv\u00e9s.',
+        'modal-browser-title': 'Choisissez votre navigateur',
+        'modal-nxtaigen-unavailable': 'Site web indisponible pour le moment',
+        'modal-nxtupdate-title': 'Installer NxtUpdate',
+        'modal-step1': '1. Installer Bun',
+        'modal-step2': '2. Installer NxtUpdate',
+        'install-or': 'ou',
+        'typewriter-text': 'D\u00e9veloppeur Web',
+        'skip-btn': 'Passer',
+        'contribs-year': 'contributions cette ann\u00e9e',
+        'contribs-loading': 'Chargement...',
+        'contribs-error': 'Impossible de charger les contributions.',
+        'contrib-months': ['Jan', 'F\u00e9v', 'Mar', 'Avr', 'Mai', 'Jun', 'Jul', 'Ao\u00fb', 'Sep', 'Oct', 'Nov', 'D\u00e9c'],
+        'contrib-days': ['', 'Lun', '', 'Mer', '', 'Ven', '']
+    },
+    en: {
+        'nav-home': 'Home',
+        'nav-about': 'About',
+        'nav-skills': 'Skills & Tools',
+        'nav-projects': 'Projects',
+        'nav-contact': 'Contact',
+        'hero-lead': 'Web developer, motivated and curious.',
+        'hero-btn-projects': 'View my projects',
+        'hero-btn-contact': 'Contact me',
+        'about-output': 'Hey! I\u2019m Th\u00e9o, a 16-year-old web developer based in Belgium. I\u2019ve been coding for a year and shipped several open-source projects under the NxtAIGen org. I like building concrete tools \u2014 a GitHub client, a multi-model AI chatbot, a browser extension. What really drives me is AI: understanding how it works and using it to build things that matter.',
+        'skills-title': 'Skills',
+        'tools-title': 'Dev Tools',
+        'projects-title': 'Projects',
+        'proj-1-desc': 'Chrome & Firefox extension to submit your GitHub projects to Flavortown in one click.',
+        'proj-2-desc': 'Multi-model web chatbot: GPT, Claude, Mistral.',
+        'proj-3-desc': 'Lightweight GitHub client for macOS/Windows: clone, commit, diff \u2014 no browser needed.',
+        'proj-4-desc': 'Dashboard comparing AI models: benchmarks, pricing and speed in real time.',
+        'proj-5-desc': 'Command-line tool to update all your packages at once.',
+        'contribs-title': 'GitHub Contributions',
+        'contact-title': 'Contact',
+        'contact-name': 'Your name:',
+        'contact-email': 'Your email:',
+        'contact-message': 'Your message:',
+        'contact-submit': 'Send',
+        'footer-rights': 'All rights reserved.',
+        'modal-browser-title': 'Choose your browser',
+        'modal-nxtaigen-unavailable': 'Website unavailable at the moment',
+        'modal-nxtupdate-title': 'Install NxtUpdate',
+        'modal-step1': '1. Install Bun',
+        'modal-step2': '2. Install NxtUpdate',
+        'install-or': 'or',
+        'typewriter-text': 'Web Developer',
+        'skip-btn': 'Skip',
+        'contribs-year': 'contributions this year',
+        'contribs-loading': 'Loading...',
+        'contribs-error': 'Unable to load contributions.',
+        'contrib-months': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        'contrib-days': ['', 'Mon', '', 'Wed', '', 'Fri', '']
+    }
+};
+
+var typewriterVersion = 0;
+
 (function () {
     var body = document.getElementById("terminal-body");
     var termEl = document.getElementById("terminal-boot");
+    var skipBtn = document.getElementById("termSkipBtn");
     if (!body || !termEl) return;
+
+    var bootDone = false;
 
     var BOOT_LINES = [
         { type: "dim", text: "\u00a0\u00a0> portfolio@1.0.0 dev" },
@@ -69,11 +157,13 @@
     function typeCommand(cb) {
         var line = makePromptLine(false);
         body.appendChild(line);
+        body.scrollTop = body.scrollHeight;
         var cmdEl = document.getElementById("term-cmd-text");
         var cursor = document.getElementById("term-cmd-cursor");
         var cmd = "npm run dev";
         var i = 0;
         function tick() {
+            if (bootDone) return;
             cmdEl.textContent = cmd.slice(0, i);
             i++;
             if (i <= cmd.length) {
@@ -90,6 +180,7 @@
         var BAR_LEN = 20;
         var step = 0;
         function update() {
+            if (bootDone) return;
             var filled = "\u2588".repeat(step);
             var empty = "\u2591".repeat(BAR_LEN - step);
             var pct = Math.round((step / BAR_LEN) * 100);
@@ -117,6 +208,7 @@
         ];
         var rowIdx = 0;
         function printRow() {
+            if (bootDone) return;
             if (rowIdx >= ROWS.length) {
                 setTimeout(cb, 150);
                 return;
@@ -124,9 +216,11 @@
             var line = document.createElement("div");
             line.className = "term-banner-line";
             container.appendChild(line);
+            body.scrollTop = body.scrollHeight;
             var text = ROWS[rowIdx];
             var charIdx = 0;
             function printChar() {
+                if (bootDone) return;
                 line.textContent = text.slice(0, charIdx);
                 charIdx++;
                 if (charIdx <= text.length) {
@@ -144,6 +238,7 @@
     function showBootLines(cb) {
         var i = 0;
         function next() {
+            if (bootDone) return;
             if (i >= BOOT_LINES.length) {
                 setTimeout(cb, 300);
                 return;
@@ -154,16 +249,19 @@
             if (d.type === "blank") {
                 el.className = "term-blank";
                 body.appendChild(el);
+                body.scrollTop = body.scrollHeight;
                 var w = DELAYS[i] !== undefined ? DELAYS[i] : 100;
                 i++;
                 setTimeout(next, w);
             } else if (d.type === "progress") {
                 el.className = "term-boot-info";
                 body.appendChild(el);
+                body.scrollTop = body.scrollHeight;
                 i++;
                 animateProgress(el, next);
             } else if (d.type === "ascii-banner") {
                 body.appendChild(el);
+                body.scrollTop = body.scrollHeight;
                 i++;
                 animateWelcomeBanner(el, next);
             } else {
@@ -173,6 +271,7 @@
                 if (d.type === "url") el.className = "term-boot-url";
                 el.textContent = d.text;
                 body.appendChild(el);
+                body.scrollTop = body.scrollHeight;
                 var wait = DELAYS[i] !== undefined ? DELAYS[i] : 200;
                 i++;
                 setTimeout(next, wait);
@@ -184,10 +283,21 @@
     function showFinalPrompt(cb) {
         var line = makePromptLine(true);
         body.appendChild(line);
+        body.scrollTop = body.scrollHeight;
         setTimeout(cb, 1200);
     }
 
+    function escHandler(e) {
+        if (e.key === "Escape" || e.key === "Esc") {
+            document.removeEventListener("keydown", escHandler);
+            hideTerm();
+        }
+    }
+
     function hideTerm() {
+        if (bootDone) return;
+        bootDone = true;
+        document.removeEventListener("keydown", escHandler);
         termEl.classList.add("hide");
         termEl.addEventListener(
             "transitionend",
@@ -198,6 +308,9 @@
             { once: true },
         );
     }
+
+    if (skipBtn) skipBtn.addEventListener("click", hideTerm);
+    document.addEventListener("keydown", escHandler);
 
     typeCommand(function () {
         showBootLines(function () {
@@ -210,10 +323,15 @@ function startTypewriter() {
     var el = document.getElementById("typewriter-text");
     var cursor = document.getElementById("typewriter-cursor");
     if (!el) return;
+    window.typewriterDone = true;
     if (cursor) cursor.classList.add("active");
-    var text = "D\u00e9veloppeur Web";
+    var lang = window.currentLang || 'fr';
+    var text = TRANSLATIONS[lang]['typewriter-text'];
+    el.textContent = '';
+    var version = ++typewriterVersion;
     var i = 0;
     function tick() {
+        if (version !== typewriterVersion) return;
         el.textContent = text.slice(0, i);
         i++;
         if (i <= text.length) {
@@ -224,22 +342,10 @@ function startTypewriter() {
 }
 
 function renderContribGraph(container, contributions, total) {
+    var lang = window.currentLang || 'fr';
     var COLORS = ["#1a1918", "#0e4429", "#006d32", "#26a641", "#39d353"];
-    var MONTHS = [
-        "Jan",
-        "Fév",
-        "Mar",
-        "Avr",
-        "Mai",
-        "Jun",
-        "Jul",
-        "Aoû",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Déc",
-    ];
-    var DAY_LABELS = ["", "Lun", "", "Mer", "", "Ven", ""];
+    var MONTHS = TRANSLATIONS[lang]['contrib-months'];
+    var DAY_LABELS = TRANSLATIONS[lang]['contrib-days'];
 
     // Map date -> level
     var map = {};
@@ -317,7 +423,7 @@ function renderContribGraph(container, contributions, total) {
                 : COLORS[day.level];
             cell.title =
                 day.date +
-                (day.level > 0 ? " — " + day.level + " contribution(s)" : "");
+                (day.level > 0 ? " \u2014 " + day.level + " contribution(s)" : "");
             col.appendChild(cell);
         });
         grid.appendChild(col);
@@ -335,7 +441,8 @@ function renderContribGraph(container, contributions, total) {
         var sum = Object.values(total).reduce(function (a, b) {
             return a + b;
         }, 0);
-        totalEl.textContent = sum + " contributions cette année";
+        window.contribSum = sum;
+        totalEl.textContent = sum + " " + TRANSLATIONS[lang]['contribs-year'];
     }
 }
 
@@ -350,6 +457,7 @@ function loadGithubContributions() {
             return r.json();
         })
         .then(function (data) {
+            window.cachedContribData = data;
             renderContribGraph(
                 container,
                 data.contributions || [],
@@ -361,9 +469,77 @@ function loadGithubContributions() {
                 container.removeChild(container.firstChild);
             var err = document.createElement("p");
             err.className = "contrib-loading";
-            err.textContent = "Impossible de charger les contributions.";
+            err.textContent = TRANSLATIONS[window.currentLang || 'fr']['contribs-error'];
             container.appendChild(err);
         });
+}
+
+function scrambleElement(el, finalText, duration) {
+    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#@&%?!';
+    var interval = 30;
+    var steps = Math.ceil(duration / interval);
+    var step = 0;
+    var timer = setInterval(function () {
+        step++;
+        var progress = step / steps;
+        var revealCount = Math.floor(progress * finalText.length);
+        var output = '';
+        for (var i = 0; i < finalText.length; i++) {
+            if (i < revealCount) {
+                output += finalText[i];
+            } else if (finalText[i] === ' ' || finalText[i] === '\u00a0') {
+                output += finalText[i];
+            } else {
+                output += chars[Math.floor(Math.random() * chars.length)];
+            }
+        }
+        el.textContent = output;
+        if (step >= steps) {
+            clearInterval(timer);
+            el.textContent = finalText;
+        }
+    }, interval);
+}
+
+function applyTranslations(lang, withAnimation) {
+    if (!TRANSLATIONS[lang]) return;
+    var t = TRANSLATIONS[lang];
+
+    document.documentElement.lang = lang;
+    var frEl = document.getElementById('lang-fr');
+    var enEl = document.getElementById('lang-en');
+    if (frEl) frEl.classList.toggle('active', lang === 'fr');
+    if (enEl) enEl.classList.toggle('active', lang === 'en');
+    localStorage.setItem('portfolio-lang', lang);
+    window.currentLang = lang;
+
+    var els = document.querySelectorAll('[data-i18n]');
+    var duration = withAnimation ? 500 : 0;
+
+    for (var i = 0; i < els.length; i++) {
+        var key = els[i].getAttribute('data-i18n');
+        if (typeof t[key] !== 'string') continue;
+        if (withAnimation) {
+            scrambleElement(els[i], t[key], duration);
+        } else {
+            els[i].textContent = t[key];
+        }
+    }
+
+    var delay = withAnimation ? 520 : 0;
+    setTimeout(function () {
+        if (window.typewriterDone) startTypewriter();
+        if (window.cachedContribData) {
+            var container = document.getElementById("contributions-graph");
+            if (container) {
+                renderContribGraph(
+                    container,
+                    window.cachedContribData.contributions || [],
+                    window.cachedContribData.total || {}
+                );
+            }
+        }
+    }, delay);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -382,6 +558,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (footerYear) {
         footerYear.textContent = new Date().getFullYear();
+    }
+
+    // Language init
+    var savedLang = localStorage.getItem('portfolio-lang') || 'fr';
+    applyTranslations(savedLang);
+
+    // Language toggle
+    var langToggle = document.getElementById('langToggle');
+    if (langToggle) {
+        langToggle.addEventListener('click', function () {
+            var newLang = window.currentLang === 'fr' ? 'en' : 'fr';
+            applyTranslations(newLang, true);
+        });
     }
 
     loadGithubContributions();

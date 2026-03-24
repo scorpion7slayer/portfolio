@@ -2,7 +2,11 @@
 <html lang="fr" data-bs-theme="dark">
     <head>
         <link rel="canonical" href="https://theo.nxtaigen.com/" />
-        <script defer src="https://analyticstheo.serverscorpion1601.site/script.js" data-website-id="9a5a895d-b5f8-4366-ab9a-58d13daff2b4"></script>
+        <script
+            defer
+            src="https://analyticstheo.serverscorpion1601.site/script.js"
+            data-website-id="9a5a895d-b5f8-4366-ab9a-58d13daff2b4"
+        ></script>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
@@ -11,7 +15,7 @@
         />
         <meta
             name="description"
-            content="Portfolio de Théo, développeur web débutant spécialisé en HTML, CSS, JavaScript, Bootstrap et TailwindCSS. Découvrez mes projets et compétences."
+            content="Portfolio de Théo, développeur web compétents en HTML, CSS, JavaScript, Bootstrap et TailwindCSS. Découvrez mes projets et compétences."
         />
 
         <!-- Open Graph / Social Media -->
@@ -42,7 +46,7 @@
             integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
             crossorigin="anonymous"
         />
-        <link href="style.css?v=4" rel="stylesheet" />
+        <link href="style.css?v=5" rel="stylesheet" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -69,6 +73,13 @@
                 </div>
                 <div class="terminal-body" id="terminal-body"></div>
             </div>
+            <button
+                class="term-skip-btn"
+                id="termSkipBtn"
+                aria-label="Passer l'animation / Skip animation"
+            >
+                <span id="termSkipBtnText">Skip</span> <kbd>Esc</kbd>
+            </button>
         </div>
         <a href="#main-content" class="skip-link">Aller au contenu</a>
         <a href="#social-links" class="skip-link">Aller aux réseaux</a>
@@ -97,21 +108,57 @@
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="#accueil">Accueil</a>
+                            <a
+                                class="nav-link"
+                                href="#accueil"
+                                data-i18n="nav-home"
+                                >Accueil</a
+                            >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#apropos">À propos</a>
+                            <a
+                                class="nav-link"
+                                href="#apropos"
+                                data-i18n="nav-about"
+                                >À propos</a
+                            >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#competences"
+                            <a
+                                class="nav-link"
+                                href="#competences"
+                                data-i18n="nav-skills"
                                 >Compétences et Outils</a
                             >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#projets">Projets</a>
+                            <a
+                                class="nav-link"
+                                href="#projets"
+                                data-i18n="nav-projects"
+                                >Projets</a
+                            >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
+                            <a
+                                class="nav-link"
+                                href="#contact"
+                                data-i18n="nav-contact"
+                                >Contact</a
+                            >
+                        </li>
+                        <li class="nav-item d-flex align-items-center ms-1">
+                            <button
+                                class="lang-toggle"
+                                id="langToggle"
+                                aria-label="Changer de langue / Switch language"
+                            >
+                                <span class="lang-opt active" id="lang-fr"
+                                    >FR</span
+                                >
+                                <span class="lang-sep">|</span>
+                                <span class="lang-opt" id="lang-en">EN</span>
+                            </button>
                         </li>
                         <li
                             id="social-links"
@@ -155,8 +202,8 @@
                                     id="typewriter-cursor"
                                 ></span>
                             </h1>
-                            <p class="lead">
-                                Développeur débutant, motivé et curieux.
+                            <p class="lead" data-i18n="hero-lead">
+                                Développeur web, motivé et curieux.
                             </p>
                         </div>
                         <div class="col-lg-6 text-center">
@@ -173,11 +220,13 @@
                                 <a
                                     href="#projets"
                                     class="btn btn-primary btn-lg rounded-pill shadow fw-bold btn-modif btn-glass btn-projects"
+                                    data-i18n="hero-btn-projects"
                                     >Voir mes projets</a
                                 >
                                 <a
                                     href="#contact"
                                     class="btn btn-outline-light btn-lg rounded-pill shadow fw-bold btn-modif btn-glass btn-contact"
+                                    data-i18n="hero-btn-contact"
                                     >Me contacter</a
                                 >
                             </div>
@@ -210,13 +259,16 @@
                                 ><span class="term-sep"> ~ % </span
                                 ><span class="about-cmd">cat about.txt</span>
                             </div>
-                            <p class="about-output">
-                                Bonjour! Je m'appelle Théo et je suis un
-                                développeur web débutant passionné par la
-                                création de sites web attrayants et
-                                fonctionnels. J'aime apprendre de nouvelles
-                                technologies et relever des défis pour améliorer
-                                mes compétences en développement.
+                            <p class="about-output" data-i18n="about-output">
+                                Bonjour&nbsp;! Je suis Théo, développeur web de
+                                16&nbsp;ans basé en Belgique. Je code depuis un
+                                an et j'ai lancé plusieurs projets open-source
+                                sous l'organisation NxtAIGen. J'aime construire
+                                des outils concrets — un client GitHub, un
+                                chatbot IA multi-modèles, une extension
+                                navigateur. Ce qui me passionne vraiment, c'est
+                                l'IA&nbsp;: comprendre comment elle fonctionne
+                                et l'utiliser pour construire des choses utiles.
                             </p>
                             <div class="about-prompt-line">
                                 <span class="term-user">theo</span
@@ -231,7 +283,9 @@
             </section>
             <section id="competences" class="py-5 section-competences">
                 <div class="container">
-                    <h2 class="h3 mb-4 text-center">Compétences</h2>
+                    <h2 class="h3 mb-4 text-center" data-i18n="skills-title">
+                        Compétences
+                    </h2>
                     <div
                         class="d-flex flex-wrap gap-3 align-items-center justify-content-center"
                     >
@@ -261,7 +315,9 @@
                         >
                     </div>
                     <br />
-                    <h2 class="h3 mb-4 text-center">Outils de développement</h2>
+                    <h2 class="h3 mb-4 text-center" data-i18n="tools-title">
+                        Outils de développement
+                    </h2>
                     <div
                         class="d-flex flex-wrap gap-3 align-items-center justify-content-center"
                     >
@@ -282,7 +338,7 @@
             </section>
             <section id="projets" class="py-5 section-projets">
                 <div class="container">
-                    <h2 class="h3 mb-4">Projets</h2>
+                    <h2 class="h3 mb-4" data-i18n="projects-title">Projets</h2>
                     <div class="projects-carousel-outer">
                         <button
                             class="carousel-btn carousel-btn-prev"
@@ -328,9 +384,13 @@
                                         <h5 class="project-card-title">
                                             flavortown github export
                                         </h5>
-                                        <p class="project-card-desc">
-                                            Extension web pour exporter les
-                                            projets GitHub vers Flavortown.
+                                        <p
+                                            class="project-card-desc"
+                                            data-i18n="proj-1-desc"
+                                        >
+                                            Extension Chrome &amp; Firefox pour
+                                            exporter vos projets GitHub vers
+                                            Flavortown en un clic.
                                         </p>
                                         <div class="project-links d-flex gap-2">
                                             <a
@@ -386,9 +446,12 @@
                                         <h5 class="project-card-title">
                                             NxtAIGen
                                         </h5>
-                                        <p class="project-card-desc">
-                                            Chatbot multi-modèles d'intelligence
-                                            artificielle.
+                                        <p
+                                            class="project-card-desc"
+                                            data-i18n="proj-2-desc"
+                                        >
+                                            Chatbot web multi-modèles&nbsp;:
+                                            GPT, Claude, Mistral.
                                         </p>
                                         <div class="project-links d-flex gap-2">
                                             <a
@@ -444,9 +507,13 @@
                                         <h5 class="project-card-title">
                                             NxtGit
                                         </h5>
-                                        <p class="project-card-desc">
-                                            Client GitHub léger avec interface
-                                            conviviale et gestion des dépôts.
+                                        <p
+                                            class="project-card-desc"
+                                            data-i18n="proj-3-desc"
+                                        >
+                                            Client GitHub léger pour
+                                            macOS/Windows&nbsp;: clone, commit,
+                                            diff — sans navigateur.
                                         </p>
                                         <div class="project-links d-flex gap-2">
                                             <a
@@ -521,10 +588,13 @@
                                         <h5 class="project-card-title">
                                             Nxt AI Card
                                         </h5>
-                                        <p class="project-card-desc">
-                                            Comparateur de modèles IA avec
-                                            benchmarks, performances et
-                                            tarification.
+                                        <p
+                                            class="project-card-desc"
+                                            data-i18n="proj-4-desc"
+                                        >
+                                            Dashboard comparant les modèles
+                                            IA&nbsp;: benchmarks, prix et
+                                            vitesse en temps réel.
                                         </p>
                                         <div class="project-links d-flex gap-2">
                                             <a
@@ -579,10 +649,13 @@
                                         <h5 class="project-card-title">
                                             NxtUpdate
                                         </h5>
-                                        <p class="project-card-desc">
-                                            Universal macOS Updater — met à jour
-                                            Homebrew, Node, Python, Rust et
-                                            macOS via une TUI.
+                                        <p
+                                            class="project-card-desc"
+                                            data-i18n="proj-5-desc"
+                                        >
+                                            Outil en ligne de commande pour
+                                            mettre à jour tous tes paquets en
+                                            une seule fois.
                                         </p>
                                         <div class="project-links d-flex gap-2">
                                             <a
@@ -636,7 +709,11 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content browser-modal-content">
                         <div class="modal-header border-0">
-                            <h5 class="modal-title" id="browserModalLabel">
+                            <h5
+                                class="modal-title"
+                                id="browserModalLabel"
+                                data-i18n="modal-browser-title"
+                            >
                                 Choisissez votre navigateur
                             </h5>
                             <button
@@ -694,7 +771,9 @@
                         </div>
                         <div class="modal-body">
                             <div class="d-flex justify-content-center gap-4">
-                                site web indisponible pour le moment
+                                <span data-i18n="modal-nxtaigen-unavailable"
+                                    >site web indisponible pour le moment</span
+                                >
                             </div>
                         </div>
                     </div>
@@ -716,7 +795,9 @@
                                     class="fa-solid fa-terminal me-2"
                                     aria-hidden="true"
                                 ></i>
-                                Installer NxtUpdate
+                                <span data-i18n="modal-nxtupdate-title"
+                                    >Installer NxtUpdate</span
+                                >
                             </h5>
                             <button
                                 type="button"
@@ -726,7 +807,12 @@
                             ></button>
                         </div>
                         <div class="modal-body">
-                            <p class="install-step-label">1. Installer Bun</p>
+                            <p
+                                class="install-step-label"
+                                data-i18n="modal-step1"
+                            >
+                                1. Installer Bun
+                            </p>
                             <div class="install-code-block">
                                 <code class="install-code"
                                     >curl -fsSL https://bun.sh/install |
@@ -740,7 +826,10 @@
                                     <i class="fa-regular fa-copy"></i>
                                 </button>
                             </div>
-                            <p class="install-step-label mt-3">
+                            <p
+                                class="install-step-label mt-3"
+                                data-i18n="modal-step2"
+                            >
                                 2. Installer NxtUpdate
                             </p>
                             <div class="install-code-block">
@@ -755,7 +844,9 @@
                                     <i class="fa-regular fa-copy"></i>
                                 </button>
                             </div>
-                            <div class="install-or">ou</div>
+                            <div class="install-or" data-i18n="install-or">
+                                ou
+                            </div>
                             <div class="install-code-block">
                                 <code class="install-code"
                                     >bun add -g nxtupdate</code
@@ -774,29 +865,41 @@
             </div>
             <section id="contributions" class="py-5 section-contributions">
                 <div class="container">
-                    <h2 class="h3 mb-3">Contributions GitHub</h2>
+                    <h2 class="h3 mb-3" data-i18n="contribs-title">
+                        Contributions GitHub
+                    </h2>
                     <p id="contributions-total" class="contributions-total"></p>
                     <div id="contributions-graph">
-                        <p class="contrib-loading">Chargement...</p>
+                        <p class="contrib-loading" data-i18n="contribs-loading">
+                            Chargement...
+                        </p>
                     </div>
                 </div>
             </section>
             <section id="contact" class="py-5 section-contact">
                 <div class="container">
-                    <h2 class="h3 mb-4">Contact</h2>
+                    <h2 class="h3 mb-4" data-i18n="contact-title">Contact</h2>
                     <div class="row">
                         <div class="col-md-6">
                             <form
                                 action="https://formspree.io/f/xqaydvyj"
                                 method="POST"
                             >
-                                <label for="contact-name"> Votre nom: </label>
+                                <label
+                                    for="contact-name"
+                                    data-i18n="contact-name"
+                                >
+                                    Votre nom:
+                                </label>
                                 <input
                                     id="contact-name"
                                     type="text"
                                     name="name"
                                 />
-                                <label for="contact-email">
+                                <label
+                                    for="contact-email"
+                                    data-i18n="contact-email"
+                                >
                                     Votre email:
                                 </label>
                                 <input
@@ -804,14 +907,22 @@
                                     type="email"
                                     name="email"
                                 />
-                                <label for="contact-message">
+                                <label
+                                    for="contact-message"
+                                    data-i18n="contact-message"
+                                >
                                     Votre message:
                                 </label>
                                 <textarea
                                     id="contact-message"
                                     name="message"
                                 ></textarea>
-                                <button type="submit">Envoyer</button>
+                                <button
+                                    type="submit"
+                                    data-i18n="contact-submit"
+                                >
+                                    Envoyer
+                                </button>
                             </form>
                         </div>
                     </div>
@@ -835,8 +946,8 @@
                     >
                 </a>
                 <h6 class="mb-0">
-                    © <span id="copyright-year"></span> Théo. Tous droits
-                    réservés.
+                    © <span id="copyright-year"></span> Théo.
+                    <span data-i18n="footer-rights">Tous droits réservés.</span>
                 </h6>
                 <a
                     href="https://github.com/sponsors/scorpion7slayer"
@@ -857,6 +968,6 @@
         <button id="backToTop" aria-label="Remonter en haut">
             <i class="fa-solid fa-chevron-up"></i>
         </button>
-        <script src="script.js?v=4"></script>
+        <script src="script.js?v=5"></script>
     </body>
 </html>
