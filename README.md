@@ -1,229 +1,77 @@
-<div align="center">
+# My Portfolio
 
-# 🌐 Portfolio | Théo
+This repository contains the source code for my personal portfolio website: [theo.nxtaigen.com](https://theo.nxtaigen.com/).
 
-### Développeur Web Débutant, Motivé et Curieux
+![Portfolio preview](assets/screenshots/portfolio.gif)
 
-[![Live Site](https://img.shields.io/badge/🌍_Site_Live-Visiter-00C7B7?style=for-the-badge)](https://theo.nxtaigen.com/)
-[![GitHub](https://img.shields.io/badge/GitHub-scorpion7slayer-181717?style=for-the-badge&logo=github)](https://github.com/scorpion7slayer)
+## What this site includes
 
----
+The portfolio is a single-page website with:
 
-![Portfolio Preview](assets/screenshots/portfolio.gif)
+- an intro section with a terminal-style landing animation
+- a short "about me" section
+- a skills and tools section
+- a projects carousel
+- a GitHub contributions section
+- a contact form powered by Formspree
 
-</div>
+The goal is simple: present my work clearly and keep the site easy to maintain.
 
----
+## Stack
 
-## ✨ Bienvenue dans mon univers
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Bootstrap 5 via CDN
+- Font Awesome 7 via CDN
 
-Ce portfolio est le reflet de ma passion pour le **développement web**. Conçu avec soin, il présente mes compétences, mes projets et ma vision du design moderne. Chaque élément a été pensé pour offrir une expérience utilisateur fluide et esthétique.
+## A few implementation details
 
-### 🎯 Ce que vous découvrirez
+- Dark UI with a glassmorphism-inspired navbar
+- Terminal boot screen and typewriter effect in the hero section
+- Responsive layout for desktop and mobile
+- Open Graph tags, `robots.txt`, and `sitemap.xml` for basic SEO
+- Manual cache busting for local assets with `?v=...`
 
-<table>
-<tr>
-<td width="33%" align="center">
+## Featured projects shown on the site
 
-### 🏠 Accueil
+Some of the projects currently highlighted in the portfolio:
 
-Une introduction chaleureuse avec un design moderne et des appels à l'action clairs
+- Flavortown GitHub Exporter
+- NxtAIGen
+- NxtGit
+- Nxt AI Card
+- NxtUpdate
 
-</td>
-<td width="33%" align="center">
+## Project structure
 
-### 👨‍💻 À propos
-
-Mon parcours et ma motivation en tant que développeur débutant passionné
-
-</td>
-<td width="33%" align="center">
-
-### 🛠️ Compétences
-
-Mes technologies maîtrisées et mes outils de développement favoris
-
-</td>
-</tr>
-<tr>
-<td width="50%" align="center">
-
-### 🚀 Projets
-
-Mes réalisations concrètes, dont des extensions Chrome fonctionnelles
-
-</td>
-<td width="50%" align="center">
-
-### 📬 Contact
-
-Un formulaire simple et élégant pour me joindre facilement
-
-</td>
-</tr>
-</table>
-
----
-
-## 🎨 Design & Expérience Utilisateur
-
-Mon portfolio se distingue par son **design moderne** et ses **interactions fluides** :
-
-- **🔮 Interface Glassmorphique** — Navbar semi-transparente avec effet de flou pour un look contemporain
-- **🌑 Thème Sombre Élégant** — Palette de couleurs professionnelle avec dégradés subtils
-- **✨ Animations Douces** — Effets de survol, transitions fluides et micro-interactions soignées
-- **📱 Design Responsive** — Expérience optimale sur tous les appareils
-- **⚡ Performance Optimisée** — Images WebP, chargement prioritaire, code léger
-
----
-
-## 💻 Technologies & Outils
-
-<div align="center">
-
-### Technologies Utilisées pour ce Portfolio
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
-
-### Outils de Développement
-
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![Claude Code](https://img.shields.io/badge/Claude_Code-C57C5E?style=for-the-badge&logo=anthropic&logoColor=white)
-
-</div>
-
----
-
-## 🚀 Projet Mis en Avant
-
-<div align="center">
-
-### 🌟 Flavortown GitHub Export Extension
-
-<img src="assets/screenshots/extension-flavortown.webp" alt="Flavortown Extension" width="500"/>
-
-Une **extension Chrome et Firefox** permettant d'exporter facilement des projets GitHub vers Flavortown.
-Projet fonctionnel et publié sur le Chrome Web Store et Firefox Add-ons !
-
-[![GitHub Repo](https://img.shields.io/badge/📁_Code_Source-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/scorpion7slayer/flavortown-github-exporter)
-[![Chrome Store](https://img.shields.io/badge/🌐_Installer-Chrome_Store-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/detail/ohkkaaibkhikfeemhpfpdhbpopjngaia)
-[![Firefox Add-ons](https://img.shields.io/badge/🦊_Installer-Firefox_Add--ons-FF7139?style=for-the-badge&logo=firefox&logoColor=white)](https://addons.mozilla.org/fr/firefox/addon/flavortown-github-exporter/)
-
-</div>
-
----
-
-<div align="center">
-
-### ⭐ NxtGit
-
-<img src="assets/screenshots/NxtGit.webp" alt="NxtGit" width="500"/>
-
-Un **client GitHub léger** offrant une interface intuitive et la gestion simplifiée de vos dépôts. Téléchargements disponibles via les releases.
-
-[![GitHub Repo](https://img.shields.io/badge/📁_Code_Source-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/scorpion7slayer/NxtGit)
-[![Releases](https://img.shields.io/badge/🔽_Téléchargements-Releases-0B0B0B?style=for-the-badge&logo=github)](https://github.com/scorpion7slayer/NxtGit/releases)
-
-</div>
-
----
-
-## 🔍 Caractéristiques Techniques
-
-### SEO & Optimisation
-
-- ✅ Balises Open Graph pour les réseaux sociaux
-- ✅ Sitemap.xml et robots.txt configurés
-- ✅ Google Site Verification activée
-- ✅ Images WebP optimisées avec fetchpriority
-- ✅ Meta descriptions complètes
-
-### Expérience Développeur
-
-- 🎯 Code propre et bien structuré
-- 📦 Système de version Git avec historique complet
-- 🎨 CSS modulaire avec animations personnalisées
-- ⚙️ JavaScript vanilla pour des interactions légères
-- 🤖 Développement assisté par IA (Claude Code)
-
-### Accessibilité & UX
-
-- ♿ Aria-labels sur les éléments interactifs
-- 📝 HTML sémantique et structuré
-- 🎨 Contrastes de couleurs optimisés pour le dark mode
-- 💬 Formulaire de contact fonctionnel via Formspree
-
----
-
-## 📸 Galerie
-
-<div align="center">
-
-| 🏠 Page d'Accueil | 🛠️ Section Compétences | 📬 Formulaire Contact |
-|:-----------------:|:----------------------:|:---------------------:|
-| ![Home](assets/screenshots/page-accueil.png) | ![Skills](assets/screenshots/section-competences.png) | ![Contact](assets/screenshots/formulaire-contact.png) |
-
-</div>
-
----
-
-## 🌈 Points Forts du Design
-
-```css
-/* Effet Glassmorphique Signature */
-navbar → background: rgba(26, 28, 35, 0.8)
-       + backdrop-filter: blur(10px)
-       + box-shadow élégante
-
-/* Palette de Couleurs */
-Fond principal: #1a1c23 (Dark Navy)
-Fond secondaire: #393b43 (Charcoal Grey)
-Accents: Dégradés dynamiques par section
-
-/* Animations Micro-Interactions */
-Boutons: translateY(-2px) au survol
-Navbar Toggle: rotation(180deg) + changement de couleur
-Cards: brightness(1.1) avec transition 200ms
+```text
+index.html       Main single-page document
+style.css        Custom styles
+script.js        UI behavior and animations
+assets/
+  screenshots/   Project images and preview media
+robots.txt       SEO
+sitemap.xml      SEO
 ```
 
----
+## Running it locally
 
-## 🎯 Objectif & Vision
+There is nothing to build.
 
-Ce portfolio n'est pas juste une vitrine — c'est une **démonstration concrète** de mes compétences en développement front-end. Chaque ligne de code reflète mon attention aux détails, ma compréhension des bonnes pratiques web modernes et ma volonté d'apprendre et de progresser.
+You can either open `index.html` directly in your browser, or run a simple local server:
 
-> *"Développeur débutant aujourd'hui, créateur de solutions innovantes demain."*
+```bash
+python3 -m http.server 8000
+```
 
----
+Then open `http://localhost:8000`.
 
-## 📞 Me Contacter
+## Author
 
-<div align="center">
+scorpion7slayer
 
-Vous avez un projet en tête ? Une opportunité à partager ?
-N'hésitez pas à me contacter via le **[formulaire sur mon portfolio](https://theo.nxtaigen.com/#contact)** !
+- Portfolio: [theo.nxtaigen.com](https://theo.nxtaigen.com/)
+- GitHub: [github.com/scorpion7slayer](https://github.com/scorpion7slayer)
 
-[![Portfolio](https://img.shields.io/badge/🌐_Visitez_Mon_Portfolio-00C7B7?style=for-the-badge)](https://theo.nxtaigen.com/)
-[![GitHub](https://img.shields.io/badge/GitHub-scorpion7slayer-181717?style=for-the-badge&logo=github)](https://github.com/scorpion7slayer)
-
-</div>
-
----
-
-<div align="center">
-
-### 💙 Merci de votre visite
-
-*Développé avec passion • Designé avec soin • Optimisé pour l'expérience*
-
-**© 2026 Théo | Portfolio Personnel**
-
-[![Made with Love](https://img.shields.io/badge/Made_with-❤️-red?style=flat-square)](https://theo.nxtaigen.com/)
-[![Powered by](https://img.shields.io/badge/Powered_by-Cloudflare-F38020?style=flat-square&logo=cloudflare)](https://www.cloudflare.com/)<br>
 [![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=cb3c5c7ece01&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
-
-</div>
