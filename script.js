@@ -38,7 +38,11 @@ var TRANSLATIONS = {
         'contribs-loading': 'Chargement...',
         'contribs-error': 'Impossible de charger les contributions.',
         'contrib-months': ['Jan', 'F\u00e9v', 'Mar', 'Avr', 'Mai', 'Jun', 'Jul', 'Ao\u00fb', 'Sep', 'Oct', 'Nov', 'D\u00e9c'],
-        'contrib-days': ['', 'Lun', '', 'Mer', '', 'Ven', '']
+        'contrib-days': ['', 'Lun', '', 'Mer', '', 'Ven', ''],
+        'stat-projects': 'Projets',
+        'stat-years': 'An de code',
+        'stat-age': 'Ans',
+        'contact-sponsor': 'Sponsor mes projets'
     },
     en: {
         'nav-home': 'Home',
@@ -77,7 +81,11 @@ var TRANSLATIONS = {
         'contribs-loading': 'Loading...',
         'contribs-error': 'Unable to load contributions.',
         'contrib-months': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        'contrib-days': ['', 'Mon', '', 'Wed', '', 'Fri', '']
+        'contrib-days': ['', 'Mon', '', 'Wed', '', 'Fri', ''],
+        'stat-projects': 'Projects',
+        'stat-years': 'Year coding',
+        'stat-age': 'Years old',
+        'contact-sponsor': 'Sponsor my projects'
     }
 };
 
@@ -687,6 +695,27 @@ document.addEventListener("DOMContentLoaded", function () {
     if (backBtn) {
         backBtn.addEventListener("click", function () {
             window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+
+    // Scroll reveal animation
+    var revealEls = document.querySelectorAll('.reveal');
+    if (revealEls.length && 'IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        revealEls.forEach(function (el) {
+            observer.observe(el);
+        });
+    } else {
+        // Fallback: show all
+        revealEls.forEach(function (el) {
+            el.classList.add('visible');
         });
     }
 });
