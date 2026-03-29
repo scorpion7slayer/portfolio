@@ -1,4 +1,3 @@
-# robots.txt pour GitHub Pages
 # Autoriser tous les robots de recherche
 
 User-agent: *
