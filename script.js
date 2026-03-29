@@ -18,7 +18,8 @@ var TRANSLATIONS = {
         'proj-2-desc': 'Chatbot web multi-mod\u00e8les\u00a0: GPT, Claude, Mistral.',
         'proj-3-desc': 'Client GitHub l\u00e9ger pour macOS/Windows\u00a0: clone, commit, diff \u2014 sans navigateur.',
         'proj-4-desc': 'Dashboard comparant les mod\u00e8les IA\u00a0: benchmarks, prix et vitesse en temps r\u00e9el.',
-        'proj-5-desc': 'Outil en ligne de commande pour mettre \u00e0 jour tous tes paquets en une seule fois.',
+        'proj-5-desc': 'Marketplace web avec cat\u00e9gories, articles tendances et derni\u00e8res annonces.',
+        'proj-6-desc': 'Outil en ligne de commande pour mettre \u00e0 jour tous tes paquets en une seule fois.',
         'contribs-title': 'Contributions GitHub',
         'contact-title': 'Contact',
         'contact-name': 'Votre nom\u00a0:',
@@ -57,7 +58,8 @@ var TRANSLATIONS = {
         'proj-2-desc': 'Multi-model web chatbot: GPT, Claude, Mistral.',
         'proj-3-desc': 'Lightweight GitHub client for macOS/Windows: clone, commit, diff \u2014 no browser needed.',
         'proj-4-desc': 'Dashboard comparing AI models: benchmarks, pricing and speed in real time.',
-        'proj-5-desc': 'Command-line tool to update all your packages at once.',
+        'proj-5-desc': 'Web marketplace with categories, trending items and latest listings.',
+        'proj-6-desc': 'Command-line tool to update all your packages at once.',
         'contribs-title': 'GitHub Contributions',
         'contact-title': 'Contact',
         'contact-name': 'Your name:',
@@ -90,6 +92,7 @@ var typewriterVersion = 0;
     if (!body || !termEl) return;
 
     var bootDone = false;
+    var BOOT_SPEED_MULTIPLIER = 0.75;
 
     var BOOT_LINES = [
         { type: "dim", text: "\u00a0\u00a0> portfolio@1.0.0 dev" },
@@ -107,6 +110,7 @@ var typewriterVersion = 0;
         { type: "success", text: "  [OK] NxtAIGen" },
         { type: "success", text: "  [OK] NxtGit" },
         { type: "success", text: "  [OK] NxtAI Card" },
+        { type: "success", text: "  [OK] Market Plier" },
         { type: "success", text: "  [OK] NxtUpdate" },
         { type: "blank" },
         { type: "progress" },
@@ -123,8 +127,8 @@ var typewriterVersion = 0;
     ];
 
     var DELAYS = [
-        120, 150, 700, 380, 380, 150, 700, 380, 380, 150, 700, 380, 380, 380, 380, 380, 150, 0, 150,
-        550, 200, 0, 150, 350, 120, 150,
+        120, 150, 700, 380, 380, 150, 700, 380, 380, 150, 700, 380, 380, 380, 380, 380, 380, 150, 0,
+        150, 550, 200, 0, 150, 350, 120, 150,
     ];
 
     function span(cls, txt) {
@@ -132,6 +136,10 @@ var typewriterVersion = 0;
         s.className = cls;
         if (txt !== undefined) s.textContent = txt;
         return s;
+    }
+
+    function getBootDelay(ms) {
+        return Math.max(0, Math.round(ms * BOOT_SPEED_MULTIPLIER));
     }
 
     function makePromptLine(withCursor) {
@@ -167,13 +175,13 @@ var typewriterVersion = 0;
             cmdEl.textContent = cmd.slice(0, i);
             i++;
             if (i <= cmd.length) {
-                setTimeout(tick, 65 + Math.random() * 45);
+                setTimeout(tick, getBootDelay(65 + Math.random() * 45));
             } else {
                 cursor.style.display = "none";
-                setTimeout(cb, 200);
+                setTimeout(cb, getBootDelay(200));
             }
         }
-        setTimeout(tick, 300);
+        setTimeout(tick, getBootDelay(300));
     }
 
     function animateProgress(el, cb) {
@@ -188,9 +196,9 @@ var typewriterVersion = 0;
                 "  Compilation... [" + filled + empty + "] " + pct + "%";
             if (step < BAR_LEN) {
                 step++;
-                setTimeout(update, 55 + Math.random() * 35);
+                setTimeout(update, getBootDelay(55 + Math.random() * 35));
             } else {
-                setTimeout(cb, 250);
+                setTimeout(cb, getBootDelay(250));
             }
         }
         update();
@@ -210,7 +218,7 @@ var typewriterVersion = 0;
         function printRow() {
             if (bootDone) return;
             if (rowIdx >= ROWS.length) {
-                setTimeout(cb, 150);
+                setTimeout(cb, getBootDelay(150));
                 return;
             }
             var line = document.createElement("div");
@@ -224,10 +232,10 @@ var typewriterVersion = 0;
                 line.textContent = text.slice(0, charIdx);
                 charIdx++;
                 if (charIdx <= text.length) {
-                    setTimeout(printChar, 4);
+                    setTimeout(printChar, getBootDelay(4));
                 } else {
                     rowIdx++;
-                    setTimeout(printRow, 15);
+                    setTimeout(printRow, getBootDelay(15));
                 }
             }
             printChar();
@@ -240,7 +248,7 @@ var typewriterVersion = 0;
         function next() {
             if (bootDone) return;
             if (i >= BOOT_LINES.length) {
-                setTimeout(cb, 300);
+                setTimeout(cb, getBootDelay(300));
                 return;
             }
             var d = BOOT_LINES[i];
@@ -250,7 +258,7 @@ var typewriterVersion = 0;
                 el.className = "term-blank";
                 body.appendChild(el);
                 body.scrollTop = body.scrollHeight;
-                var w = DELAYS[i] !== undefined ? DELAYS[i] : 100;
+                var w = DELAYS[i] !== undefined ? getBootDelay(DELAYS[i]) : getBootDelay(100);
                 i++;
                 setTimeout(next, w);
             } else if (d.type === "progress") {
@@ -272,7 +280,7 @@ var typewriterVersion = 0;
                 el.textContent = d.text;
                 body.appendChild(el);
                 body.scrollTop = body.scrollHeight;
-                var wait = DELAYS[i] !== undefined ? DELAYS[i] : 200;
+                var wait = DELAYS[i] !== undefined ? getBootDelay(DELAYS[i]) : getBootDelay(200);
                 i++;
                 setTimeout(next, wait);
             }
@@ -284,7 +292,7 @@ var typewriterVersion = 0;
         var line = makePromptLine(true);
         body.appendChild(line);
         body.scrollTop = body.scrollHeight;
-        setTimeout(cb, 1200);
+        setTimeout(cb, getBootDelay(1200));
     }
 
     function escHandler(e) {
