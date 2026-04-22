@@ -175,6 +175,12 @@ body {
     font-weight: 500;
 }
 
+.badge-os-small {
+    font-size: 0.6em;
+    padding-top: 0.35em;
+    padding-bottom: 0.35em;
+}
+
 /* Carrousel projets */
 .projects-carousel-outer {
     position: relative;
