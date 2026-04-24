@@ -1,86 +1,132 @@
-window.currentLang = localStorage.getItem('portfolio-lang') || 'fr';
+window.currentLang = localStorage.getItem("portfolio-lang") || "fr";
 
 var TRANSLATIONS = {
     fr: {
-        'nav-home': 'Accueil',
-        'nav-about': '\u00c0 propos',
-        'nav-skills': 'Comp\u00e9tences et Outils',
-        'nav-projects': 'Projets',
-        'nav-contact': 'Contact',
-        'hero-lead': 'D\u00e9veloppeur web, motiv\u00e9 et curieux.',
-        'hero-btn-projects': 'Voir mes projets',
-        'hero-btn-contact': 'Me contacter',
-        'about-output': 'Bonjour\u00a0! Je suis Th\u00e9o, d\u00e9veloppeur web de 16\u00a0ans bas\u00e9 en Belgique. Je code depuis un an et j\u2019ai lanc\u00e9 plusieurs projets open-source sous l\u2019organisation NxtAIGen. J\u2019aime construire des outils concrets \u2014 un client GitHub, un chatbot IA multi-mod\u00e8les, une extension navigateur. Ce qui me passionne vraiment, c\u2019est l\u2019IA\u00a0: comprendre comment elle fonctionne et l\u2019utiliser pour construire des choses utiles.',
-        'skills-title': 'Comp\u00e9tences',
-        'tools-title': 'Outils de d\u00e9veloppement',
-        'projects-title': 'Projets',
-        'proj-1-desc': 'Extension Chrome & Firefox pour exporter vos projets GitHub vers Flavortown en un clic.',
-        'proj-2-desc': 'Chatbot web multi-mod\u00e8les\u00a0: GPT, Claude, Mistral.',
-        'proj-3-desc': 'Client GitHub l\u00e9ger pour macOS/Windows\u00a0: clone, commit, diff \u2014 sans navigateur.',
-        'proj-4-desc': 'Dashboard comparant les mod\u00e8les IA\u00a0: benchmarks, prix et vitesse en temps r\u00e9el.',
-        'proj-5-desc': 'Marketplace web avec cat\u00e9gories, articles tendances et derni\u00e8res annonces.',
-        'proj-6-desc': 'Outil en ligne de commande pour mettre \u00e0 jour tous tes paquets en une seule fois.',
-        'contribs-title': 'Contributions GitHub',
-        'contact-title': 'Contact',
-        'contact-name': 'Votre nom\u00a0:',
-        'contact-email': 'Votre email\u00a0:',
-        'contact-message': 'Votre message\u00a0:',
-        'contact-submit': 'Envoyer',
-        'footer-rights': 'Tous droits r\u00e9serv\u00e9s.',
-        'modal-browser-title': 'Choisissez votre navigateur',
-        'modal-nxtaigen-unavailable': 'Site web indisponible pour le moment',
-        'modal-nxtupdate-title': 'Installer NxtUpdate',
-        'modal-step1': '1. Installer Bun',
-        'modal-step2': '2. Installer NxtUpdate',
-        'install-or': 'ou',
-        'typewriter-text': 'D\u00e9veloppeur Web',
-        'skip-btn': 'Passer',
-        'contribs-year': 'contributions cette ann\u00e9e',
-        'contribs-loading': 'Chargement...',
-        'contribs-error': 'Impossible de charger les contributions.',
-        'contrib-months': ['Jan', 'F\u00e9v', 'Mar', 'Avr', 'Mai', 'Jun', 'Jul', 'Ao\u00fb', 'Sep', 'Oct', 'Nov', 'D\u00e9c'],
-        'contrib-days': ['', 'Lun', '', 'Mer', '', 'Ven', '']
+        "nav-home": "Accueil",
+        "nav-about": "\u00c0 propos",
+        "nav-skills": "Comp\u00e9tences et Outils",
+        "nav-projects": "Projets",
+        "nav-contact": "Contact",
+        "hero-lead": "D\u00e9veloppeur web, motiv\u00e9 et curieux.",
+        "hero-btn-projects": "Voir mes projets",
+        "hero-btn-contact": "Me contacter",
+        "about-output":
+            "Bonjour\u00a0! Je suis Th\u00e9o, d\u00e9veloppeur web de 16\u00a0ans bas\u00e9 en Belgique. Je code depuis un an et j\u2019ai lanc\u00e9 plusieurs projets open-source sous l\u2019organisation NxtAIGen. J\u2019aime construire des outils concrets \u2014 un client GitHub, un chatbot IA multi-mod\u00e8les, une extension navigateur. Ce qui me passionne vraiment, c\u2019est l\u2019IA\u00a0: comprendre comment elle fonctionne et l\u2019utiliser pour construire des choses utiles.",
+        "skills-title": "Comp\u00e9tences",
+        "tools-title": "Outils de d\u00e9veloppement",
+        "projects-title": "Projets",
+        "proj-1-desc":
+            "Extension Chrome & Firefox pour exporter vos projets GitHub vers Flavortown en un clic.",
+        "proj-2-desc":
+            "Chatbot web multi-mod\u00e8les\u00a0: GPT, Claude, Mistral.",
+        "proj-3-desc":
+            "Client GitHub l\u00e9ger pour macOS/Windows\u00a0: clone, commit, diff \u2014 sans navigateur.",
+        "proj-4-desc":
+            "Alternative \u00e0 Discord orient\u00e9e communaut\u00e9, en cours de d\u00e9veloppement.",
+        "proj-5-desc":
+            "Dashboard comparant les mod\u00e8les IA\u00a0: benchmarks, prix et vitesse en temps r\u00e9el.",
+        "proj-6-desc":
+            "Marketplace web avec cat\u00e9gories, articles tendances et derni\u00e8res annonces.",
+        "proj-7-desc":
+            "Outil en ligne de commande pour mettre \u00e0 jour tous tes paquets en une seule fois.",
+        "proj-status-dev": "En cours de d\u00e9veloppement",
+        "proj-unavailable": "GitHub et site bient\u00f4t disponibles.",
+        "contribs-title": "Contributions GitHub",
+        "contact-title": "Contact",
+        "contact-name": "Votre nom\u00a0:",
+        "contact-email": "Votre email\u00a0:",
+        "contact-message": "Votre message\u00a0:",
+        "contact-submit": "Envoyer",
+        "footer-rights": "Tous droits r\u00e9serv\u00e9s.",
+        "modal-browser-title": "Choisissez votre navigateur",
+        "modal-nxtaigen-unavailable": "Site web indisponible pour le moment",
+        "modal-nxtupdate-title": "Installer NxtUpdate",
+        "modal-step1": "1. Installer Bun",
+        "modal-step2": "2. Installer NxtUpdate",
+        "install-or": "ou",
+        "typewriter-text": "D\u00e9veloppeur Web",
+        "skip-btn": "Passer",
+        "contribs-year": "contributions cette ann\u00e9e",
+        "contribs-loading": "Chargement...",
+        "contribs-error": "Impossible de charger les contributions.",
+        "contrib-months": [
+            "Jan",
+            "F\u00e9v",
+            "Mar",
+            "Avr",
+            "Mai",
+            "Jun",
+            "Jul",
+            "Ao\u00fb",
+            "Sep",
+            "Oct",
+            "Nov",
+            "D\u00e9c",
+        ],
+        "contrib-days": ["", "Lun", "", "Mer", "", "Ven", ""],
     },
     en: {
-        'nav-home': 'Home',
-        'nav-about': 'About',
-        'nav-skills': 'Skills & Tools',
-        'nav-projects': 'Projects',
-        'nav-contact': 'Contact',
-        'hero-lead': 'Web developer, motivated and curious.',
-        'hero-btn-projects': 'View my projects',
-        'hero-btn-contact': 'Contact me',
-        'about-output': 'Hey! I\u2019m Th\u00e9o, a 16-year-old web developer based in Belgium. I\u2019ve been coding for a year and shipped several open-source projects under the NxtAIGen org. I like building concrete tools \u2014 a GitHub client, a multi-model AI chatbot, a browser extension. What really drives me is AI: understanding how it works and using it to build things that matter.',
-        'skills-title': 'Skills',
-        'tools-title': 'Dev Tools',
-        'projects-title': 'Projects',
-        'proj-1-desc': 'Chrome & Firefox extension to submit your GitHub projects to Flavortown in one click.',
-        'proj-2-desc': 'Multi-model web chatbot: GPT, Claude, Mistral.',
-        'proj-3-desc': 'Lightweight GitHub client for macOS/Windows: clone, commit, diff \u2014 no browser needed.',
-        'proj-4-desc': 'Dashboard comparing AI models: benchmarks, pricing and speed in real time.',
-        'proj-5-desc': 'Web marketplace with categories, trending items and latest listings.',
-        'proj-6-desc': 'Command-line tool to update all your packages at once.',
-        'contribs-title': 'GitHub Contributions',
-        'contact-title': 'Contact',
-        'contact-name': 'Your name:',
-        'contact-email': 'Your email:',
-        'contact-message': 'Your message:',
-        'contact-submit': 'Send',
-        'footer-rights': 'All rights reserved.',
-        'modal-browser-title': 'Choose your browser',
-        'modal-nxtaigen-unavailable': 'Website unavailable at the moment',
-        'modal-nxtupdate-title': 'Install NxtUpdate',
-        'modal-step1': '1. Install Bun',
-        'modal-step2': '2. Install NxtUpdate',
-        'install-or': 'or',
-        'typewriter-text': 'Web Developer',
-        'skip-btn': 'Skip',
-        'contribs-year': 'contributions this year',
-        'contribs-loading': 'Loading...',
-        'contribs-error': 'Unable to load contributions.',
-        'contrib-months': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        'contrib-days': ['', 'Mon', '', 'Wed', '', 'Fri', '']
-    }
+        "nav-home": "Home",
+        "nav-about": "About",
+        "nav-skills": "Skills & Tools",
+        "nav-projects": "Projects",
+        "nav-contact": "Contact",
+        "hero-lead": "Web developer, motivated and curious.",
+        "hero-btn-projects": "View my projects",
+        "hero-btn-contact": "Contact me",
+        "about-output":
+            "Hey! I\u2019m Th\u00e9o, a 16-year-old web developer based in Belgium. I\u2019ve been coding for a year and shipped several open-source projects under the NxtAIGen org. I like building concrete tools \u2014 a GitHub client, a multi-model AI chatbot, a browser extension. What really drives me is AI: understanding how it works and using it to build things that matter.",
+        "skills-title": "Skills",
+        "tools-title": "Dev Tools",
+        "projects-title": "Projects",
+        "proj-1-desc":
+            "Chrome & Firefox extension to submit your GitHub projects to Flavortown in one click.",
+        "proj-2-desc": "Multi-model web chatbot: GPT, Claude, Mistral.",
+        "proj-3-desc":
+            "Lightweight GitHub client for macOS/Windows: clone, commit, diff \u2014 no browser needed.",
+        "proj-4-desc":
+            "Discord alternative focused on community, currently in development.",
+        "proj-5-desc":
+            "Dashboard comparing AI models: benchmarks, pricing and speed in real time.",
+        "proj-6-desc":
+            "Web marketplace with categories, trending items and latest listings.",
+        "proj-7-desc": "Command-line tool to update all your packages at once.",
+        "proj-status-dev": "In development",
+        "proj-unavailable": "GitHub and website coming soon.",
+        "contribs-title": "GitHub Contributions",
+        "contact-title": "Contact",
+        "contact-name": "Your name:",
+        "contact-email": "Your email:",
+        "contact-message": "Your message:",
+        "contact-submit": "Send",
+        "footer-rights": "All rights reserved.",
+        "modal-browser-title": "Choose your browser",
+        "modal-nxtaigen-unavailable": "Website unavailable at the moment",
+        "modal-nxtupdate-title": "Install NxtUpdate",
+        "modal-step1": "1. Install Bun",
+        "modal-step2": "2. Install NxtUpdate",
+        "install-or": "or",
+        "typewriter-text": "Web Developer",
+        "skip-btn": "Skip",
+        "contribs-year": "contributions this year",
+        "contribs-loading": "Loading...",
+        "contribs-error": "Unable to load contributions.",
+        "contrib-months": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+        ],
+        "contrib-days": ["", "Mon", "", "Wed", "", "Fri", ""],
+    },
 };
 
 var typewriterVersion = 0;
@@ -101,14 +147,24 @@ var typewriterVersion = 0;
         { type: "success", text: "  [OK] HTML5 \u00b7 CSS3 \u00b7 JavaScript" },
         { type: "success", text: "  [OK] Bootstrap 5 \u00b7 Font Awesome 7" },
         { type: "blank" },
-        { type: "info", text: "  R\u00e9cup\u00e9ration des comp\u00e9tences et des outils..." },
-        { type: "success", text: "  [OK] HTML \u00b7 CSS \u00b7 JavaScript \u00b7 Bootstrap \u00b7 TailwindCSS \u00b7 Next.js \u00b7 Tauri" },
-        { type: "success", text: "  [OK] VS Code \u00b7 DDEV \u00b7 GitHub \u00b7 Claude Code" },
+        {
+            type: "info",
+            text: "  R\u00e9cup\u00e9ration des comp\u00e9tences et des outils...",
+        },
+        {
+            type: "success",
+            text: "  [OK] HTML \u00b7 CSS \u00b7 JavaScript \u00b7 Bootstrap \u00b7 TailwindCSS \u00b7 Next.js \u00b7 Tauri",
+        },
+        {
+            type: "success",
+            text: "  [OK] VS Code \u00b7 DDEV \u00b7 GitHub \u00b7 Claude Code",
+        },
         { type: "blank" },
         { type: "info", text: "  R\u00e9cup\u00e9ration des projets..." },
         { type: "success", text: "  [OK] flavortown-github-exporter" },
         { type: "success", text: "  [OK] NxtAIGen" },
         { type: "success", text: "  [OK] NxtGit" },
+        { type: "success", text: "  [OK] Nxtcord" },
         { type: "success", text: "  [OK] NxtAI Card" },
         { type: "success", text: "  [OK] Market Plier" },
         { type: "success", text: "  [OK] NxtUpdate" },
@@ -127,8 +183,8 @@ var typewriterVersion = 0;
     ];
 
     var DELAYS = [
-        120, 150, 700, 380, 380, 150, 700, 380, 380, 150, 700, 380, 380, 380, 380, 380, 380, 150, 0,
-        150, 550, 200, 0, 150, 350, 120, 150,
+        120, 150, 700, 380, 380, 150, 700, 380, 380, 150, 700, 380, 380, 380,
+        380, 380, 380, 380, 150, 0, 150, 550, 200, 0, 150, 350, 120, 150,
     ];
 
     function span(cls, txt) {
@@ -212,7 +268,7 @@ var typewriterVersion = 0;
             "  ****    *   *     *  **  * *  *     *  ** *   * *    ",
             "  *   *   *   *     *   *  * *  *     *   * *   * *    ",
             "  *   *   *   *     *   *   *   *     *   * *   * *    ",
-            "  ****   ***  ***** *   *   *   ***** *   *  ***  *****"
+            "  ****   ***  ***** *   *   *   ***** *   *  ***  *****",
         ];
         var rowIdx = 0;
         function printRow() {
@@ -258,7 +314,10 @@ var typewriterVersion = 0;
                 el.className = "term-blank";
                 body.appendChild(el);
                 body.scrollTop = body.scrollHeight;
-                var w = DELAYS[i] !== undefined ? getBootDelay(DELAYS[i]) : getBootDelay(100);
+                var w =
+                    DELAYS[i] !== undefined
+                        ? getBootDelay(DELAYS[i])
+                        : getBootDelay(100);
                 i++;
                 setTimeout(next, w);
             } else if (d.type === "progress") {
@@ -280,7 +339,10 @@ var typewriterVersion = 0;
                 el.textContent = d.text;
                 body.appendChild(el);
                 body.scrollTop = body.scrollHeight;
-                var wait = DELAYS[i] !== undefined ? getBootDelay(DELAYS[i]) : getBootDelay(200);
+                var wait =
+                    DELAYS[i] !== undefined
+                        ? getBootDelay(DELAYS[i])
+                        : getBootDelay(200);
                 i++;
                 setTimeout(next, wait);
             }
@@ -333,9 +395,9 @@ function startTypewriter() {
     if (!el) return;
     window.typewriterDone = true;
     if (cursor) cursor.classList.add("active");
-    var lang = window.currentLang || 'fr';
-    var text = TRANSLATIONS[lang]['typewriter-text'];
-    el.textContent = '';
+    var lang = window.currentLang || "fr";
+    var text = TRANSLATIONS[lang]["typewriter-text"];
+    el.textContent = "";
     var version = ++typewriterVersion;
     var i = 0;
     function tick() {
@@ -350,10 +412,10 @@ function startTypewriter() {
 }
 
 function renderContribGraph(container, contributions, total) {
-    var lang = window.currentLang || 'fr';
+    var lang = window.currentLang || "fr";
     var COLORS = ["#1a1918", "#0e4429", "#006d32", "#26a641", "#39d353"];
-    var MONTHS = TRANSLATIONS[lang]['contrib-months'];
-    var DAY_LABELS = TRANSLATIONS[lang]['contrib-days'];
+    var MONTHS = TRANSLATIONS[lang]["contrib-months"];
+    var DAY_LABELS = TRANSLATIONS[lang]["contrib-days"];
 
     // Map date -> level
     var map = {};
@@ -431,7 +493,9 @@ function renderContribGraph(container, contributions, total) {
                 : COLORS[day.level];
             cell.title =
                 day.date +
-                (day.level > 0 ? " \u2014 " + day.level + " contribution(s)" : "");
+                (day.level > 0
+                    ? " \u2014 " + day.level + " contribution(s)"
+                    : "");
             col.appendChild(cell);
         });
         grid.appendChild(col);
@@ -450,7 +514,7 @@ function renderContribGraph(container, contributions, total) {
             return a + b;
         }, 0);
         window.contribSum = sum;
-        totalEl.textContent = sum + " " + TRANSLATIONS[lang]['contribs-year'];
+        totalEl.textContent = sum + " " + TRANSLATIONS[lang]["contribs-year"];
     }
 }
 
@@ -477,13 +541,15 @@ function loadGithubContributions() {
                 container.removeChild(container.firstChild);
             var err = document.createElement("p");
             err.className = "contrib-loading";
-            err.textContent = TRANSLATIONS[window.currentLang || 'fr']['contribs-error'];
+            err.textContent =
+                TRANSLATIONS[window.currentLang || "fr"]["contribs-error"];
             container.appendChild(err);
         });
 }
 
 function scrambleElement(el, finalText, duration) {
-    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#@&%?!';
+    var chars =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#@&%?!";
     var interval = 30;
     var steps = Math.ceil(duration / interval);
     var step = 0;
@@ -491,11 +557,11 @@ function scrambleElement(el, finalText, duration) {
         step++;
         var progress = step / steps;
         var revealCount = Math.floor(progress * finalText.length);
-        var output = '';
+        var output = "";
         for (var i = 0; i < finalText.length; i++) {
             if (i < revealCount) {
                 output += finalText[i];
-            } else if (finalText[i] === ' ' || finalText[i] === '\u00a0') {
+            } else if (finalText[i] === " " || finalText[i] === "\u00a0") {
                 output += finalText[i];
             } else {
                 output += chars[Math.floor(Math.random() * chars.length)];
@@ -514,19 +580,19 @@ function applyTranslations(lang, withAnimation) {
     var t = TRANSLATIONS[lang];
 
     document.documentElement.lang = lang;
-    var frEl = document.getElementById('lang-fr');
-    var enEl = document.getElementById('lang-en');
-    if (frEl) frEl.classList.toggle('active', lang === 'fr');
-    if (enEl) enEl.classList.toggle('active', lang === 'en');
-    localStorage.setItem('portfolio-lang', lang);
+    var frEl = document.getElementById("lang-fr");
+    var enEl = document.getElementById("lang-en");
+    if (frEl) frEl.classList.toggle("active", lang === "fr");
+    if (enEl) enEl.classList.toggle("active", lang === "en");
+    localStorage.setItem("portfolio-lang", lang);
     window.currentLang = lang;
 
-    var els = document.querySelectorAll('[data-i18n]');
+    var els = document.querySelectorAll("[data-i18n]");
     var duration = withAnimation ? 500 : 0;
 
     for (var i = 0; i < els.length; i++) {
-        var key = els[i].getAttribute('data-i18n');
-        if (typeof t[key] !== 'string') continue;
+        var key = els[i].getAttribute("data-i18n");
+        if (typeof t[key] !== "string") continue;
         if (withAnimation) {
             scrambleElement(els[i], t[key], duration);
         } else {
@@ -543,7 +609,7 @@ function applyTranslations(lang, withAnimation) {
                 renderContribGraph(
                     container,
                     window.cachedContribData.contributions || [],
-                    window.cachedContribData.total || {}
+                    window.cachedContribData.total || {},
                 );
             }
         }
@@ -569,14 +635,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Language init
-    var savedLang = localStorage.getItem('portfolio-lang') || 'fr';
+    var savedLang = localStorage.getItem("portfolio-lang") || "fr";
     applyTranslations(savedLang);
 
     // Language toggle
-    var langToggle = document.getElementById('langToggle');
+    var langToggle = document.getElementById("langToggle");
     if (langToggle) {
-        langToggle.addEventListener('click', function () {
-            var newLang = window.currentLang === 'fr' ? 'en' : 'fr';
+        langToggle.addEventListener("click", function () {
+            var newLang = window.currentLang === "fr" ? "en" : "fr";
             applyTranslations(newLang, true);
         });
     }
