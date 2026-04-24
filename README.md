@@ -1,5 +1,7 @@
 # Théo — Portfolio
 
+[![Licence: MIT](https://img.shields.io/badge/Licence-MIT-yellow.svg)](LICENSE)
+
 > **Online:** [theo.nxtaigen.com](https://theo.nxtaigen.com/)
 
 ## Why I Created This Site
