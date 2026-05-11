@@ -1,1 +1,15 @@
 tasks/
+.DS_Store
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.pyc
+__pycache__/
+env/
+venv/
+.idea/
+.vscode/
+*.iml
+*.sln
