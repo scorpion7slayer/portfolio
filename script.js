@@ -29,6 +29,8 @@ var TRANSLATIONS = {
             "Marketplace web avec cat\u00e9gories, articles tendances et derni\u00e8res annonces.",
         "proj-7-desc":
             "Outil en ligne de commande pour mettre \u00e0 jour tous tes paquets en une seule fois.",
+        "proj-8-desc":
+            "Site web pixel-art pour un serveur Minecraft Java\u00a0: pr\u00e9sentation, status et acc\u00e8s Discord.",
         "proj-status-dev": "En cours de d\u00e9veloppement",
         "proj-unavailable": "GitHub et site bient\u00f4t disponibles.",
         "contribs-title": "Contributions GitHub",
@@ -91,6 +93,8 @@ var TRANSLATIONS = {
         "proj-6-desc":
             "Web marketplace with categories, trending items and latest listings.",
         "proj-7-desc": "Command-line tool to update all your packages at once.",
+        "proj-8-desc":
+            "Pixel-art website for a Minecraft Java server: presentation, status and Discord access.",
         "proj-status-dev": "In development",
         "proj-unavailable": "GitHub and website coming soon.",
         "contribs-title": "GitHub Contributions",
@@ -168,6 +172,7 @@ var typewriterVersion = 0;
         { type: "success", text: "  [OK] NxtAI Card" },
         { type: "success", text: "  [OK] Market Plier" },
         { type: "success", text: "  [OK] NxtUpdate" },
+        { type: "success", text: "  [OK] Galactic SMP" },
         { type: "blank" },
         { type: "progress" },
         { type: "blank" },
@@ -184,7 +189,7 @@ var typewriterVersion = 0;
 
     var DELAYS = [
         120, 150, 700, 380, 380, 150, 700, 380, 380, 150, 700, 380, 380, 380,
-        380, 380, 380, 380, 150, 0, 150, 550, 200, 0, 150, 350, 120, 150,
+        380, 380, 380, 380, 380, 150, 0, 150, 550, 200, 0, 150, 350, 120, 150,
     ];
 
     function span(cls, txt) {
