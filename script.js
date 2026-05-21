@@ -30,7 +30,7 @@ var TRANSLATIONS = {
         "proj-7-desc":
             "Outil en ligne de commande pour mettre \u00e0 jour tous tes paquets en une seule fois.",
         "proj-8-desc":
-            "Site web pixel-art pour un serveur Minecraft Java\u00a0: pr\u00e9sentation, status et acc\u00e8s Discord.",
+            "Site web pixel-art pour un serveur Minecraft Java\u00a0: pr\u00e9sentation, statut et acc\u00e8s Discord.",
         "proj-status-dev": "En cours de d\u00e9veloppement",
         "proj-unavailable": "GitHub et site bient\u00f4t disponibles.",
         "contribs-title": "Contributions GitHub",
@@ -172,7 +172,7 @@ var typewriterVersion = 0;
         { type: "success", text: "  [OK] NxtAI Card" },
         { type: "success", text: "  [OK] Market Plier" },
         { type: "success", text: "  [OK] NxtUpdate" },
-        { type: "success", text: "  [OK] Galactic SMP" },
+        { type: "success", text: "  [OK] Zyranex" },
         { type: "blank" },
         { type: "progress" },
         { type: "blank" },
