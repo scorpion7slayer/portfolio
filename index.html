@@ -2,23 +2,19 @@
 <html lang="fr" data-bs-theme="dark">
     <head>
         <link rel="canonical" href="https://theo.nxtaigen.com/" />
-        <script
-            src="https://analyticstheo.serverscorpion1601.site/api/script.js"
-            data-site-id="3d647ad2bd4f"
-            defer
-        ></script>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
-            name="google-site-verification"
-            content="OmaMRfu7ZnzUMz5hGCRt7azppVVqF2iyiPNHxSnh1Go"
+            name="robots"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         />
         <meta
             name="description"
-            content="Portfolio de Théo, développeur web compétents en HTML, CSS, JavaScript, Bootstrap et TailwindCSS. Découvrez mes projets et compétences."
+            content="Portfolio de Théo, développeur web basé en Belgique, compétent en HTML, CSS, JavaScript, Bootstrap et TailwindCSS. Découvrez mes projets et compétences."
         />
 
         <!-- Open Graph / Social Media -->
+        <meta property="og:locale" content="fr" />
         <meta property="og:title" content="Théo - Développeur Web Portfolio" />
         <meta
             property="og:description"
@@ -26,10 +22,45 @@
         />
         <meta
             property="og:image"
-            content="https://theo.nxtaigen.com/profilimg.webp"
+            content="https://theo.nxtaigen.com/assets/screenshots/NxtAIGen.webp"
         />
         <meta property="og:url" content="https://theo.nxtaigen.com/" />
         <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Théo - Développeur Web Portfolio" />
+        <meta
+            name="twitter:description"
+            content="Découvrez mes projets et compétences en développement web"
+        />
+        <meta
+            name="twitter:image"
+            content="https://theo.nxtaigen.com/assets/screenshots/NxtAIGen.webp"
+        />
+        <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Théo",
+                "url": "https://theo.nxtaigen.com/",
+                "image": "https://github.com/scorpion7slayer.png",
+                "jobTitle": "Développeur web",
+                "knowsAbout": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "Bootstrap",
+                    "TailwindCSS",
+                    "Next.js",
+                    "Tauri"
+                ],
+                "sameAs": [
+                    "https://github.com/scorpion7slayer",
+                    "https://www.linkedin.com/in/th%C3%A9o-darville-5664053a1/"
+                ]
+            }
+        </script>
 
         <title>Théo - Développeur Web | Portfolio HTML CSS JavaScript</title>
         <!-- Iosevka Charon Mono -->
@@ -42,7 +73,6 @@
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
             rel="stylesheet"
-            rel="preconnect"
             integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
             crossorigin="anonymous"
         />
@@ -168,6 +198,7 @@
                             <a
                                 class="nav-link github-link"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 href="https://github.com/scorpion7slayer"
                                 aria-label="GitHub (ouvre dans un nouvel onglet)"
                                 ><i
@@ -178,6 +209,7 @@
                             <a
                                 class="nav-link linkedin-link"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 href="https://www.linkedin.com/in/th%C3%A9o-darville-5664053a1/"
                                 aria-label="LinkedIn (ouvre dans un nouvel onglet)"
                                 ><i
@@ -378,6 +410,8 @@
                                             src="assets/screenshots/extension-flavortown.webp"
                                             class="project-card-img"
                                             alt="Extension web Flavortown GitHub Exporter pour Chrome"
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                     </div>
                                     <div class="project-card-body">
@@ -396,6 +430,7 @@
                                             <a
                                                 href="https://github.com/scorpion7slayer/flavortown-github-exporter"
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 aria-label="Voir le code source"
                                                 title="Voir le code source"
                                             >
@@ -404,7 +439,7 @@
                                                 ></i>
                                             </a>
                                             <a
-                                                href="#"
+                                                href="#browserModal"
                                                 data-bs-toggle="modal"
                                                 data-bs-target="#browserModal"
                                                 aria-label="Installer l'extension"
@@ -440,6 +475,8 @@
                                             src="assets/screenshots/NxtAIGen.webp"
                                             class="project-card-img"
                                             alt="Chatbot multi modèles IA NxtAIGen"
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                     </div>
                                     <div class="project-card-body">
@@ -457,6 +494,7 @@
                                             <a
                                                 href="https://github.com/scorpion7slayer/NxtAIGen"
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 aria-label="Voir le code source"
                                                 title="Voir le code source"
                                             >
@@ -465,7 +503,7 @@
                                                 ></i>
                                             </a>
                                             <a
-                                                href="#"
+                                                href="#nxtaigenModal"
                                                 data-bs-toggle="modal"
                                                 data-bs-target="#nxtaigenModal"
                                                 aria-label="Voir le site"
@@ -501,6 +539,8 @@
                                             src="assets/screenshots/NxtGit.webp"
                                             class="project-card-img"
                                             alt="Client GitHub NxtGit"
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                     </div>
                                     <div class="project-card-body">
@@ -533,6 +573,7 @@
                                             <a
                                                 href="https://github.com/scorpion7slayer/NxtGit"
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 aria-label="Voir le code source"
                                                 title="Voir le code source"
                                             >
@@ -543,6 +584,7 @@
                                             <a
                                                 href="https://github.com/scorpion7slayer/NxtGit/releases"
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 aria-label="Télécharger depuis les releases"
                                                 title="Télécharger depuis les releases"
                                             >
@@ -553,6 +595,7 @@
                                             <a
                                                 href="https://nxtgit.nxtaigen.com/"
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 aria-label="Visiter le site web"
                                                 title="Visiter le site web"
                                             >
@@ -563,6 +606,7 @@
                                             <a
                                                 href="https://youtu.be/W2mVp_yVHcA"
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 aria-label="Voir la vidéo de démonstration"
                                                 title="Voir la vidéo de démonstration"
                                             >
@@ -595,7 +639,9 @@
                                         <img
                                             src="assets/screenshots/nxtcord.webp"
                                             class="project-card-img"
-                                            alt="Alternative a Discord Nxtcord"
+                                            alt="Alternative à Discord Nxtcord"
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                     </div>
                                     <div class="project-card-body">
@@ -613,15 +659,15 @@
                                             class="project-card-desc"
                                             data-i18n="proj-4-desc"
                                         >
-                                            Alternative a Discord orientee
+                                            Alternative à Discord orientée
                                             communaute, en cours de
-                                            developpement.
+                                            développement.
                                         </p>
                                         <p
                                             class="project-status-note"
                                             data-i18n="proj-unavailable"
                                         >
-                                            GitHub et site bientot disponibles.
+                                            GitHub et site bientôt disponibles.
                                         </p>
                                         <div class="project-links d-flex gap-2">
                                             <span
@@ -670,6 +716,8 @@
                                             src="assets/screenshots/NxtAICard.webp"
                                             class="project-card-img"
                                             alt="Comparateur de modèles IA Nxt AI Card"
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                     </div>
                                     <div class="project-card-body">
@@ -688,6 +736,7 @@
                                             <a
                                                 href="https://github.com/scorpion7slayer/nxtaicard"
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 aria-label="Voir le code source"
                                                 title="Voir le code source"
                                             >
@@ -698,6 +747,7 @@
                                             <a
                                                 href="https://nxtaicard.nxtaigen.com/"
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 aria-label="Visiter le site web"
                                                 title="Visiter le site web"
                                             >
@@ -731,6 +781,8 @@
                                             src="assets/screenshots/marketplier.webp"
                                             class="project-card-img"
                                             alt="Marketplace web Market Plier"
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                     </div>
                                     <div class="project-card-body">
@@ -758,7 +810,7 @@
                                                 ></i>
                                             </a>
                                             <a
-                                                href="#"
+                                                href="#marketPlierModal"
                                                 data-bs-toggle="modal"
                                                 data-bs-target="#marketPlierModal"
                                                 aria-label="Voir le site"
@@ -794,6 +846,8 @@
                                             src="assets/screenshots/NxtUpdate.webp"
                                             class="project-card-img"
                                             alt="Universal macOS Updater NxtUpdate"
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                     </div>
                                     <div class="project-card-body">
@@ -818,6 +872,7 @@
                                             <a
                                                 href="https://github.com/scorpion7slayer/NxtUpdate"
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 aria-label="Voir le code source"
                                                 title="Voir le code source"
                                             >
@@ -826,7 +881,7 @@
                                                 ></i>
                                             </a>
                                             <a
-                                                href="#"
+                                                href="#nxtupdateModal"
                                                 data-bs-toggle="modal"
                                                 data-bs-target="#nxtupdateModal"
                                                 aria-label="Instructions d'installation"
@@ -839,7 +894,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Card 8 : Galactic SMP -->
+                                <!-- Card 8 : Zyranex -->
                                 <div class="project-card">
                                     <div class="project-card-bar">
                                         <div class="terminal-buttons">
@@ -854,19 +909,21 @@
                                             ></span>
                                         </div>
                                         <span class="project-card-filename"
-                                            >galactic-smp.js</span
+                                            >zyranex.js</span
                                         >
                                     </div>
                                     <div class="project-card-img-wrap">
                                         <img
-                                            src="assets/screenshots/galactic-smp.webp"
+                                            src="assets/screenshots/zyranex.webp"
                                             class="project-card-img"
-                                            alt="Site web du serveur Minecraft Galactic SMP"
+                                            alt="Site web du serveur Minecraft Zyranex"
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                     </div>
                                     <div class="project-card-body">
                                         <h5 class="project-card-title">
-                                            Galactic SMP
+                                            Zyranex
                                         </h5>
                                         <p
                                             class="project-card-desc"
@@ -874,12 +931,13 @@
                                         >
                                             Site web pixel-art pour un serveur
                                             Minecraft Java&nbsp;: présentation,
-                                            status et accès Discord.
+                                            statut et accès Discord.
                                         </p>
                                         <div class="project-links d-flex gap-2">
                                             <a
-                                                href="https://github.com/scorpion7slayer/GALACTIC-SMP-WEB"
+                                                href="https://github.com/scorpion7slayer/ZYRANEX-WEB-scorpion"
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 aria-label="Voir le code source"
                                                 title="Voir le code source"
                                             >
@@ -888,8 +946,9 @@
                                                 ></i>
                                             </a>
                                             <a
-                                                href="https://nolannaxstudio.github.io/GALACTIC-SMP-WEB/"
+                                                href="https://zyranex.fr/"
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 aria-label="Visiter le site web"
                                                 title="Visiter le site web"
                                             >
@@ -946,6 +1005,7 @@
                                 <a
                                     href="https://chromewebstore.google.com/detail/ohkkaaibkhikfeemhpfpdhbpopjngaia"
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     class="browser-choice"
                                     aria-label="Installer sur Chrome"
                                 >
@@ -955,6 +1015,7 @@
                                 <a
                                     href="https://addons.mozilla.org/fr/firefox/addon/flavortown-github-exporter/"
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     class="browser-choice"
                                     aria-label="Installer sur Firefox"
                                 >
@@ -1185,6 +1246,7 @@
                 <a
                     href="https://m.do.co/c/cb3c5c7ece01"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="footer-powered-link"
                     title="Powered by DigitalOcean"
                 >
@@ -1201,6 +1263,7 @@
                 <a
                     href="https://github.com/sponsors/scorpion7slayer"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-outline-light btn-sm footer-sponsor-btn me-3"
                     title="Sponsor scorpion7slayer"
                 >
