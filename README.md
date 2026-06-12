@@ -36,7 +36,7 @@ The site is **bilingual (FR/EN)** — change the language in the navigation bar.
 
 - **[NxtGit](https://nxtgit.nxtaigen.com/)** — Lightweight GitHub client for macOS/Windows: cloning, committing, diffing — no browser required
 
-- **[Nxt AI Card](https://nxtaicard.nxtaigen.com/)** — Dashboard comparing AI models: performance, price, and speed Real-time updates
+- **[BenchSift](https://benchsift.nxtaigen.com/)** — Dashboard comparing AI models: performance, price, and speed Real-time updates
 - **[NxtUpdate](https://github.com/scorpion7slayer/NxtUpdate)** — Updates Homebrew, Node, Python, Rust, and macOS from a single terminal.
 
 ## Technology Stack
