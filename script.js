@@ -21,8 +21,6 @@ var TRANSLATIONS = {
             "Chatbot web multi-mod\u00e8les\u00a0: GPT, Claude, Mistral.",
         "proj-3-desc":
             "Client GitHub l\u00e9ger pour macOS/Windows\u00a0: clone, commit, diff \u2014 sans navigateur.",
-        "proj-4-desc":
-            "Alternative \u00e0 Discord orient\u00e9e communaut\u00e9, en cours de d\u00e9veloppement.",
         "proj-5-desc":
             "Dashboard comparant les mod\u00e8les IA\u00a0: benchmarks, prix et vitesse en temps r\u00e9el.",
         "proj-6-desc":
@@ -31,8 +29,6 @@ var TRANSLATIONS = {
             "Outil en ligne de commande pour mettre \u00e0 jour tous tes paquets en une seule fois.",
         "proj-8-desc":
             "Site web pixel-art pour un serveur Minecraft Java\u00a0: pr\u00e9sentation, statut et acc\u00e8s Discord.",
-        "proj-status-dev": "En cours de d\u00e9veloppement",
-        "proj-unavailable": "GitHub et site bient\u00f4t disponibles.",
         "contribs-title": "Contributions GitHub",
         "contact-title": "Contact",
         "contact-name": "Votre nom\u00a0:",
@@ -47,7 +43,6 @@ var TRANSLATIONS = {
         "modal-step2": "2. Installer NxtUpdate",
         "install-or": "ou",
         "typewriter-text": "D\u00e9veloppeur Web",
-        "skip-btn": "Passer",
         "contribs-year": "contributions cette ann\u00e9e",
         "contribs-loading": "Chargement...",
         "contribs-error": "Impossible de charger les contributions.",
@@ -86,8 +81,6 @@ var TRANSLATIONS = {
         "proj-2-desc": "Multi-model web chatbot: GPT, Claude, Mistral.",
         "proj-3-desc":
             "Lightweight GitHub client for macOS/Windows: clone, commit, diff \u2014 no browser needed.",
-        "proj-4-desc":
-            "Discord alternative focused on community, currently in development.",
         "proj-5-desc":
             "Dashboard comparing AI models: benchmarks, pricing and speed in real time.",
         "proj-6-desc":
@@ -95,8 +88,6 @@ var TRANSLATIONS = {
         "proj-7-desc": "Command-line tool to update all your packages at once.",
         "proj-8-desc":
             "Pixel-art website for a Minecraft Java server: presentation, status and Discord access.",
-        "proj-status-dev": "In development",
-        "proj-unavailable": "GitHub and website coming soon.",
         "contribs-title": "GitHub Contributions",
         "contact-title": "Contact",
         "contact-name": "Your name:",
@@ -111,7 +102,6 @@ var TRANSLATIONS = {
         "modal-step2": "2. Install NxtUpdate",
         "install-or": "or",
         "typewriter-text": "Web Developer",
-        "skip-btn": "Skip",
         "contribs-year": "contributions this year",
         "contribs-loading": "Loading...",
         "contribs-error": "Unable to load contributions.",
@@ -135,265 +125,6 @@ var TRANSLATIONS = {
 
 var typewriterVersion = 0;
 
-(function () {
-    var body = document.getElementById("terminal-body");
-    var termEl = document.getElementById("terminal-boot");
-    var skipBtn = document.getElementById("termSkipBtn");
-    if (!body || !termEl) return;
-
-    var bootDone = false;
-    var BOOT_SPEED_MULTIPLIER = 0.75;
-
-    var BOOT_LINES = [
-        { type: "dim", text: "\u00a0\u00a0> portfolio@1.0.0 dev" },
-        { type: "blank" },
-        { type: "info", text: "  Chargement des modules..." },
-        { type: "success", text: "  [OK] HTML5 \u00b7 CSS3 \u00b7 JavaScript" },
-        { type: "success", text: "  [OK] Bootstrap 5 \u00b7 Font Awesome 7" },
-        { type: "blank" },
-        {
-            type: "info",
-            text: "  R\u00e9cup\u00e9ration des comp\u00e9tences et des outils...",
-        },
-        {
-            type: "success",
-            text: "  [OK] HTML \u00b7 CSS \u00b7 JavaScript \u00b7 Bootstrap \u00b7 TailwindCSS \u00b7 Next.js \u00b7 Tauri",
-        },
-        {
-            type: "success",
-            text: "  [OK] VS Code \u00b7 DDEV \u00b7 GitHub \u00b7 Claude Code",
-        },
-        { type: "blank" },
-        { type: "info", text: "  R\u00e9cup\u00e9ration des projets..." },
-        { type: "success", text: "  [OK] flavortown-github-exporter" },
-        { type: "success", text: "  [OK] NxtAIGen" },
-        { type: "success", text: "  [OK] NxtGit" },
-        { type: "success", text: "  [OK] Nxtcord" },
-        { type: "success", text: "  [OK] NxtAI Card" },
-        { type: "success", text: "  [OK] Market Plier" },
-        { type: "success", text: "  [OK] NxtUpdate" },
-        { type: "success", text: "  [OK] Zyranex" },
-        { type: "blank" },
-        { type: "progress" },
-        { type: "blank" },
-        {
-            type: "success",
-            text: "  [OK] Interface construite !",
-        },
-        { type: "ascii-banner" },
-        { type: "blank" },
-        { type: "url", text: "  \u279C  Local:    http://127.0.0.1/" },
-        { type: "url", text: "  \u279C  Network:  https://theo.nxtaigen.com/" },
-        { type: "blank" },
-    ];
-
-    var DELAYS = [
-        120, 150, 700, 380, 380, 150, 700, 380, 380, 150, 700, 380, 380, 380,
-        380, 380, 380, 380, 380, 150, 0, 150, 550, 200, 0, 150, 350, 120, 150,
-    ];
-
-    function span(cls, txt) {
-        var s = document.createElement("span");
-        s.className = cls;
-        if (txt !== undefined) s.textContent = txt;
-        return s;
-    }
-
-    function getBootDelay(ms) {
-        return Math.max(0, Math.round(ms * BOOT_SPEED_MULTIPLIER));
-    }
-
-    function makePromptLine(withCursor) {
-        var d = document.createElement("div");
-        d.className = "term-prompt-line";
-        d.appendChild(span("term-user", "theo"));
-        d.appendChild(span("term-at", "@"));
-        d.appendChild(span("term-host", "portfolio"));
-        d.appendChild(span("term-sep", " ~ % "));
-        if (withCursor) {
-            d.appendChild(span("term-cursor-inline", "\u2588"));
-        } else {
-            var cmdEl = span("term-cmd-text", "");
-            cmdEl.id = "term-cmd-text";
-            d.appendChild(cmdEl);
-            var cur = span("term-cursor-inline", "\u2588");
-            cur.id = "term-cmd-cursor";
-            d.appendChild(cur);
-        }
-        return d;
-    }
-
-    function typeCommand(cb) {
-        var line = makePromptLine(false);
-        body.appendChild(line);
-        body.scrollTop = body.scrollHeight;
-        var cmdEl = document.getElementById("term-cmd-text");
-        var cursor = document.getElementById("term-cmd-cursor");
-        var cmd = "npm run dev";
-        var i = 0;
-        function tick() {
-            if (bootDone) return;
-            cmdEl.textContent = cmd.slice(0, i);
-            i++;
-            if (i <= cmd.length) {
-                setTimeout(tick, getBootDelay(65 + Math.random() * 45));
-            } else {
-                cursor.style.display = "none";
-                setTimeout(cb, getBootDelay(200));
-            }
-        }
-        setTimeout(tick, getBootDelay(300));
-    }
-
-    function animateProgress(el, cb) {
-        var BAR_LEN = 20;
-        var step = 0;
-        function update() {
-            if (bootDone) return;
-            var filled = "\u2588".repeat(step);
-            var empty = "\u2591".repeat(BAR_LEN - step);
-            var pct = Math.round((step / BAR_LEN) * 100);
-            el.textContent =
-                "  Compilation... [" + filled + empty + "] " + pct + "%";
-            if (step < BAR_LEN) {
-                step++;
-                setTimeout(update, getBootDelay(55 + Math.random() * 35));
-            } else {
-                setTimeout(cb, getBootDelay(250));
-            }
-        }
-        update();
-    }
-
-    function animateWelcomeBanner(container, cb) {
-        var ROWS = [
-            "  ****   ***  ***** *   * *   * ***** *   * *   * *****",
-            "  *   *   *   *     **  * *   * *     **  * *   * *    ",
-            "  *   *   *   ****  * * * *   * ****  * * * *   * **** ",
-            "  ****    *   *     *  **  * *  *     *  ** *   * *    ",
-            "  *   *   *   *     *   *  * *  *     *   * *   * *    ",
-            "  *   *   *   *     *   *   *   *     *   * *   * *    ",
-            "  ****   ***  ***** *   *   *   ***** *   *  ***  *****",
-        ];
-        var rowIdx = 0;
-        function printRow() {
-            if (bootDone) return;
-            if (rowIdx >= ROWS.length) {
-                setTimeout(cb, getBootDelay(150));
-                return;
-            }
-            var line = document.createElement("div");
-            line.className = "term-banner-line";
-            container.appendChild(line);
-            body.scrollTop = body.scrollHeight;
-            var text = ROWS[rowIdx];
-            var charIdx = 0;
-            function printChar() {
-                if (bootDone) return;
-                line.textContent = text.slice(0, charIdx);
-                charIdx++;
-                if (charIdx <= text.length) {
-                    setTimeout(printChar, getBootDelay(4));
-                } else {
-                    rowIdx++;
-                    setTimeout(printRow, getBootDelay(15));
-                }
-            }
-            printChar();
-        }
-        printRow();
-    }
-
-    function showBootLines(cb) {
-        var i = 0;
-        function next() {
-            if (bootDone) return;
-            if (i >= BOOT_LINES.length) {
-                setTimeout(cb, getBootDelay(300));
-                return;
-            }
-            var d = BOOT_LINES[i];
-            var el = document.createElement("div");
-
-            if (d.type === "blank") {
-                el.className = "term-blank";
-                body.appendChild(el);
-                body.scrollTop = body.scrollHeight;
-                var w =
-                    DELAYS[i] !== undefined
-                        ? getBootDelay(DELAYS[i])
-                        : getBootDelay(100);
-                i++;
-                setTimeout(next, w);
-            } else if (d.type === "progress") {
-                el.className = "term-boot-info";
-                body.appendChild(el);
-                body.scrollTop = body.scrollHeight;
-                i++;
-                animateProgress(el, next);
-            } else if (d.type === "ascii-banner") {
-                body.appendChild(el);
-                body.scrollTop = body.scrollHeight;
-                i++;
-                animateWelcomeBanner(el, next);
-            } else {
-                if (d.type === "dim") el.className = "term-boot-dim";
-                if (d.type === "info") el.className = "term-boot-info";
-                if (d.type === "success") el.className = "term-boot-success";
-                if (d.type === "url") el.className = "term-boot-url";
-                el.textContent = d.text;
-                body.appendChild(el);
-                body.scrollTop = body.scrollHeight;
-                var wait =
-                    DELAYS[i] !== undefined
-                        ? getBootDelay(DELAYS[i])
-                        : getBootDelay(200);
-                i++;
-                setTimeout(next, wait);
-            }
-        }
-        next();
-    }
-
-    function showFinalPrompt(cb) {
-        var line = makePromptLine(true);
-        body.appendChild(line);
-        body.scrollTop = body.scrollHeight;
-        setTimeout(cb, getBootDelay(1200));
-    }
-
-    function escHandler(e) {
-        if (e.key === "Escape" || e.key === "Esc") {
-            document.removeEventListener("keydown", escHandler);
-            hideTerm();
-        }
-    }
-
-    function hideTerm() {
-        if (bootDone) return;
-        bootDone = true;
-        document.removeEventListener("keydown", escHandler);
-        termEl.classList.add("hide");
-        termEl.addEventListener(
-            "transitionend",
-            function () {
-                termEl.remove();
-                startTypewriter();
-            },
-            { once: true },
-        );
-    }
-
-    if (skipBtn) skipBtn.addEventListener("click", hideTerm);
-    document.addEventListener("keydown", escHandler);
-
-    typeCommand(function () {
-        showBootLines(function () {
-            showFinalPrompt(hideTerm);
-        });
-    });
-})();
-
 function startTypewriter() {
     var el = document.getElementById("typewriter-text");
     var cursor = document.getElementById("typewriter-cursor");
@@ -405,15 +136,30 @@ function startTypewriter() {
     el.textContent = "";
     var version = ++typewriterVersion;
     var i = 0;
-    function tick() {
+
+    function typeNext() {
         if (version !== typewriterVersion) return;
         el.textContent = text.slice(0, i);
-        i++;
-        if (i <= text.length) {
-            setTimeout(tick, 85 + Math.random() * 45);
+        if (i < text.length) {
+            i++;
+            setTimeout(typeNext, 85 + Math.random() * 45);
+        } else {
+            setTimeout(deleteNext, 6000 + Math.random() * 3500);
         }
     }
-    tick();
+
+    function deleteNext() {
+        if (version !== typewriterVersion) return;
+        if (i > 0) {
+            i--;
+            el.textContent = text.slice(0, i);
+            setTimeout(deleteNext, 45 + Math.random() * 35);
+        } else {
+            setTimeout(typeNext, 700 + Math.random() * 500);
+        }
+    }
+
+    typeNext();
 }
 
 function renderContribGraph(container, contributions, total) {
@@ -642,6 +388,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Language init
     var savedLang = localStorage.getItem("portfolio-lang") || "fr";
     applyTranslations(savedLang);
+    setTimeout(startTypewriter, 0);
 
     // Language toggle
     var langToggle = document.getElementById("langToggle");

@@ -52,8 +52,7 @@
                     "JavaScript",
                     "Bootstrap",
                     "TailwindCSS",
-                    "Next.js",
-                    "Tauri"
+                    "TypeScript"
                 ],
                 "sameAs": [
                     "https://github.com/scorpion7slayer",
@@ -76,7 +75,7 @@
             integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
             crossorigin="anonymous"
         />
-        <link href="style.css?v=11" rel="stylesheet" />
+        <link href="style.css?v=16" rel="stylesheet" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -86,31 +85,6 @@
         />
     </head>
     <body>
-        <!-- Terminal Boot Screen -->
-        <div
-            id="terminal-boot"
-            class="terminal-boot-overlay"
-            aria-hidden="true"
-        >
-            <div class="terminal-window">
-                <div class="terminal-titlebar">
-                    <div class="terminal-buttons">
-                        <span class="terminal-btn terminal-btn-close"></span>
-                        <span class="terminal-btn terminal-btn-minimize"></span>
-                        <span class="terminal-btn terminal-btn-maximize"></span>
-                    </div>
-                    <span class="terminal-title">theo — zsh</span>
-                </div>
-                <div class="terminal-body" id="terminal-body"></div>
-            </div>
-            <button
-                class="term-skip-btn"
-                id="termSkipBtn"
-                aria-label="Passer l'animation / Skip animation"
-            >
-                <span id="termSkipBtnText">Skip</span> <kbd>Esc</kbd>
-            </button>
-        </div>
         <a href="#main-content" class="skip-link">Aller au contenu</a>
         <a href="#social-links" class="skip-link">Aller aux réseaux</a>
         <nav
@@ -321,30 +295,72 @@
                     <div
                         class="d-flex flex-wrap gap-3 align-items-center justify-content-center"
                     >
-                        <span class="badge badge-html rounded-pill px-3 py-2"
-                            >HTML</span
-                        >
                         <span
-                            class="badge text-bg-primary rounded-pill px-3 py-2"
-                            >CSS</span
+                            class="badge brand-badge badge-html rounded-pill px-3 py-2"
                         >
+                            <img
+                                src="assets/icons/html5.svg"
+                                class="brand-badge-icon"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            HTML
+                        </span>
                         <span
-                            class="badge text-bg-warning rounded-pill px-3 py-2"
-                            >JavaScript</span
+                            class="badge brand-badge badge-css rounded-pill px-3 py-2"
                         >
+                            <img
+                                src="assets/icons/css.svg"
+                                class="brand-badge-icon"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            CSS
+                        </span>
                         <span
-                            class="badge badge-bootstrap rounded-pill px-3 py-2"
-                            >Bootstrap</span
+                            class="badge brand-badge badge-javascript rounded-pill px-3 py-2"
                         >
-                        <span class="badge text-bg-info rounded-pill px-3 py-2"
-                            >TailwindCSS</span
+                            <img
+                                src="assets/icons/javascript.svg"
+                                class="brand-badge-icon"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            JavaScript
+                        </span>
+                        <span
+                            class="badge brand-badge badge-bootstrap rounded-pill px-3 py-2"
                         >
-                        <span class="badge badge-nextjs rounded-pill px-3 py-2"
-                            >Next.js</span
+                            <img
+                                src="assets/icons/bootstrap.svg"
+                                class="brand-badge-icon"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            Bootstrap
+                        </span>
+                        <span
+                            class="badge brand-badge badge-tailwind rounded-pill px-3 py-2"
                         >
-                        <span class="badge badge-tauri rounded-pill px-3 py-2"
-                            >Tauri</span
+                            <img
+                                src="assets/icons/tailwindcss.svg"
+                                class="brand-badge-icon"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            Tailwind CSS
+                        </span>
+                        <span
+                            class="badge brand-badge badge-typescript rounded-pill px-3 py-2"
                         >
+                            <img
+                                src="assets/icons/typescript.svg"
+                                class="brand-badge-icon"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            TypeScript
+                        </span>
                     </div>
                     <br />
                     <h2 class="h3 mb-4 text-center" data-i18n="tools-title">
@@ -353,18 +369,59 @@
                     <div
                         class="d-flex flex-wrap gap-3 align-items-center justify-content-center"
                     >
-                        <span class="badge bg-primary rounded-pill px-3 py-2"
-                            >VS Code</span
+                        <span
+                            class="badge brand-badge badge-vscode rounded-pill px-3 py-2"
                         >
-                        <span class="badge badge-ddev rounded-pill px-3 py-2"
-                            >DDEV</span
+                            <img
+                                src="assets/icons/vscode.svg"
+                                class="brand-badge-icon"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            VS Code
+                        </span>
+                        <span
+                            class="badge brand-badge badge-ddev rounded-pill px-3 py-2"
                         >
-                        <span class="badge badge-github rounded-pill px-3 py-2"
-                            >GitHub</span
+                            <img
+                                src="assets/icons/ddev.svg"
+                                class="brand-badge-icon badge-ddev-icon"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            DDEV
+                        </span>
+                        <span
+                            class="badge brand-badge badge-github rounded-pill px-3 py-2"
                         >
-                        <span class="badge badge-claude rounded-pill px-3 py-2"
-                            >Claude Code</span
+                            <i
+                                class="fa-brands fa-github brand-badge-icon-font"
+                                aria-hidden="true"
+                            ></i>
+                            GitHub
+                        </span>
+                        <span
+                            class="badge brand-badge badge-claude rounded-pill px-3 py-2"
                         >
+                            <img
+                                src="assets/icons/claude.png"
+                                class="brand-badge-icon badge-claude-icon"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            Claude Code
+                        </span>
+                        <span
+                            class="badge brand-badge badge-codex rounded-pill px-3 py-2"
+                        >
+                            <img
+                                src="assets/icons/codex.png"
+                                class="brand-badge-icon badge-app-icon"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            Codex
+                        </span>
                     </div>
                 </div>
             </section>
@@ -387,7 +444,7 @@
                                 class="projects-carousel-track"
                                 id="projectsTrack"
                             >
-                                <!-- Card 1 : Flavortown -->
+                                <!-- Card 1 : BenchSift -->
                                 <div class="project-card">
                                     <div class="project-card-bar">
                                         <div class="terminal-buttons">
@@ -402,33 +459,33 @@
                                             ></span>
                                         </div>
                                         <span class="project-card-filename"
-                                            >flavortown.js</span
+                                            >BenchSift.js</span
                                         >
                                     </div>
                                     <div class="project-card-img-wrap">
                                         <img
-                                            src="assets/screenshots/extension-flavortown.webp"
+                                            src="assets/screenshots/benchsift.png"
                                             class="project-card-img"
-                                            alt="Extension web Flavortown GitHub Exporter pour Chrome"
+                                            alt="Comparateur de modèles IA BenchSift"
                                             loading="lazy"
                                             decoding="async"
                                         />
                                     </div>
                                     <div class="project-card-body">
                                         <h5 class="project-card-title">
-                                            flavortown github export
+                                            BenchSift
                                         </h5>
                                         <p
                                             class="project-card-desc"
-                                            data-i18n="proj-1-desc"
+                                            data-i18n="proj-5-desc"
                                         >
-                                            Extension Chrome &amp; Firefox pour
-                                            exporter vos projets GitHub vers
-                                            Flavortown en un clic.
+                                            Dashboard comparant les modèles
+                                            IA&nbsp;: benchmarks, prix et
+                                            vitesse en temps réel.
                                         </p>
                                         <div class="project-links d-flex gap-2">
                                             <a
-                                                href="https://github.com/scorpion7slayer/flavortown-github-exporter"
+                                                href="https://github.com/scorpion7slayer/benchsift"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 aria-label="Voir le code source"
@@ -439,11 +496,11 @@
                                                 ></i>
                                             </a>
                                             <a
-                                                href="#browserModal"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#browserModal"
-                                                aria-label="Installer l'extension"
-                                                title="Installer l'extension"
+                                                href="https://benchsift.nxtaigen.com/"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label="Visiter le site web"
+                                                title="Visiter le site web"
                                             >
                                                 <i
                                                     class="fa-solid fa-globe text-white"
@@ -452,7 +509,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Card 2 : NxtAIGen -->
+                                <!-- Card 2 : NxtUpdate -->
                                 <div class="project-card">
                                     <div class="project-card-bar">
                                         <div class="terminal-buttons">
@@ -467,32 +524,39 @@
                                             ></span>
                                         </div>
                                         <span class="project-card-filename"
-                                            >NxtAIGen.js</span
+                                            >NxtUpdate.js</span
                                         >
                                     </div>
                                     <div class="project-card-img-wrap">
                                         <img
-                                            src="assets/screenshots/NxtAIGen.webp"
+                                            src="assets/screenshots/NxtUpdate.webp"
                                             class="project-card-img"
-                                            alt="Chatbot multi modèles IA NxtAIGen"
+                                            alt="Universal macOS Updater NxtUpdate"
                                             loading="lazy"
                                             decoding="async"
                                         />
                                     </div>
                                     <div class="project-card-body">
-                                        <h5 class="project-card-title">
-                                            NxtAIGen
+                                        <h5
+                                            class="project-card-title d-flex align-items-center"
+                                        >
+                                            NxtUpdate
+                                            <span
+                                                class="badge badge-os badge-os-small rounded-pill ms-2"
+                                                >macOS</span
+                                            >
                                         </h5>
                                         <p
                                             class="project-card-desc"
-                                            data-i18n="proj-2-desc"
+                                            data-i18n="proj-7-desc"
                                         >
-                                            Chatbot web multi-modèles&nbsp;:
-                                            GPT, Claude, Mistral.
+                                            Outil en ligne de commande pour
+                                            mettre à jour tous tes paquets en
+                                            une seule fois.
                                         </p>
                                         <div class="project-links d-flex gap-2">
                                             <a
-                                                href="https://github.com/scorpion7slayer/NxtAIGen"
+                                                href="https://github.com/scorpion7slayer/NxtUpdate"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 aria-label="Voir le code source"
@@ -503,11 +567,76 @@
                                                 ></i>
                                             </a>
                                             <a
-                                                href="#nxtaigenModal"
+                                                href="#nxtupdateModal"
                                                 data-bs-toggle="modal"
-                                                data-bs-target="#nxtaigenModal"
-                                                aria-label="Voir le site"
-                                                title="Voir le site"
+                                                data-bs-target="#nxtupdateModal"
+                                                aria-label="Instructions d'installation"
+                                                title="Instructions d'installation"
+                                            >
+                                                <i
+                                                    class="fa-solid fa-terminal text-white"
+                                                ></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 3 : Zyranex -->
+                                <div class="project-card">
+                                    <div class="project-card-bar">
+                                        <div class="terminal-buttons">
+                                            <span
+                                                class="terminal-btn terminal-btn-close"
+                                            ></span>
+                                            <span
+                                                class="terminal-btn terminal-btn-minimize"
+                                            ></span>
+                                            <span
+                                                class="terminal-btn terminal-btn-maximize"
+                                            ></span>
+                                        </div>
+                                        <span class="project-card-filename"
+                                            >zyranex.js</span
+                                        >
+                                    </div>
+                                    <div class="project-card-img-wrap">
+                                        <img
+                                            src="assets/screenshots/zyranex.webp"
+                                            class="project-card-img"
+                                            alt="Site web du serveur Minecraft Zyranex"
+                                            loading="lazy"
+                                            decoding="async"
+                                        />
+                                    </div>
+                                    <div class="project-card-body">
+                                        <h5 class="project-card-title">
+                                            Zyranex
+                                        </h5>
+                                        <p
+                                            class="project-card-desc"
+                                            data-i18n="proj-8-desc"
+                                        >
+                                            Site web pixel-art pour un serveur
+                                            Minecraft Java&nbsp;: présentation,
+                                            statut et accès Discord.
+                                        </p>
+                                        <div class="project-links d-flex gap-2">
+                                            <a
+                                                href="https://github.com/scorpion7slayer/ZYRANEX-WEB-scorpion"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label="Voir le code source"
+                                                title="Voir le code source"
+                                            >
+                                                <i
+                                                    class="fa-brands fa-github text-white"
+                                                ></i>
+                                            </a>
+                                            <a
+                                                href="https://zyranex.fr/"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label="Visiter le site web"
+                                                title="Visiter le site web"
                                             >
                                                 <i
                                                     class="fa-solid fa-globe text-white"
@@ -516,7 +645,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Card 3 : NxtGit -->
+                                <!-- Card 4 : NxtGit -->
                                 <div class="project-card">
                                     <div class="project-card-bar">
                                         <div class="terminal-buttons">
@@ -617,7 +746,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Card 4 : Nxtcord -->
+                                <!-- Card 5 : NxtAIGen -->
                                 <div class="project-card">
                                     <div class="project-card-bar">
                                         <div class="terminal-buttons">
@@ -632,109 +761,32 @@
                                             ></span>
                                         </div>
                                         <span class="project-card-filename"
-                                            >Nxtcord.js</span
+                                            >NxtAIGen.js</span
                                         >
                                     </div>
                                     <div class="project-card-img-wrap">
                                         <img
-                                            src="assets/screenshots/nxtcord.webp"
+                                            src="assets/screenshots/NxtAIGen.webp"
                                             class="project-card-img"
-                                            alt="Alternative à Discord Nxtcord"
-                                            loading="lazy"
-                                            decoding="async"
-                                        />
-                                    </div>
-                                    <div class="project-card-body">
-                                        <h5
-                                            class="project-card-title d-flex align-items-center"
-                                        >
-                                            Nxtcord
-                                            <span
-                                                class="badge badge-os badge-os-small rounded-pill ms-2"
-                                                data-i18n="proj-status-dev"
-                                                >En cours de développement</span
-                                            >
-                                        </h5>
-                                        <p
-                                            class="project-card-desc"
-                                            data-i18n="proj-4-desc"
-                                        >
-                                            Alternative à Discord orientée
-                                            communaute, en cours de
-                                            développement.
-                                        </p>
-                                        <p
-                                            class="project-status-note"
-                                            data-i18n="proj-unavailable"
-                                        >
-                                            GitHub et site bientôt disponibles.
-                                        </p>
-                                        <div class="project-links d-flex gap-2">
-                                            <span
-                                                class="project-link-disabled"
-                                                aria-label="GitHub indisponible pour le moment"
-                                                title="GitHub indisponible pour le moment"
-                                            >
-                                                <i
-                                                    class="fa-brands fa-github text-white"
-                                                    aria-hidden="true"
-                                                ></i>
-                                            </span>
-                                            <span
-                                                class="project-link-disabled"
-                                                aria-label="Site indisponible pour le moment"
-                                                title="Site indisponible pour le moment"
-                                            >
-                                                <i
-                                                    class="fa-solid fa-globe text-white"
-                                                    aria-hidden="true"
-                                                ></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card 5 : BenchSift -->
-                                <div class="project-card">
-                                    <div class="project-card-bar">
-                                        <div class="terminal-buttons">
-                                            <span
-                                                class="terminal-btn terminal-btn-close"
-                                            ></span>
-                                            <span
-                                                class="terminal-btn terminal-btn-minimize"
-                                            ></span>
-                                            <span
-                                                class="terminal-btn terminal-btn-maximize"
-                                            ></span>
-                                        </div>
-                                        <span class="project-card-filename"
-                                            >BenchSift.js</span
-                                        >
-                                    </div>
-                                    <div class="project-card-img-wrap">
-                                        <img
-                                            src="assets/screenshots/NxtAICard.webp"
-                                            class="project-card-img"
-                                            alt="Comparateur de modèles IA BenchSift"
+                                            alt="Chatbot multi modèles IA NxtAIGen"
                                             loading="lazy"
                                             decoding="async"
                                         />
                                     </div>
                                     <div class="project-card-body">
                                         <h5 class="project-card-title">
-                                            BenchSift
+                                            NxtAIGen
                                         </h5>
                                         <p
                                             class="project-card-desc"
-                                            data-i18n="proj-5-desc"
+                                            data-i18n="proj-2-desc"
                                         >
-                                            Dashboard comparant les modèles
-                                            IA&nbsp;: benchmarks, prix et
-                                            vitesse en temps réel.
+                                            Chatbot web multi-modèles&nbsp;:
+                                            GPT, Claude, Mistral.
                                         </p>
                                         <div class="project-links d-flex gap-2">
                                             <a
-                                                href="https://github.com/scorpion7slayer/benchsift"
+                                                href="https://github.com/scorpion7slayer/NxtAIGen"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 aria-label="Voir le code source"
@@ -745,11 +797,11 @@
                                                 ></i>
                                             </a>
                                             <a
-                                                href="https://benchsift.nxtaigen.com/"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="Visiter le site web"
-                                                title="Visiter le site web"
+                                                href="#nxtaigenModal"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#nxtaigenModal"
+                                                aria-label="Voir le site"
+                                                title="Voir le site"
                                             >
                                                 <i
                                                     class="fa-solid fa-globe text-white"
@@ -823,7 +875,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Card 7 : NxtUpdate -->
+                                <!-- Card 7 : Flavortown -->
                                 <div class="project-card">
                                     <div class="project-card-bar">
                                         <div class="terminal-buttons">
@@ -838,104 +890,33 @@
                                             ></span>
                                         </div>
                                         <span class="project-card-filename"
-                                            >NxtUpdate.js</span
+                                            >flavortown.js</span
                                         >
                                     </div>
                                     <div class="project-card-img-wrap">
                                         <img
-                                            src="assets/screenshots/NxtUpdate.webp"
+                                            src="assets/screenshots/extension-flavortown.webp"
                                             class="project-card-img"
-                                            alt="Universal macOS Updater NxtUpdate"
-                                            loading="lazy"
-                                            decoding="async"
-                                        />
-                                    </div>
-                                    <div class="project-card-body">
-                                        <h5
-                                            class="project-card-title d-flex align-items-center"
-                                        >
-                                            NxtUpdate
-                                            <span
-                                                class="badge badge-os badge-os-small rounded-pill ms-2"
-                                                >macOS</span
-                                            >
-                                        </h5>
-                                        <p
-                                            class="project-card-desc"
-                                            data-i18n="proj-7-desc"
-                                        >
-                                            Outil en ligne de commande pour
-                                            mettre à jour tous tes paquets en
-                                            une seule fois.
-                                        </p>
-                                        <div class="project-links d-flex gap-2">
-                                            <a
-                                                href="https://github.com/scorpion7slayer/NxtUpdate"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="Voir le code source"
-                                                title="Voir le code source"
-                                            >
-                                                <i
-                                                    class="fa-brands fa-github text-white"
-                                                ></i>
-                                            </a>
-                                            <a
-                                                href="#nxtupdateModal"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#nxtupdateModal"
-                                                aria-label="Instructions d'installation"
-                                                title="Instructions d'installation"
-                                            >
-                                                <i
-                                                    class="fa-solid fa-terminal text-white"
-                                                ></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card 8 : Zyranex -->
-                                <div class="project-card">
-                                    <div class="project-card-bar">
-                                        <div class="terminal-buttons">
-                                            <span
-                                                class="terminal-btn terminal-btn-close"
-                                            ></span>
-                                            <span
-                                                class="terminal-btn terminal-btn-minimize"
-                                            ></span>
-                                            <span
-                                                class="terminal-btn terminal-btn-maximize"
-                                            ></span>
-                                        </div>
-                                        <span class="project-card-filename"
-                                            >zyranex.js</span
-                                        >
-                                    </div>
-                                    <div class="project-card-img-wrap">
-                                        <img
-                                            src="assets/screenshots/zyranex.webp"
-                                            class="project-card-img"
-                                            alt="Site web du serveur Minecraft Zyranex"
+                                            alt="Extension web Flavortown GitHub Exporter pour Chrome"
                                             loading="lazy"
                                             decoding="async"
                                         />
                                     </div>
                                     <div class="project-card-body">
                                         <h5 class="project-card-title">
-                                            Zyranex
+                                            flavortown github export
                                         </h5>
                                         <p
                                             class="project-card-desc"
-                                            data-i18n="proj-8-desc"
+                                            data-i18n="proj-1-desc"
                                         >
-                                            Site web pixel-art pour un serveur
-                                            Minecraft Java&nbsp;: présentation,
-                                            statut et accès Discord.
+                                            Extension Chrome &amp; Firefox pour
+                                            exporter vos projets GitHub vers
+                                            Flavortown en un clic.
                                         </p>
                                         <div class="project-links d-flex gap-2">
                                             <a
-                                                href="https://github.com/scorpion7slayer/ZYRANEX-WEB-scorpion"
+                                                href="https://github.com/scorpion7slayer/flavortown-github-exporter"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 aria-label="Voir le code source"
@@ -946,11 +927,11 @@
                                                 ></i>
                                             </a>
                                             <a
-                                                href="https://zyranex.fr/"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="Visiter le site web"
-                                                title="Visiter le site web"
+                                                href="#browserModal"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#browserModal"
+                                                aria-label="Installer l'extension"
+                                                title="Installer l'extension"
                                             >
                                                 <i
                                                     class="fa-solid fa-globe text-white"
@@ -1280,6 +1261,6 @@
         <button id="backToTop" aria-label="Remonter en haut">
             <i class="fa-solid fa-chevron-up"></i>
         </button>
-        <script src="script.js?v=9"></script>
+        <script src="script.js?v=12"></script>
     </body>
 </html>
