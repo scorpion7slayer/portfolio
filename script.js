@@ -29,6 +29,8 @@ var TRANSLATIONS = {
             "Outil en ligne de commande pour mettre \u00e0 jour tous tes paquets en une seule fois.",
         "proj-8-desc":
             "Site web pixel-art pour un serveur Minecraft Java\u00a0: pr\u00e9sentation, statut et acc\u00e8s Discord.",
+        "proj-lumy-desc":
+            "Assistant IA multi-mod\u00e8les avec une interface rapide, claire et personnalisable.",
         "contribs-title": "Contributions GitHub",
         "contact-title": "Contact",
         "contact-name": "Votre nom\u00a0:",
@@ -88,6 +90,8 @@ var TRANSLATIONS = {
         "proj-7-desc": "Command-line tool to update all your packages at once.",
         "proj-8-desc":
             "Pixel-art website for a Minecraft Java server: presentation, status and Discord access.",
+        "proj-lumy-desc":
+            "Multi-model AI assistant with a fast, clear and customizable interface.",
         "contribs-title": "GitHub Contributions",
         "contact-title": "Contact",
         "contact-name": "Your name:",
@@ -481,6 +485,72 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         goTo(0);
+    })();
+
+    // Visionneuse plein écran des images de projets
+    (function () {
+        var lightbox = document.getElementById("imageLightbox");
+        var lightboxImage = document.getElementById("imageLightboxImg");
+        var closeButton = document.getElementById("imageLightboxClose");
+        var projectImages = document.querySelectorAll(".project-card-img");
+        var lastTrigger = null;
+        var closeTimer = null;
+        if (!lightbox || !lightboxImage || !closeButton) return;
+
+        function openLightbox(image) {
+            clearTimeout(closeTimer);
+            lastTrigger = image;
+            lightboxImage.src = image.currentSrc || image.src;
+            lightboxImage.alt = image.alt;
+            lightbox.hidden = false;
+            document.body.classList.add("lightbox-open");
+            window.requestAnimationFrame(function () {
+                lightbox.classList.add("active");
+                closeButton.focus();
+            });
+        }
+
+        function closeLightbox() {
+            if (lightbox.hidden) return;
+            lightbox.classList.remove("active");
+            document.body.classList.remove("lightbox-open");
+            closeTimer = setTimeout(function () {
+                lightbox.hidden = true;
+                lightboxImage.removeAttribute("src");
+                lightboxImage.alt = "";
+                if (lastTrigger) lastTrigger.focus();
+            }, 220);
+        }
+
+        for (var i = 0; i < projectImages.length; i++) {
+            projectImages[i].setAttribute("role", "button");
+            projectImages[i].setAttribute("tabindex", "0");
+            projectImages[i].setAttribute(
+                "aria-label",
+                "Agrandir l’image : " + projectImages[i].alt,
+            );
+            projectImages[i].addEventListener("click", function () {
+                openLightbox(this);
+            });
+            projectImages[i].addEventListener("keydown", function (event) {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    openLightbox(this);
+                }
+            });
+        }
+
+        closeButton.addEventListener("click", closeLightbox);
+        lightbox.addEventListener("click", function (event) {
+            if (event.target === lightbox) closeLightbox();
+        });
+        lightbox.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") closeLightbox();
+            if (event.key === "Tab") {
+                event.preventDefault();
+                closeButton.focus();
+            }
+        });
     })();
 
     // Boutons copier dans les modals
