@@ -15,6 +15,8 @@ var TRANSLATIONS = {
         "skills-title": "Comp\u00e9tences",
         "tools-title": "Outils de d\u00e9veloppement",
         "projects-title": "Projets",
+        "proj-nxtaigen-desc":
+            "Projets open source pour GitHub, l’IA et le terminal.",
         "proj-1-desc":
             "Extension Chrome & Firefox pour exporter vos projets GitHub vers Flavortown en un clic.",
         "proj-2-desc":
@@ -78,6 +80,8 @@ var TRANSLATIONS = {
         "skills-title": "Skills",
         "tools-title": "Dev Tools",
         "projects-title": "Projects",
+        "proj-nxtaigen-desc":
+            "Open-source projects for GitHub, AI and the terminal.",
         "proj-1-desc":
             "Chrome & Firefox extension to submit your GitHub projects to Flavortown in one click.",
         "proj-2-desc": "Multi-model web chatbot: GPT, Claude, Mistral.",
