@@ -30,7 +30,7 @@ The site is **bilingual (FR/EN)** — change the language in the navigation bar.
 
 ## Featured Projects
 
-- **[flavortown-github-exporter](https://github.com/scorpion7slayer/flavortown-github-exporter)** — Chrome and Firefox extension for submitting GitHub projects to Flavortown with one click
+- **[stardance-github-exporter](https://github.com/scorpion7slayer/stardance-github-exporter)** — Chrome and Firefox extension for importing GitHub repositories into Stardance with one click
 
 - **[NxtAIGen](https://github.com/scorpion7slayer/NxtAIGen)** — Multi-model AI chatbot (GPT, Claude, Mistral) from a single interface
 
