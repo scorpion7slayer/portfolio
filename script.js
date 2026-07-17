@@ -27,6 +27,11 @@ var TRANSLATIONS = {
             "Dashboard comparant les mod\u00e8les IA\u00a0: benchmarks, prix et vitesse en temps r\u00e9el.",
         "proj-6-desc":
             "Marketplace web avec cat\u00e9gories, articles tendances et derni\u00e8res annonces.",
+        "project-group": "Projet de groupe",
+        "marketplier-team-title": "L\u2019\u00e9quipe de Market Plier",
+        "marketplier-team-intro":
+            "Un projet construit \u00e0 trois. D\u00e9couvre les profils des d\u00e9veloppeurs ou consulte directement le d\u00e9p\u00f4t.",
+        "marketplier-repo-link": "Voir le d\u00e9p\u00f4t du projet",
         "proj-7-desc":
             "Outil en ligne de commande pour mettre \u00e0 jour tous tes paquets en une seule fois.",
         "proj-8-desc":
@@ -91,6 +96,11 @@ var TRANSLATIONS = {
             "Dashboard comparing AI models: benchmarks, pricing and speed in real time.",
         "proj-6-desc":
             "Web marketplace with categories, trending items and latest listings.",
+        "project-group": "Group project",
+        "marketplier-team-title": "The Market Plier team",
+        "marketplier-team-intro":
+            "A project built by three developers. Explore their profiles or go directly to the repository.",
+        "marketplier-repo-link": "View the project repository",
         "proj-7-desc": "Command-line tool to update all your packages at once.",
         "proj-8-desc":
             "Pixel-art website for a Minecraft Java server: presentation, status and Discord access.",

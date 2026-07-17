@@ -104,7 +104,3 @@ sitemap.xml SEO
 - Portfolio: [theo.nxtaigen.com](https://theo.nxtaigen.com/)
 
 - GitHub: [github.com/scorpion7slayer](https://github.com/scorpion7slayer)
-
----
-
-[![Sponsorship badge DigitalOcean](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=cb3c5c7ece01&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
