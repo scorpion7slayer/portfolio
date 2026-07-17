@@ -845,6 +845,17 @@
                                                 class="badge badge-indisponible rounded-pill"
                                                 >Indisponible</span
                                             >
+                                            <span
+                                                class="badge badge-group-project rounded-pill"
+                                            >
+                                                <i
+                                                    class="fa-solid fa-user-group"
+                                                    aria-hidden="true"
+                                                ></i>
+                                                <span data-i18n="project-group"
+                                                    >Projet de groupe</span
+                                                >
+                                            </span>
                                         </h5>
                                         <p
                                             class="project-card-desc"
@@ -856,14 +867,15 @@
                                         </p>
                                         <div class="project-links d-flex gap-2">
                                             <a
-                                                href="https://github.com/scorpion7slayer/market-plier"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="Voir le code source"
-                                                title="Voir le code source"
+                                                href="#marketPlierGithubModal"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#marketPlierGithubModal"
+                                                aria-label="Voir l’équipe GitHub de Market Plier"
+                                                title="Voir l’équipe GitHub"
                                             >
                                                 <i
                                                     class="fa-brands fa-github text-white"
+                                                    aria-hidden="true"
                                                 ></i>
                                             </a>
                                             <a
@@ -1063,6 +1075,130 @@
                                 <span data-i18n="modal-nxtaigen-unavailable"
                                     >site web indisponible pour le moment</span
                                 >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal équipe GitHub Market Plier -->
+            <div
+                class="modal fade"
+                id="marketPlierGithubModal"
+                tabindex="-1"
+                aria-labelledby="marketPlierGithubModalLabel"
+                aria-describedby="marketPlierGithubDescription"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div
+                        class="modal-content browser-modal-content project-team-modal"
+                    >
+                        <div class="modal-header border-0">
+                            <h5
+                                class="modal-title"
+                                id="marketPlierGithubModalLabel"
+                                data-i18n="marketplier-team-title"
+                            >
+                                L’équipe de Market Plier
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close btn-close-white"
+                                data-bs-dismiss="modal"
+                                aria-label="Fermer"
+                            ></button>
+                        </div>
+                        <div class="modal-body project-team-body">
+                            <p
+                                class="project-team-intro"
+                                id="marketPlierGithubDescription"
+                                data-i18n="marketplier-team-intro"
+                            >
+                                Un projet construit à trois. Découvre les
+                                profils des développeurs ou consulte directement
+                                le dépôt.
+                            </p>
+                            <div class="project-team-list">
+                                <a
+                                    class="project-collaborator"
+                                    href="https://github.com/scorpion7slayer"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="GitHub de scorpion7slayer"
+                                >
+                                    <img
+                                        src="https://github.com/scorpion7slayer.png?size=160"
+                                        alt="Photo de profil GitHub de scorpion7slayer"
+                                        width="72"
+                                        height="72"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <span>@scorpion7slayer</span>
+                                    <i
+                                        class="fa-solid fa-arrow-up-right-from-square"
+                                        aria-hidden="true"
+                                    ></i>
+                                </a>
+                                <a
+                                    class="project-collaborator"
+                                    href="https://github.com/Gaspami"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="GitHub de Gaspami"
+                                >
+                                    <img
+                                        src="https://github.com/Gaspami.png?size=160"
+                                        alt="Photo de profil GitHub de Gaspami"
+                                        width="72"
+                                        height="72"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <span>@Gaspami</span>
+                                    <i
+                                        class="fa-solid fa-arrow-up-right-from-square"
+                                        aria-hidden="true"
+                                    ></i>
+                                </a>
+                                <a
+                                    class="project-collaborator"
+                                    href="https://github.com/dayko555"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="GitHub de dayko555"
+                                >
+                                    <img
+                                        src="https://github.com/dayko555.png?size=160"
+                                        alt="Photo de profil GitHub de dayko555"
+                                        width="72"
+                                        height="72"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <span>@dayko555</span>
+                                    <i
+                                        class="fa-solid fa-arrow-up-right-from-square"
+                                        aria-hidden="true"
+                                    ></i>
+                                </a>
+                            </div>
+                            <div class="project-repo-action">
+                                <a
+                                    class="btn btn-primary project-repo-link"
+                                    href="https://github.com/scorpion7slayer/market-plier"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Dépôt GitHub de Market Plier"
+                                >
+                                    <i
+                                        class="fa-brands fa-github"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span data-i18n="marketplier-repo-link"
+                                        >Voir le dépôt du projet</span
+                                    >
+                                </a>
                             </div>
                         </div>
                     </div>
