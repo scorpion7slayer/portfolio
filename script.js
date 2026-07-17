@@ -18,7 +18,7 @@ var TRANSLATIONS = {
         "proj-nxtaigen-desc":
             "Projets open source pour GitHub, l’IA et le terminal.",
         "proj-1-desc":
-            "Extension Chrome & Firefox pour exporter vos projets GitHub vers Flavortown en un clic.",
+            "Extension Chrome & Firefox pour importer vos d\u00e9p\u00f4ts GitHub dans Stardance en un clic.",
         "proj-2-desc":
             "Chatbot web multi-mod\u00e8les\u00a0: GPT, Claude, Mistral.",
         "proj-3-desc":
@@ -83,7 +83,7 @@ var TRANSLATIONS = {
         "proj-nxtaigen-desc":
             "Open-source projects for GitHub, AI and the terminal.",
         "proj-1-desc":
-            "Chrome & Firefox extension to submit your GitHub projects to Flavortown in one click.",
+            "Chrome & Firefox extension to import your GitHub repositories into Stardance in one click.",
         "proj-2-desc": "Multi-model web chatbot: GPT, Claude, Mistral.",
         "proj-3-desc":
             "Lightweight GitHub client for macOS/Windows: clone, commit, diff \u2014 no browser needed.",
