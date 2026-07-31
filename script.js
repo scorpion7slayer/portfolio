@@ -28,6 +28,7 @@ var TRANSLATIONS = {
         "proj-6-desc":
             "Marketplace web avec cat\u00e9gories, articles tendances et derni\u00e8res annonces.",
         "project-group": "Projet de groupe",
+        "project-archived": "Archivé",
         "marketplier-team-title": "L\u2019\u00e9quipe de Market Plier",
         "marketplier-team-intro":
             "Un projet construit \u00e0 trois. D\u00e9couvre les profils des d\u00e9veloppeurs ou consulte directement le d\u00e9p\u00f4t.",
@@ -97,6 +98,7 @@ var TRANSLATIONS = {
         "proj-6-desc":
             "Web marketplace with categories, trending items and latest listings.",
         "project-group": "Group project",
+        "project-archived": "Archived",
         "marketplier-team-title": "The Market Plier team",
         "marketplier-team-intro":
             "A project built by three developers. Explore their profiles or go directly to the repository.",
