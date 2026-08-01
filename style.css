@@ -786,7 +786,7 @@ body.lightbox-open {
 .nav-link:focus,
 .btn:focus,
 #backToTop:focus,
-.footer-sponsor-btn:focus {
+.footer-support-btn:focus {
     outline: 3px solid #ffc107;
     outline-offset: 2px;
 }
@@ -1044,19 +1044,84 @@ body.lightbox-open {
 }
 
 /* Footer */
-.footer-sponsor-btn {
+.footer-support-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.footer-support-btn {
     border-radius: 6px;
     padding: 0.25rem 0.75rem;
     font-size: 0.875rem;
     display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
+    justify-content: center;
+    gap: 0.4rem;
+    min-height: 2rem;
+    font-weight: 600;
+    text-decoration: none;
 }
 
-.footer-sponsor-btn:hover {
+.footer-coffee-btn {
+    background-color: #ffdd00;
+    color: #1e1d1c;
+    border-color: #ffdd00;
+}
+
+.footer-coffee-btn:hover {
+    background-color: #ffe74d;
+    border-color: #ffe74d;
+    color: #1e1d1c;
+}
+
+.footer-qr-btn:hover {
     background-color: #e5e4e2;
     color: #1e1d1c;
-    text-decoration: none;
+}
+
+.support-qr-content {
+    overflow: hidden;
+    background: #252423;
+    border: 1px solid rgba(229, 228, 226, 0.12);
+    border-radius: 12px;
+}
+
+.support-qr-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem 1.25rem;
+}
+
+.support-qr-intro {
+    margin: 0;
+    color: rgba(229, 228, 226, 0.78);
+    font-size: 0.875rem;
+    line-height: 1.55;
+    text-align: center;
+}
+
+.support-qr-image {
+    display: block;
+    width: min(100%, 19rem);
+    height: auto;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.support-qr-link {
+    width: 100%;
+    min-height: 2.5rem;
+}
+
+@media (max-width: 575.98px) {
+    footer.bg-dark {
+        padding-bottom: 4.5rem !important;
+    }
 }
 
 .footer-powered-link {
@@ -1068,13 +1133,13 @@ body.lightbox-open {
     gap: 0.25rem;
 }
 
-.footer-do-brand {
+.footer-cloudflare-brand {
     color: #aaa;
     transition: color 0.2s;
 }
 
-.footer-powered-link:hover .footer-do-brand {
-    color: #4d8cee;
+.footer-powered-link:hover .footer-cloudflare-brand {
+    color: #f6821f;
 }
 
 /* Bouton retour en haut */
