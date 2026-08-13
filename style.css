@@ -433,6 +433,26 @@ body {
     flex: 1;
 }
 
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0 0 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.project-tags li {
+    padding: 0.26rem 0.5rem;
+    border: 1px solid rgba(94, 159, 255, 0.35);
+    border-radius: 999px;
+    background: rgba(13, 110, 253, 0.11);
+    color: #b4d0ff;
+    font-size: 0.67rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
 .project-status-note {
     font-size: 0.75rem;
     color: rgba(229, 228, 226, 0.45);
