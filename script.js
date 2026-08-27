@@ -15,8 +15,6 @@ var TRANSLATIONS = {
         "skills-title": "Comp\u00e9tences",
         "tools-title": "Outils de d\u00e9veloppement",
         "projects-title": "Projets",
-        "proj-hyper-flow-desc":
-            "Bibliothèque TypeScript sans dépendance pour créer des champs de particules Canvas et des animations d’interface fluides.",
         "proj-nxtaigen-desc":
             "Projets open source pour GitHub, l’IA et le terminal.",
         "proj-1-desc":
@@ -94,8 +92,6 @@ var TRANSLATIONS = {
         "skills-title": "Skills",
         "tools-title": "Dev Tools",
         "projects-title": "Projects",
-        "proj-hyper-flow-desc":
-            "Dependency-free TypeScript library for Canvas particle fields and fluid interface animations.",
         "proj-nxtaigen-desc":
             "Open-source projects for GitHub, AI and the terminal.",
         "proj-1-desc":
