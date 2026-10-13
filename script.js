@@ -11,7 +11,7 @@ var TRANSLATIONS = {
         "hero-btn-projects": "Voir mes projets",
         "hero-btn-contact": "Me contacter",
         "about-output":
-            "Bonjour\u00a0! Je suis Th\u00e9o, d\u00e9veloppeur web de 16\u00a0ans bas\u00e9 en Belgique. Je code depuis un an et j\u2019ai lanc\u00e9 plusieurs projets open-source sous l\u2019organisation NxtAIGen. J\u2019aime construire des outils concrets \u2014 un client GitHub, un chatbot IA multi-mod\u00e8les, une extension navigateur. Ce qui me passionne vraiment, c\u2019est l\u2019IA\u00a0: comprendre comment elle fonctionne et l\u2019utiliser pour construire des choses utiles.",
+            "Bonjour\u00a0! Je suis Th\u00e9o, d\u00e9veloppeur web de 16\u00a0ans bas\u00e9 en Belgique. Je code depuis un an et j\u2019ai lanc\u00e9 plusieurs projets open-source. J\u2019aime construire des outils concrets \u2014 un client GitHub, un chatbot IA multi-mod\u00e8les, une extension navigateur. Ce qui me passionne vraiment, c\u2019est l\u2019IA\u00a0: comprendre comment elle fonctionne et l\u2019utiliser pour construire des choses utiles.",
         "skills-title": "Comp\u00e9tences",
         "tools-title": "Outils de d\u00e9veloppement",
         "projects-title": "Projets",
@@ -88,7 +88,7 @@ var TRANSLATIONS = {
         "hero-btn-projects": "View my projects",
         "hero-btn-contact": "Contact me",
         "about-output":
-            "Hey! I\u2019m Th\u00e9o, a 16-year-old web developer based in Belgium. I\u2019ve been coding for a year and shipped several open-source projects under the NxtAIGen org. I like building concrete tools \u2014 a GitHub client, a multi-model AI chatbot, a browser extension. What really drives me is AI: understanding how it works and using it to build things that matter.",
+            "Hey! I\u2019m Th\u00e9o, a 16-year-old web developer based in Belgium. I\u2019ve been coding for a year and shipped several open-source projects. I like building concrete tools \u2014 a GitHub client, a multi-model AI chatbot, a browser extension. What really drives me is AI: understanding how it works and using it to build things that matter.",
         "skills-title": "Skills",
         "tools-title": "Dev Tools",
         "projects-title": "Projects",

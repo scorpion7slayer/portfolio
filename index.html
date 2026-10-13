@@ -50,9 +50,9 @@
                     "HTML",
                     "CSS",
                     "JavaScript",
+                    "PHP",
                     "Bootstrap",
-                    "TailwindCSS",
-                    "TypeScript"
+                    "TailwindCSS"
                 ],
                 "sameAs": [
                     "https://github.com/scorpion7slayer",
@@ -75,7 +75,7 @@
             integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
             crossorigin="anonymous"
         />
-        <link href="style.css?v=23" rel="stylesheet" />
+        <link href="style.css?v=28" rel="stylesheet" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -273,8 +273,8 @@
                             <p class="about-output" data-i18n="about-output">
                                 Bonjour&nbsp;! Je suis Théo, développeur web de
                                 16&nbsp;ans basé en Belgique. Je code depuis un
-                                an et j'ai lancé plusieurs projets open-source
-                                sous l'organisation NxtAIGen. J'aime construire
+                                an et j'ai lancé plusieurs projets open-source.
+                                J'aime construire
                                 des outils concrets — un client GitHub, un
                                 chatbot IA multi-modèles, une extension
                                 navigateur. Ce qui me passionne vraiment, c'est
@@ -334,6 +334,17 @@
                             JavaScript
                         </span>
                         <span
+                            class="badge brand-badge badge-php rounded-pill px-3 py-2"
+                        >
+                            <img
+                                src="assets/icons/php.svg"
+                                class="brand-badge-icon"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            PHP
+                        </span>
+                        <span
                             class="badge brand-badge badge-bootstrap rounded-pill px-3 py-2"
                         >
                             <img
@@ -354,17 +365,6 @@
                                 aria-hidden="true"
                             />
                             Tailwind CSS
-                        </span>
-                        <span
-                            class="badge brand-badge badge-typescript rounded-pill px-3 py-2"
-                        >
-                            <img
-                                src="assets/icons/typescript.svg"
-                                class="brand-badge-icon"
-                                alt=""
-                                aria-hidden="true"
-                            />
-                            TypeScript
                         </span>
                     </div>
                     <br />
@@ -463,8 +463,12 @@
                                                 class="terminal-btn terminal-btn-maximize"
                                             ></span>
                                         </div>
-                                        <span class="project-card-filename"
-                                            >nxtaigen.com</span
+                                        <a
+                                            href="https://nxtaigen.com/"
+                                            class="project-card-filename"
+                                            target="_blank"
+                                            rel="noopener"
+                                            >nxtaigen.com</a
                                         >
                                     </div>
                                     <div class="project-card-img-wrap">
@@ -531,7 +535,11 @@
                                     </div>
                                     <div class="project-card-body">
                                         <h5 class="project-card-title">
-                                            BenchSift
+                                            <a
+                                                href="projets/benchsift.html"
+                                                class="project-card-title-link"
+                                                >BenchSift</a
+                                            >
                                         </h5>
                                         <p
                                             class="project-card-desc"
@@ -542,6 +550,15 @@
                                             vitesse en temps réel.
                                         </p>
                                         <div class="project-links d-flex gap-2">
+                                            <a
+                                                href="projets/benchsift.html"
+                                                aria-label="Voir la page du projet BenchSift"
+                                                title="Voir la page du projet BenchSift"
+                                            >
+                                                <i
+                                                    class="fa-solid fa-circle-info text-white"
+                                                ></i>
+                                            </a>
                                             <a
                                                 href="https://github.com/scorpion7slayer/benchsift"
                                                 target="_blank"
@@ -598,7 +615,11 @@
                                         <h5
                                             class="project-card-title d-flex align-items-center"
                                         >
-                                            NxtUpdate
+                                            <a
+                                                href="projets/nxtupdate.html"
+                                                class="project-card-title-link"
+                                                >NxtUpdate</a
+                                            >
                                             <span
                                                 class="badge badge-os badge-os-small rounded-pill ms-2"
                                                 >macOS</span
@@ -614,6 +635,15 @@
                                         </p>
                                         <div class="project-links d-flex gap-2">
                                             <a
+                                                href="projets/nxtupdate.html"
+                                                aria-label="Voir la page du projet NxtUpdate"
+                                                title="Voir la page du projet NxtUpdate"
+                                            >
+                                                <i
+                                                    class="fa-solid fa-circle-info text-white"
+                                                ></i>
+                                            </a>
+                                            <a
                                                 href="https://github.com/scorpion7slayer/NxtUpdate"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
@@ -622,6 +652,17 @@
                                             >
                                                 <i
                                                     class="fa-brands fa-github text-white"
+                                                ></i>
+                                            </a>
+                                            <a
+                                                href="https://nxtupdate.nxtaigen.com/"
+                                                target="_blank"
+                                                rel="noopener"
+                                                aria-label="Visiter le site de NxtUpdate"
+                                                title="Visiter le site de NxtUpdate"
+                                            >
+                                                <i
+                                                    class="fa-solid fa-globe text-white"
                                                 ></i>
                                             </a>
                                             <a
@@ -669,7 +710,11 @@
                                         <h5
                                             class="project-card-title d-flex align-items-center flex-wrap"
                                         >
-                                            NxtGit
+                                            <a
+                                                href="projets/nxtgit.html"
+                                                class="project-card-title-link"
+                                                >NxtGit</a
+                                            >
                                             <span
                                                 class="badge badge-os badge-os-small rounded-pill ms-2"
                                                 >macOS</span
@@ -697,6 +742,15 @@
                                             diff — sans navigateur.
                                         </p>
                                         <div class="project-links d-flex gap-2">
+                                            <a
+                                                href="projets/nxtgit.html"
+                                                aria-label="Voir la page du projet NxtGit"
+                                                title="Voir la page du projet NxtGit"
+                                            >
+                                                <i
+                                                    class="fa-solid fa-circle-info text-white"
+                                                ></i>
+                                            </a>
                                             <a
                                                 href="https://github.com/scorpion7slayer/NxtGit"
                                                 target="_blank"
@@ -1410,6 +1464,10 @@
                 <h6 class="mb-0">
                     © <span id="copyright-year"></span> Théo.
                     <span data-i18n="footer-rights">Tous droits réservés.</span>
+                    &middot;
+                    <a href="https://nxtaigen.com/" class="footer-powered-link"
+                        >NxtAIGen</a
+                    >
                 </h6>
                 <div class="footer-support-actions">
                     <a
@@ -1501,6 +1559,6 @@
         <button id="backToTop" aria-label="Remonter en haut">
             <i class="fa-solid fa-chevron-up"></i>
         </button>
-        <script src="script.js?v=22"></script>
+        <script src="script.js?v=27"></script>
     </body>
 </html>
