@@ -178,6 +178,12 @@ body {
     color: #1e1d1c;
 }
 
+.badge-php {
+    background: linear-gradient(135deg, #777bb3 0%, #5b5f96 55%, #42466f 100%);
+    border-color: rgba(220, 222, 250, 0.46);
+    box-shadow: 0 3px 12px rgba(119, 123, 179, 0.28);
+}
+
 .badge-bootstrap {
     background: linear-gradient(135deg, #9368d1 0%, #7952b3 55%, #59358e 100%);
     border-color: rgba(226, 211, 250, 0.45);
@@ -188,12 +194,6 @@ body {
     background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 55%, #078ba4 100%);
     border-color: rgba(190, 244, 252, 0.48);
     box-shadow: 0 3px 12px rgba(6, 182, 212, 0.25);
-}
-
-.badge-typescript {
-    background: linear-gradient(135deg, #4d91d8 0%, #3178c6 55%, #225991 100%);
-    border-color: rgba(195, 224, 255, 0.46);
-    box-shadow: 0 3px 12px rgba(49, 120, 198, 0.28);
 }
 
 .brand-badge {
@@ -389,6 +389,21 @@ body {
     letter-spacing: 0.02em;
 }
 
+a.project-card-filename {
+    text-decoration: none;
+    transition: color 150ms ease;
+}
+
+a.project-card-filename:hover {
+    color: #e5e4e2;
+}
+
+a.project-card-filename:focus-visible,
+.project-card-title-link:focus-visible {
+    outline: 3px solid #ffc107;
+    outline-offset: 2px;
+}
+
 .project-card-img-wrap {
     overflow: hidden;
     flex-shrink: 0;
@@ -424,6 +439,18 @@ body {
     font-weight: 600;
     color: #e5e4e2;
     margin-bottom: 0.5rem;
+}
+
+.project-card-title-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 150ms ease;
+}
+
+.project-card-title-link:hover {
+    color: #6ea8fe;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .project-card-desc {
@@ -1457,4 +1484,142 @@ body.lightbox-open {
 .lang-sep {
     color: rgba(229, 228, 226, 0.2);
     font-size: 0.65rem;
+}
+
+/* Pages projets */
+.project-page {
+    background: linear-gradient(
+        180deg,
+        rgba(30, 29, 28, 1) 10%,
+        rgba(37, 36, 35, 1) 60%
+    );
+    min-height: 100vh;
+}
+
+.project-page-container {
+    max-width: 880px;
+}
+
+.project-breadcrumb {
+    --bs-breadcrumb-divider-color: rgba(229, 228, 226, 0.35);
+    --bs-breadcrumb-item-active-color: rgba(229, 228, 226, 0.6);
+    font-size: 0.8rem;
+}
+
+.project-breadcrumb a {
+    color: rgba(229, 228, 226, 0.6);
+    text-decoration: none;
+    transition: color 150ms ease;
+}
+
+.project-breadcrumb a:hover {
+    color: #e5e4e2;
+}
+
+.project-page-title {
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    font-weight: 700;
+    color: #e5e4e2;
+}
+
+.project-page-lead {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(229, 228, 226, 0.78);
+}
+
+.project-page-window {
+    background: rgba(30, 29, 28, 0.6);
+    border: 1px solid rgba(229, 228, 226, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+}
+
+.project-page-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.project-page-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #e5e4e2;
+    margin-bottom: 0.9rem;
+}
+
+.project-page-section p,
+.project-page-list li {
+    color: rgba(229, 228, 226, 0.75);
+    line-height: 1.65;
+}
+
+.project-page-list {
+    padding-left: 1.2rem;
+}
+
+.project-page-list li {
+    margin-bottom: 0.45rem;
+}
+
+.project-page-list li::marker {
+    color: #0d6efd;
+}
+
+.project-page-list strong {
+    color: #e5e4e2;
+}
+
+.project-page-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.project-page-actions .btn:focus-visible,
+.project-page-others a:focus-visible,
+.project-breadcrumb a:focus-visible {
+    outline: 3px solid #ffc107;
+    outline-offset: 2px;
+}
+
+.project-page-others {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.75rem;
+    padding: 0;
+    list-style: none;
+}
+
+.project-page-others a {
+    display: block;
+    height: 100%;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid rgba(229, 228, 226, 0.1);
+    border-radius: 12px;
+    background: rgba(30, 29, 28, 0.6);
+    color: #e5e4e2;
+    text-decoration: none;
+    transition:
+        border-color 150ms ease,
+        transform 150ms ease;
+}
+
+.project-page-others a:hover {
+    border-color: rgba(13, 110, 253, 0.6);
+    transform: translateY(-1px);
+}
+
+.project-page-others span {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(229, 228, 226, 0.55);
+    margin-top: 0.2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-page-others a {
+        transition: none;
+    }
 }

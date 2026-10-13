@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="fr" data-bs-theme="dark">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>NxtUpdate — Mettre à jour tous ses paquets macOS en une commande | Théo</title>
+        <link rel="canonical" href="https://theo.nxtaigen.com/projets/nxtupdate.html" />
+        <meta
+            name="robots"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+        <meta
+            name="description"
+            content="NxtUpdate détecte les gestionnaires de paquets installés sur un Mac (Homebrew, npm, pip, Cargo, softwareupdate) et les met tous à jour en une seule commande, avec une interface terminal ou la CLI."
+        />
+
+        <!-- Open Graph / Social Media -->
+        <meta property="og:locale" content="fr" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Théo - Portfolio" />
+        <meta property="og:title" content="NxtUpdate — Mettre à jour tous ses paquets macOS en une commande | Théo" />
+        <meta
+            property="og:description"
+            content="NxtUpdate détecte les gestionnaires de paquets installés sur un Mac (Homebrew, npm, pip, Cargo, softwareupdate) et les met tous à jour en une seule commande, avec une interface terminal ou la CLI."
+        />
+        <meta
+            property="og:image"
+            content="https://theo.nxtaigen.com/assets/screenshots/NxtUpdate.webp"
+        />
+        <meta property="og:url" content="https://theo.nxtaigen.com/projets/nxtupdate.html" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="NxtUpdate — Mettre à jour tous ses paquets macOS en une commande | Théo" />
+        <meta
+            name="twitter:description"
+            content="NxtUpdate détecte les gestionnaires de paquets installés sur un Mac (Homebrew, npm, pip, Cargo, softwareupdate) et les met tous à jour en une seule commande, avec une interface terminal ou la CLI."
+        />
+        <meta
+            name="twitter:image"
+            content="https://theo.nxtaigen.com/assets/screenshots/NxtUpdate.webp"
+        />
+        <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "SoftwareApplication",
+                        "name": "NxtUpdate",
+                        "description": "NxtUpdate détecte les gestionnaires de paquets installés sur un Mac (Homebrew, npm, pip, Cargo, softwareupdate) et les met tous à jour en une seule commande, avec une interface terminal ou la CLI.",
+                        "url": "https://nxtupdate.nxtaigen.com/",
+                        "image": "https://theo.nxtaigen.com/assets/screenshots/NxtUpdate.webp",
+                        "applicationCategory": "DeveloperApplication",
+                        "operatingSystem": "macOS",
+                        "license": "https://opensource.org/licenses/MIT",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "0",
+                            "priceCurrency": "EUR"
+                        },
+                        "author": {
+                            "@type": "Person",
+                            "name": "Théo",
+                            "url": "https://theo.nxtaigen.com/"
+                        },
+                        "sameAs": [
+                            "https://github.com/scorpion7slayer/NxtUpdate"
+                        ],
+                        "softwareVersion": "1.0.6"
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Accueil",
+                                "item": "https://theo.nxtaigen.com/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Projets",
+                                "item": "https://theo.nxtaigen.com/#projets"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "NxtUpdate",
+                                "item": "https://theo.nxtaigen.com/projets/nxtupdate.html"
+                            }
+                        ]
+                    }
+                ]
+            }
+        </script>
+
+        <!-- Iosevka Charon Mono -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <link href="../style.css?v=28" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <script
+            src="https://rybbit.nxtaigen.com/api/script.js"
+            data-site-id="f44e76bb0708"
+            defer
+        ></script>
+    </head>
+    <body>
+        <a href="#main-content" class="skip-link">Aller au contenu</a>
+        <nav
+            class="navbar navbar-expand-lg navbar-dark fixed-top rounded-bottom-5 rounded-top-5"
+        >
+            <div class="container">
+                <a class="navbar-brand fw-bold text-primary fs-3" href="../"
+                    >Théo</a
+                >
+                <a class="nav-link" href="../#projets"
+                    ><i class="fa-solid fa-arrow-left me-2" aria-hidden="true"></i
+                    >Projets</a
+                >
+            </div>
+        </nav>
+        <main id="main-content" class="project-page py-5">
+            <article class="container project-page-container pt-4">
+                <nav aria-label="Fil d'Ariane">
+                    <ol class="breadcrumb project-breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="../">Accueil</a></li>
+                        <li class="breadcrumb-item">
+                            <a href="../#projets">Projets</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            NxtUpdate
+                        </li>
+                    </ol>
+                </nav>
+                <header class="mb-4">
+                    <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                        <h1 class="project-page-title mb-0 me-2">NxtUpdate</h1>
+                        <span class="badge badge-os rounded-pill">macOS</span>
+                    </div>
+                    <p class="project-page-lead">
+                        Un outil en ligne de commande qui détecte tous les gestionnaires de paquets installés sur un Mac et les met à jour en une seule fois, avec une interface terminal interactive ou de simples commandes.
+                    </p>
+                    <div class="project-page-actions mt-4">
+                        <a
+                            href="https://nxtupdate.nxtaigen.com/"
+                            class="btn btn-glass btn-modif btn-contact rounded-pill fw-bold"
+                            target="_blank"
+                            rel="noopener"
+                            ><i class="fa-solid fa-globe me-2" aria-hidden="true"></i>Site web</a
+                        >
+                        <a
+                            href="https://github.com/scorpion7slayer/NxtUpdate"
+                            class="btn btn-glass btn-modif btn-projects rounded-pill fw-bold"
+                            target="_blank"
+                            rel="noopener"
+                            ><i class="fa-brands fa-github me-2" aria-hidden="true"></i>Code source</a
+                        >
+                        <a
+                            href="https://www.npmjs.com/package/nxtupdate"
+                            class="btn btn-glass btn-modif btn-projects rounded-pill fw-bold"
+                            target="_blank"
+                            rel="noopener"
+                            ><i class="fa-brands fa-npm me-2" aria-hidden="true"></i>Paquet npm</a
+                        >
+                    </div>
+                </header>
+                <figure class="project-page-window my-5">
+                    <div class="project-card-bar">
+                        <div class="terminal-buttons" aria-hidden="true">
+                            <span class="terminal-btn terminal-btn-close"></span>
+                            <span class="terminal-btn terminal-btn-minimize"></span>
+                            <span class="terminal-btn terminal-btn-maximize"></span>
+                        </div>
+                        <span class="project-card-filename">NxtUpdate.js</span>
+                    </div>
+                    <img
+                        src="../assets/screenshots/NxtUpdate.webp"
+                        class="project-page-img"
+                        alt="Interface terminal de NxtUpdate listant les paquets à mettre à jour"
+                        width="2668"
+                        height="1046"
+                        decoding="async"
+                        fetchpriority="high"
+                    />
+                </figure>
+                    <section class="project-page-section mb-5">
+                        <h2>Le projet</h2>
+                        <p>Sur un Mac de développeur, les mises à jour sont éparpillées entre Homebrew, npm, pip, Cargo et les mises à jour système. NxtUpdate les détecte automatiquement et les regroupe dans une seule commande&nbsp;: <code>nxtupdate</code>.</p>
+                        <p>Aucune configuration n'est nécessaire. On peut tout mettre à jour d'un coup, choisir un seul gestionnaire, ou sélectionner les paquets un par un.</p>
+                    </section>
+                    <section class="project-page-section mb-5">
+                        <h2>Fonctionnalités</h2>
+                        <ul class="project-page-list">
+                            <li><strong>Interface terminal interactive</strong>&nbsp;: parcourir, sélectionner et mettre à jour les paquets au clavier.</li>
+                            <li><strong>Détection automatique</strong>&nbsp;: repère chaque gestionnaire de paquets installé.</li>
+                            <li><strong>Mises à jour sélectives</strong>&nbsp;: choisir les gestionnaires ou les paquets à mettre à jour.</li>
+                            <li><strong>Mode simulation</strong>&nbsp;: <code>--dry-run</code> affiche ce qui changerait sans rien toucher.</li>
+                            <li><strong>Désinstallation</strong>&nbsp;: supprimer des paquets de n'importe quel gestionnaire depuis l'interface.</li>
+                            <li><strong>Mises à jour système</strong>&nbsp;: inclut <code>softwareupdate</code> de macOS, avec prise en charge de sudo.</li>
+                        </ul>
+                    </section>
+                    <section class="project-page-section mb-5">
+                        <h2>Gestionnaires pris en charge</h2>
+                        <p>Homebrew (formules et casks), npm, pnpm, yarn et bun, pip et pip3 (les environnements virtuels sont ignorés), Cargo via <code>cargo-install-update</code>, et <code>softwareupdate</code> pour macOS.</p>
+                    </section>
+                    <section class="project-page-section mb-5">
+                        <h2>Installation</h2>
+                        <p>NxtUpdate fonctionne uniquement sur macOS et utilise <a href="https://bun.sh" target="_blank" rel="noopener">Bun</a> (version 1.0 ou plus) comme environnement d'exécution.</p>
+                        <p class="install-step-label">1. Installer Bun (si besoin)</p>
+                        <div class="install-code-block">
+                            <code class="install-code">curl -fsSL https://bun.sh/install | bash</code>
+                        </div>
+                        <p class="install-step-label mt-3">2. Installer NxtUpdate</p>
+                        <div class="install-code-block">
+                            <code class="install-code">npm install -g nxtupdate</code>
+                        </div>
+                        <div class="install-or">ou</div>
+                        <div class="install-code-block">
+                            <code class="install-code">bun add -g nxtupdate</code>
+                        </div>
+                        <p class="install-step-label mt-3">3. Lancer</p>
+                        <div class="install-code-block">
+                            <code class="install-code">nxtupdate</code>
+                        </div>
+                    </section>
+                    <section class="project-page-section mb-5">
+                        <h2>Technologies</h2>
+                        <ul class="project-tags">
+                            <li>TypeScript</li>
+                            <li>Bun</li>
+                            <li>Ink</li>
+                            <li>React</li>
+                            <li>Commander</li>
+                        </ul>
+                    </section>
+                    <section class="project-page-section">
+                        <h2>Autres projets</h2>
+                        <ul class="project-page-others">
+                            <li>
+                                <a href="nxtgit.html"
+                                    >NxtGit<span>Client GitHub de bureau avec IA</span></a
+                                >
+                            </li>
+                            <li>
+                                <a href="benchsift.html"
+                                    >BenchSift<span>Comparateur de modèles d'IA</span></a
+                                >
+                            </li>
+                        </ul>
+                        <a href="../#projets" class="btn btn-glass btn-modif rounded-pill mt-3"
+                            ><i class="fa-solid fa-arrow-left me-2" aria-hidden="true"></i
+                            >Tous les projets</a
+                        >
+                    </section>
+            </article>
+        </main>
+        <footer class="py-3 bg-dark">
+            <div
+                class="container d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between gap-2"
+            >
+                <h6 class="mb-0">
+                    © 2026 Théo. Tous droits réservés.
+                    &middot;
+                    <a href="https://nxtaigen.com/" class="footer-powered-link"
+                        >NxtAIGen</a
+                    >
+                </h6>
+                <a href="../" class="footer-powered-link">
+                    <i class="fa-solid fa-house" aria-hidden="true"></i>
+                    Retour au portfolio
+                </a>
+            </div>
+        </footer>
+    </body>
+</html>
